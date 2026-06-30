@@ -1,0 +1,1609 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#003875" />
+<meta name="format-detection" content="telephone=yes" />
+
+<!-- =====================================================================
+     TEMPLATE-PLATZHALTER  ·  zentrale Werte für Wiederverwendung
+     ---------------------------------------------------------------------
+     {{FIRMENNAME}}       = Wilfing Auto
+     {{DOMAIN}}           = wilfing-auto.de
+     {{ORT}}              = Steinheim an der Murr
+     {{PLZ}}              = 71711
+     {{STRASSE}}          = Musterstraße 1
+     {{TELEFON}}          = 0 71 44 – XX XX XX
+     {{EMAIL}}            = info@wilfing-auto.de
+     {{GRUENDUNGSJAHR}}   = 1999
+     {{FARBE_PRIMARY}}    = #003875
+     {{FARBE_SECONDARY}}  = #0055B3
+     {{OEFFNUNGSZEITEN}}  = Mo–Fr 7:30–18:00, Sa 8:00–13:00
+     {{HERO_CLAIM}}       = Ihr Partner für alle Fahrzeuge.
+     ---------------------------------------------------------------------
+     Demo-/Akquise-Seite für Irtona.de · Vorbild: UBC Europe GmbH
+     Kontaktdaten mit XX sind Platzhalter und vor dem Livegang zu ersetzen.
+     ===================================================================== -->
+
+<title>Wilfing Auto — Ihre Kfz-Werkstatt in Steinheim an der Murr | Meisterbetrieb</title>
+<meta name="description" content="Autowerkstatt Wilfing Auto in Steinheim an der Murr – Inspektion, HU/AU, Karosserie, Klimaservice, Elektrik & Reifenservice. Meisterbetrieb seit 1999. Jetzt Termin vereinbaren." />
+<meta name="keywords" content="Autowerkstatt Steinheim, Kfz Werkstatt Steinheim an der Murr, HU AU, Inspektion, Karosserie, Klimaservice, Reifenservice, Wilfing Auto, Ludwigsburg" />
+<meta name="author" content="Wilfing Auto" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+
+<!-- Favicon (inline SVG – Werkzeug-Marke in Markenblau) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23003875'/%3E%3Cpath d='M21.6 9.4a4 4 0 0 1-5.1 5.1l-6.2 6.2a1.7 1.7 0 1 1-2.4-2.4l6.2-6.2a4 4 0 0 1 5.1-5.1l-2.3 2.3 1.6 1.6 2.3-2.3z' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Wilfing Auto" />
+<meta property="og:title" content="Wilfing Auto — Ihre Kfz-Werkstatt in Steinheim an der Murr" />
+<meta property="og:description" content="Von der Inspektion bis zur Karosserie – erfahren, zuverlässig und fair. Meisterbetrieb seit 1999." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80" />
+
+<!-- Strukturierte Daten (LocalBusiness · AutoRepair) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Wilfing Auto",
+  "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80",
+  "url": "https://wilfing-auto.de/",
+  "telephone": "+49-7144-XXXXXX",
+  "email": "info@wilfing-auto.de",
+  "foundingDate": "1999",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Musterstraße 1",
+    "addressLocality": "Steinheim an der Murr",
+    "postalCode": "71711",
+    "addressCountry": "DE"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:30",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "13:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150"
+  }
+}
+</script>
+
+<!-- Google Fonts: Inter (UI + Headlines) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Hero-Bild vorladen für schnellen Bildaufbau -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1600&q=80" />
+
+<style>
+/* =========================================================================
+   1. DESIGN-TOKENS  ·  alle Farben & Maße als CSS-Variablen
+   ========================================================================= */
+:root{
+  /* --- Corporate – Wilfing Auto --- */
+  --color-primary:        #003875;   /* Wilfing-Dunkelblau (Hauptfarbe)     */
+  --color-primary-mid:    #0055B3;   /* Mittleres Blau (Hover, Links)       */
+  --color-primary-light:  #E8F0FA;   /* Hellblau (Sektion-Hintergrund)      */
+  --color-accent:         #FF6A2C;   /* Energie-Orange (Akzent, Buttons)    */
+  --color-accent-dark:    #E8531A;   /* Orange dunkler (Hover)              */
+  --color-accent-2:       #FFB23E;   /* Warmes Amber (Verlauf-Ende)         */
+  --color-cyan:           #29C7E6;   /* Elektrisches Cyan (Glanzlichter)    */
+
+  /* --- Neutral --- */
+  --color-white:          #FFFFFF;
+  --color-bg:             #EEF3FB;   /* Seiten-Hintergrund (leicht blau)    */
+  --color-surface:        #FFFFFF;   /* Karten-Hintergrund                  */
+  --color-border:         #DDE3EE;
+  --color-text:           #1A2340;   /* Haupttext                           */
+  --color-text-muted:     #5A6480;   /* Sekundärtext                        */
+  --color-footer:         #0D1B35;   /* Footer-Hintergrund (sehr dunkel)    */
+
+  /* --- Status --- */
+  --color-success:        #2E7D32;
+  --color-error:          #C62828;
+
+  /* --- Typografie --- */
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+
+  --leading-tight:  1.2;
+  --leading-normal: 1.6;
+
+  /* --- Spacing & Layout --- */
+  --space-section: 96px;
+  --space-gap:     24px;
+  --container:     1200px;
+  --gutter:        clamp(1.25rem, 4vw, 2.5rem);
+  --radius-card:   8px;
+  --radius-btn:    4px;
+  --radius-pill:   999px;
+  --shadow-card:   0 2px 12px rgba(0,56,117,0.10);
+  --shadow-hover:  0 14px 38px rgba(0,56,117,0.20);
+  --transition:    0.25s ease;
+  --header-h:      76px;
+
+  /* --- Verläufe & Glow (Aufpepp-Layer) --- */
+  --grad-accent:   linear-gradient(120deg, #FF8A3D 0%, #FF5A2C 52%, #FF3D63 100%);
+  --grad-primary:  linear-gradient(120deg, #0061C9 0%, #003875 100%);
+  --grad-dark:     linear-gradient(160deg, #06224a 0%, #00132f 100%);
+  --glow-accent:   0 12px 32px rgba(255,90,44,.42);
+  --glow-primary:  0 12px 32px rgba(0,85,179,.38);
+}
+
+/* =========================================================================
+   2. RESET & BASIS
+   ========================================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html {
+  scroll-behavior: smooth; -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+  /* nie mehr „nur weiß“: weicher, kühl-warmer Grundverlauf */
+  background:
+    radial-gradient(1200px 700px at 88% -8%, rgba(255,106,44,.10), transparent 60%),
+    radial-gradient(1100px 800px at -6% 12%, rgba(0,85,179,.14), transparent 58%),
+    linear-gradient(180deg, #EFF4FC 0%, #F3F1EC 100%);
+  background-attachment: fixed;
+}
+body {
+  position: relative;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: transparent;
+  line-height: var(--leading-normal);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* =========================================================================
+   2b. DEKO-HINTERGRUND  ·  langsam schwebende Farb-Blobs (fix hinter allem)
+   ========================================================================= */
+.bg-decor{ position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
+.bg-decor span{
+  position:absolute; border-radius:50%; filter:blur(60px); opacity:.42;
+  will-change:transform;
+}
+.bg-decor .b1{ width:46vw; height:46vw; left:-10vw; top:8vh;
+  background:radial-gradient(circle at 30% 30%, #2E7BD6, transparent 70%);
+  animation:floatBlob 26s ease-in-out infinite; }
+.bg-decor .b2{ width:40vw; height:40vw; right:-8vw; top:34vh;
+  background:radial-gradient(circle at 60% 40%, #FF6A2C, transparent 70%);
+  opacity:.30; animation:floatBlob 32s ease-in-out infinite reverse; }
+.bg-decor .b3{ width:38vw; height:38vw; left:24vw; bottom:-12vh;
+  background:radial-gradient(circle at 50% 50%, #29C7E6, transparent 72%);
+  opacity:.24; animation:floatBlob 38s ease-in-out infinite; }
+@keyframes floatBlob{
+  0%,100%{ transform:translate3d(0,0,0) scale(1); }
+  33%{ transform:translate3d(6vw,-4vh,0) scale(1.12); }
+  66%{ transform:translate3d(-4vw,5vh,0) scale(.94); }
+}
+
+/* feines Punkt-Raster über dem Verlauf – gibt Tiefe ohne aufdringlich zu sein */
+.bg-decor::after{
+  content:""; position:absolute; inset:0;
+  background-image:radial-gradient(rgba(0,40,95,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image:linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+}
+
+/* schmaler Scroll-Fortschrittsbalken ganz oben */
+.scroll-progress{
+  position:fixed; left:0; top:0; height:3px; width:0; z-index:1600;
+  background:var(--grad-accent); box-shadow:0 0 12px rgba(255,90,44,.6);
+  transition:width .08s linear;
+}
+img, svg, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; padding: 0; }
+button, input, textarea { font: inherit; color: inherit; }
+::selection { background: var(--color-primary); color: #fff; }
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height: var(--leading-tight); }
+
+/* sichtbarer Fokus für Tastatur-Navigation */
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+
+/* Skip-Link (Barrierefreiheit) */
+.skip-link{
+  position:absolute; left:-9999px; top:0; z-index:2000;
+  background:var(--color-primary); color:#fff; padding:.75rem 1.25rem;
+  border-radius:0 0 var(--radius-btn) 0; font-weight:600;
+}
+.skip-link:focus{ left:0; }
+
+/* =========================================================================
+   3. LAYOUT-HELFER  ·  container, section, section-head
+   ========================================================================= */
+.container{ width:100%; max-width:var(--container); margin-inline:auto; padding-inline:var(--gutter); }
+
+.section{ padding-block:var(--space-section); }
+.section--tint{ background:var(--color-primary-light); }
+
+.section-head{ max-width:680px; margin:0 auto clamp(2.5rem,5vw,3.5rem); text-align:center; }
+.eyebrow{
+  display:inline-block;
+  font-family:var(--font-heading); font-weight:600;
+  font-size:var(--text-sm); letter-spacing:.16em; text-transform:uppercase;
+  color:var(--color-text-muted); margin-bottom:.85rem;
+}
+.section-head h2{
+  font-size:clamp(2.625rem, 5.6vw, 3.15rem); color:var(--color-primary);
+  margin-bottom:.85rem; position:relative; display:block;
+}
+.section-head h2::after{
+  content:""; display:block; width:78px; height:4px; margin:.85rem auto 0;
+  border-radius:var(--radius-pill); background:var(--grad-accent);
+}
+.section-head p{ color:var(--color-text-muted); font-size:var(--text-lg); }
+
+/* =========================================================================
+   4. BUTTONS
+   ========================================================================= */
+.btn{
+  --btn-gap:.55rem;
+  position:relative; overflow:hidden; isolation:isolate;
+  display:inline-flex; align-items:center; gap:var(--btn-gap);
+  padding:.95rem 1.7rem; border-radius:var(--radius-btn);
+  font-family:var(--font-heading); font-weight:600; font-size:var(--text-base);
+  letter-spacing:.02em; text-transform:uppercase;
+  border:2px solid transparent; cursor:pointer;
+  transition:transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition), border-color var(--transition), filter var(--transition);
+  white-space:nowrap;
+}
+.btn svg{ width:1.1em; height:1.1em; transition:transform var(--transition); }
+.btn:hover{ transform:translateY(-3px); }
+.btn:hover svg{ transform:translateX(3px); }
+.btn:active{ transform:translateY(-1px); }
+
+/* Glanz-Sweep, der bei Hover über den Button läuft */
+.btn::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(110deg, transparent 25%, rgba(255,255,255,.55) 50%, transparent 75%);
+  background-size:220% 100%; background-position:140% 0;
+  transition:background-position .6s ease; pointer-events:none;
+}
+.btn:hover::before{ background-position:-40% 0; }
+
+/* Markenblau gefüllt – für helle Hintergründe */
+.btn-solid{ background:var(--grad-primary); color:#fff; box-shadow:var(--glow-primary); }
+.btn-solid:hover{ filter:brightness(1.06); box-shadow:0 18px 40px rgba(0,85,179,.5); }
+
+/* Energie-Orange Verlauf – Navigation / Haupt-CTA */
+.btn-accent{ background:var(--grad-accent); color:#fff; box-shadow:var(--glow-accent); }
+.btn-accent:hover{ color:#fff; filter:brightness(1.05); box-shadow:0 18px 44px rgba(255,90,44,.55); }
+
+/* Weiß gefüllt – für dunkle Hintergründe (Hero, CTA-Banner) */
+.btn-white{ background:#fff; color:var(--color-primary); }
+.btn-white:hover{ background:#fff; box-shadow:0 16px 38px rgba(0,0,0,.32); }
+
+/* Geist / Outline weiß – für dunkle Hintergründe */
+.btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.55); }
+.btn-ghost:hover{ background:rgba(255,255,255,.12); border-color:#fff; }
+
+/* Textlink mit Pfeil */
+.link-arrow{
+  display:inline-flex; align-items:center; gap:.4rem; font-weight:600;
+  color:var(--color-primary-mid); font-size:var(--text-sm);
+  transition:gap var(--transition), color var(--transition);
+}
+.link-arrow svg{ width:1.05em; height:1.05em; transition:transform var(--transition); }
+.link-arrow:hover{ color:var(--color-primary); }
+.link-arrow:hover svg{ transform:translateX(4px); }
+
+/* =========================================================================
+   5. HEADER / NAVIGATION  ·  sticky, transparent → solid auf Scroll
+   ========================================================================= */
+.site-header{
+  position:fixed; inset:0 0 auto 0; z-index:1000;
+  height:var(--header-h);
+  display:flex; align-items:center;
+  background:transparent;
+  transition:background var(--transition), box-shadow var(--transition);
+}
+.site-header.scrolled{ background:var(--color-primary); box-shadow:0 2px 16px rgba(0,20,60,.35); }
+
+.nav{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; width:100%; }
+
+.nav-logo{ display:inline-flex; align-items:center; gap:.6rem; color:#fff; }
+.nav-logo svg{ width:30px; height:30px; flex:none; }
+
+/* Werkstatt-Maskottchen · transparentes PNG, einmal definiert & wiederverwendet */
+.mascot{ display:inline-block; flex:none; background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALIAAAC/CAYAAABaFIa2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAL39JREFUeNrsXQl8VNW9PgnEYCVkqAoRRQZBUFQYEPvKIkxsbXGD4KuWzZJosWIXQkXr66smUV9rVRqoVij0NaEqamtNsC5oazO4QBeFScAFCTIsIkstE8EnCSF55ztz/pOTyZ25y9zZwv3/fpeZDHe2O9/5zvdfzv9kM8cc6waW7VwCx7qD9TwRvuTJJ5/s5jdF/BjED498OMCPen74P//8c58Dhcy2rG4O4GJ+s0ABLxs+fDjLy+sj7m/d+j47fPgw/RfAvI6DutyBhQPkdAEwgFtFAJ46dRorvKyQFRZe1uk8gPiJJx5nTzz+eBjQHMhZDiwcIKcLiOv44QJwb7/jDjZgwICYz1lYWsrq6v7KpMwY7cDC0chpAeK8vDzXPffe24WBtezBBx4gEAf5UWhErnCwVzvQcYCcKBC7CMS/+d/fCi2sZ889t0ZICwIxB2hQ5z0gV4r57Sh+7kIHPo60SASQqziIi42CeOvWreyb119Hf47mwPQbAbHy0HT+nFoHQulh2d0ExG6A7Jb58w2BGI7dt2+6kf4sMQBiRDKK4TTOnj2HHq6Ss4BjjrSwzRbAoVNApuvcySjFEj29K0N4ZRgg0N2wt976JxgdIK7EQHBg5DCyXVYENjZi0MQAIjefns7lIEYSpQoghmQhq1yylHEZw6RedjswcoBsl5PnNhKh2Lt3L1u+bFlYUhiIgIRBLIErDOyvDJxKB0YOkO0wD4ClAi2a3X3XXWomrzKaxpWP13AQuyJBTAYZI/V4kcPKDpBtMSMghoFFx469JCxH+LGJg9CrcSpA7I4GYrLb7/hRWKM7UEqt9cj0L5CTk+P+5JNPioefN5wNHjw45rlg7qnTprGxl1wiZAY/wLzF/DVc/Ph7a2vrUYpQPLpsuW5GEP+PWDRn+QL+3KUOnBwgWzYOoAAHYfH6N990XXfd9Sw3N1f3OQToAWcOEPFkDsQv84dn8NfpiwgFwmzXXXedoffHgNi8uQEDYRX/LEEHUg6Q42HlppaWlqLAjgCbMmWK4ecNH34emz1nDgHaxQHtjYhK6FpLSzN7ee1a3F2DQeVAygFyPKzs52D2BgI73AAlAGrGCNCQJ6edepqpwcDZmNXVoUaJLeWfY58DqdRYd0pRQ+/uQK3Fiy+tNcyo8RoiIdDJTvmnE7WwxWTBz1KE11DRlgx76623BIi5+R0oOUC20ybjH6z8SLRhwNx910/oz1UOlBwg2yUtivmNF5JCTScnCsQoOkLEgoVKQKsdKDlAtgvEVQTiROpjhOuuvGKKuJW2UK+O2bHEW880BCVqHIIcHAF53xWhhX1aIMZ9LGsyUsZplYVRcKTUasAqnNUiDiNrgRiA3HSue2DNsffeKBoy8MwaFlp/Fz74OTsAXtQ38KOGQIwkBg7revcu4bxpGRw6FOErIAYDlzgrrtPHstIEwC4JVM9Fw4ewF1c8xPLzerMn/vQK27V3vzhn89ZG1vDB9vDfqmlVqJmRCnDacIvnh1Zchyrp6v76V0pBq0+plkwcyADJ5aWBp7V4gIqmuoM0ShcgA8ReFcTRDED+2a9/J0AOI11sRVIApAjVRQBVy/wyMlGd7j+6BGcZP0oNPkWELVlokUHQAXJ8cqLYCIjJNm/dzibMvEXcx6oNK5ICAJYLT9XIwxotEGfKD0wzW9vAkZ7WCy5n7X36M36/q5488CHL+nQ/y97dwLL38OPA9owHdFaKLzxKKWsuHTuKrV5cbgjEsFk/LGPP+9YLANPyI6OGkNnC0gVq1KFWRh4CLMONX8/K40PHl7ZMu9scCDioe75dy3q882eW1XwkkIlObFaK2WMTP9wA8P2L5rPZ13xN93mfHPmcDZ401ZIuhjMHEEspQQ5bbQK+F7QpIi6T5cP4OyAlCvrN+exmevm+h5qvf0CThQ2Bofkz1nNjDevBQc0B7ZMD3O8A2YCkOHtAfzZoQAF7/a16wciXXjySTeQMPZJLjeDhz4SMUK3W9ze2Z+/HzGw9BWSEkrrGjzPdLhZWmiTOZUqfOQPmV8EdD2ikY1cXD5BVQOfULRcMLdm53AGy9kUv5jdVyypuD7MwnLj55Q8KQMcys84d1V7ImggmNeBCm74HwLNAgpi153yBtZ05hh0fMJq1uc5m7V84LXSR/+9fLOuzf7Hs4C6W3bSbZR98X/wdxcCE6wjkRgebnUBWtXTOy4uhoW0d+N0CyNTWioPYZURKkM0ve1BEKrBc6ZZb5hsGMVLJih4usUP7SQaukpKBtZ1+Hmt1T2DHB000DhIO5px314hb2HHunJFeFbdwyJqPkATy64GbgNw6fg47Nm6Orb/ZSWsXg52pG5P/hAcyedW3zrrWA01sxpoOH2FX3ryIBfYeMCQrAF6AWAmt2QXichneEqx7bNRMAWSr1mPvRpbzz/9lbcMmsJYpt3UF/O6GUIRBRhkkwIOKLGliHdV3NYhUHJ1nfw3TSWvuYT0a16ctmJMNZEQoil5Y8ZCl51PYDdJi7NixUc/TiA9DfxbaMAiRSfRCQhzzzDTFwHrsnLvu58yoLBDA5oDOPrhdBXf4/48PHc+OFX5HhN9sAwrXzbkr54qoBr+Wg9MNyD2TCGJMfUX/9Z0bLL8GEiGwWItCAWKkm+FEeoafo6u5zcwkcOTAvi3jvy/0sF2G1zzunsh6bqxlLQaADIAexzF0HGPjOvRsFoANgO9pYL046HBee35//vpDxLnxaOf23FMYw9F8xJ2O0iKZRUNC1z1ft541cGZFVOKiYUMMx44fXf2siB0jbhwNyLRaA9ob0gWvLWPOXoAxjnAXmNgDsLWMvSkhF6d10ATBymBbK0za1u8cxvhx/ILOsiT7oGTr3N5xfb4ejRtIv/scjRwq8ilSHwNzjuSAvmj4UIbsHu7jMVUbP7q6hj3CD1S3RcviUabuau94tvoXFZ2ef+HVN+DWUvdM/pmR6q08PmCMYGI1CqFriGJwHW34vZ4p4ZLgFtY6pijtgCI1Mu6OTkeNnOwyznUqkAHcSy8eJZjzjbfrBesCeKrR0v1YDh4adQPEGAAI6cHAxE1HPmPQ43iM/40RYCX5UUZOGYBmWT4A0BzYkCTtEtxtp5waDtF1aNEj6cd2nIkliCvSNWqRTI1cDGYD2G6ddS1nzgmdmJexkHZGPHnXx6HFyK19zmBnn3eR7mvLlRpsOQcsVc1BhpAkkUkVDKASk58Zz9Fqq2V6es0O7vJ2fOCNnfXnSacE2vqNwPu42mx00OyynPWiJsWfzomRrGSBmAOsCo4eQGzUrrp5Ebt82jd0i4IAZKzaePPJ5YLlqRZDw1LenFtZLEDA9suBsQOPH/3eH0OOVRqxMRzHdJUUSWNkyuKhsg0gM2pgVUQceuadqgtkkhx4zv3D5wtJQQaGzs87heqYrcoL20wBgy/iGrng5GUd2J70LFV7vyFRB09O3a/TWlIkBciUAUN1mxkQq6E2A7XC4ZUbADJYH9EQqt3AAIK8eGLvK5bkRZJsGrFf7u/vMPVEXNtoZjT02J7bm7UNHceOjZ/TKWKSs+FxaONAJtRaJJqREe4KNmzdbmqLAqGT5UoQvZoKcvQoQgEwQ74AxBg8OK4qnECF+C7Es9Ntp1P+eaZH6Qqq5Xh64Vv813e+xcyk+LtcX+mHIBSKgb7rnT+LIqE2zs4AtQjd8YNlSEf+hM9i5OTdv2i+y6g+VjVurMJ5NQ0N4FJsWiv9feHVc2hwoDRxCcswo2pBNUZupwlZtuJ3bOdHnZaSpWUWL5XOnkdKDN0SRzAEheDAxk///g+a56kFQUZWl2BgYICwDClLjLh++LxlYOF4MqN69odXX2G79+9nS1Y+y4JNR1iv3JPY0eYWLO9Ke1ZOSvhNOgqjuWYrltMjtLPadDts5w4/X9yOvWRszM1tkMUzCuLQdJqZ/QWl5CgDEycSxLCz+hUIILv69GZTCi9h7oH9WfXTrxTvO/DvYLrvK5iS6jd+eABSZOqs2PLly4SDZxTEVAIqbXAmLWtC+wP+Pd0ILSbaNmxu4EdnB5EzMsDMOJhL0nn5U89UgBhMbBXEWK4EEFNEQm/F9czbytRVJiUZBmLMYO7l5bcn/L2aW1rYOx+GrpP/ne3Mv6VjZQ6YmUsNaHT/CZ/ZY6FCdA90b+USa74WLRw1AmIw8J0PLVNT3iUZ2BWoEpLCbOjSKht/+lnoWkEfB3YLKYaYe5DfL/JcOMTFwY1ambR0/rKTxCwAcVE8jVTg3NHCUdRORPtxAVxICRyZDGKZDXVpRWBChVTPCudVkUzh/0Pdihk7eOgQ27j1vfDfBf2+qEYt4Oj5JUO75Sxx4jGyrB4rtrJ0XzVUt8G5ww+LCrdoIMYqEkVKpPXyHB0TDp7WrIOZhgA8a+rXw4+r/T4w0I3qat/Gf3b6+7yhA8XxfuNur3wI14/uI1+ddqSQnWAQezj7VkJKxANi1BhTnXGsWHQEiP3SsYtnZbJL9pmrkT3n2pXjEDokoZeEPMdj43UT2jjad50os3kAqzqo1VnKZTDODF28edt25ltfz+VERwy56IoJuKHvpDauWddtohbyR3PLLxqUToBPPWfrB9tcgUCg7tRTT/XE0+YVLIwGgnoRip/9+rFwWlsyhuV2rzK1jjChlWnUxzqW+FtyjjBo+KB1U0mqGSOmNpr123NgP5tRWsYa3t8eBrDngtCAKH/od+EoDz4TCy2OmJ6OnYh6mvxxF8gf16Xx/0HpHKzy1zfgx6tzu91xsRQlPQBeeO5aIFabGp7Z//QlH+0/uDOezJ2UQmX0HZEOppLTkRG6nPpuIEa96+P9lMzxKtMwXs8UuGXywz17qrX0s9m09Vn9+rOrJk8IA7n2pTeFo1c0ZULkqYUZ3Q5Ahs0qVXZC+Gz2nNniFoyJrpWoeaC64BEjRgRnzJzpstrmlezbN90kNkBX+19EGko9kSiYePGokpzzJ8al3SgNTIBAJq1zzbS+UR3D6281iA6iOznAI5vMsI4l/gRuOFU+SRab+Hu6tjz/eNJAAMcRuluRZB7PhUNECC5TNvnJMiAh6oidEHXAtrXRVjDL3UTDf+N8q7KCli4BUNGmWHjnV85bxFb9/K6S63/wY1tADAkD9rc75IXPCsYGqNEeVwPcYYM2NtsuwaopS8Fo5pguf3OPnD1GZzSQ5eqIKuE3cDCiMUqslLGdRiuh9XQxZeziZQ1qpoj32fL8Y7YX5BgBN6SJWnaJzwBA3zprekI/D5iYMzJIQCx0lHqYWh+weNsopBTIKhODVe+5976EbWmg5dxBF2ezdqZXjE8VbTYAGc0URdMYMytYEmEANckRaG9q8JgIw7Xj1xC6d7SWA5eOJa9mnT3BxNC4SCUna/NF2vILt/jxYoEYU6F09Oy40MIpHZmEDJqeUQ11tFi5nSajPL5oUYhMAbEmkGUM0xNvAsOKUUUbVj3oMePmD7Yzx+JjYxmqq+8O30crIbJARCYuGZv0D4P3hBbfyafUyLYAMcyOAL1gJEQaThRTYu7+yCiVTPCUyyhKxgJZTLMDBpxpyUlT2reaNjiT6LR5cp5LNGWJZQ2d09DxWi2FoUwMoMxm5I/3d7l+0jfaIaVlmfSTMhbILATkAaadNEgDHKgXjsdmz5kTWkemsYNTh0b+TJNRLBqKxoMAsRJPPSGMkjOqgw//5NONosm3287Ue9oDmSINNLpRL4y0crR96/SssPAy1say1Okv0T+m2IYB96EbIyvKuqPdf9t84VAfe++NOn5Ubnn+8U0vrnxIJGLgnygkEsxUIAetgPjw4cO1HBB9JSCC9Diyc0qjbUOGKAlYGYBK1lQvG7cIMEesKOmWhsiIdKi9/ChFBnPixaPCmUzMiPK6BDIVyLXIzhkBnwJiP4FA1v2i+FrUOyDFDHY2uJ9d2Ci9HU0rXzp2ZCLAXK2C+USTGR2y7UjGDWQtIIsMT8SWBbFATDW/QXWqlosVkRUSIxrp5ogO8jFNNC/kYCZmSKJmBJiRpg3ivVHLEUurd0dTVtb4MhbIciop0dh/I2xg7Gggjngtn+yLUEHgNxPVQCguGjugf4UaZUmAzECNgR9pYxSrJ3tApcqQNleu95qMBbLCStVaYFaXHLFQbaqRqEE1aV+tFgCxWBmp8Rfq3uzyf6GebqIGYVCCmDkgC2YqKJoBdja7jCjTJMUtXFIpTl51RgNZ/pAlKphRpiniVKWlBOyFJlKYNVb3jAbwX39bO1EhU8oJDQ/JZi4AtA/sjGq77gpoDFZFRi3NpK18s3V+xDCYAeBQSE2s76o1WryOpUAAG2o2rBQexdLp8LKZUsSeQDD7ZRUYtHNABXR3iW5EhB19mdaNKcsgGMMF59IMNTmhlrIAsZUSUAwg9D3GpjZaO0FRPTJLct9j+b3m0iCCxEGRD5olYudWu8su1WJ9Wo0S5DLA6Cb0RkA8v0NS+GP5PelqPQ0yUonM8OCoNghiN7+pROTBah0zIh0A86woq0Mmym0buLbDns9JAzL5EPKazOXvX8TB4FbZmbYmPvuM/vx+gejRTNV1cibRHJiRy6e0WsMi/otVMVZBjPWN+DxYtIDwprrWMRP6vFlmZAlMF+tYNRA0cH4dd9a8aEJopQyUwnt9874glrXrFNenvGukcn3c8pis3LfFwPq3zr426kAwaojCRKxQwe9ZkYldSk0xsmQhfFmfwR8VU68XBfnxgBhs/PQvymIyj+x9jJqAolRuqxDr+ii9j1VgA42Ri3gD8v87SRYs/8etHTICMiUCxBkpJSwD2aSVwbGLtTtpNE0MOUG93bBWT4996Afm03vKt1WIAXKj0R1aRe012qAxVihN67mvd462VGdadMJS1MLiFAs2cYdY9SaRmqbQXTRDcRGq5uDYAcR98/MCsVZOa4EZzmgm1c/qGXXdj8eB09ThHZpb6OEM7cKUFEZ20xSJUB0O2hoBVW3DzwuF4La+v1UwsAznqVNrxd59B6pn/bCsXZYS6hqW7csfDpKmvDv8MIMGxLdNWbRV2gojL2XdyBLWs0Cyo1c6Pd4YTk9ASoI16hSMtlQvrnzIsGODmC738DFFDs7kqZK60+9eVxMXIw+cPJ3hNSL1MRbssgzaUiHVGplqNqrlQcCmEJ6fdbTaigo6xE2NAnk+n4o5kOE8lXYHVo4HxNhmQqv8VWHjWtbNLDtZbyRrF5ARLJe3Ph3m9JlJA0Mny1raBTIUltEWTwp89XMv68mNNQ6Qk2d+o/vEqVqZhUJapewENciHKLu+hhk5k5b5dwcg19M0adQQ5ZCsXJbpEYxgx5pEUxZreZhkZF93HMDpDGSh494wycr3L7qV7pZFcaa8Eb2Oq9JMivhjRR305EjUsFuHVPE7QE6iSf3sf973pqnnQSvLbW27NN+WGce64tI73Uue+hO7b8XjrOCss/FYTRp9dV9IIpjfTu1HytKsyMaPSs+OdQ6Qk2+rNFKqBrRyeD+6yggQV/3mxddYcemPmOfLE9nEr13FjnzalI4DOPC6SWcPK1hwnRDtWP2Lii7JJLS4dRg5xfLCbM0vQnYy2+eVUsILEN/50K/Y0BEXhc9rfHczATndWMqn7setZwAwLZRFWlurb1xDqMVYMJO2Z+s2QJYX3bS8IK0sY7Gopa4C+075xqxO5/Tuk09389Psq68jljUCYuydQnIiWuNHOSi6JRtnAiPDllqRF4heyL4Nbg5YN9g40rg+FhKDW1GaOXw+moli9fUgEOOcWLUp3d3RyxQgi00LraxiRpNsABpMrLBvJwPAAXQ4gekSspMzUYD2DNQyhCWJiVGvHavASumT1+QAObXOT220tGssCzXJvpWtfWa10MOki/G3yspPvVEPZhYN/GQ4zpMmA1gAFnUkuAWzYkCjMB6bRWKVh14zdIHejpi0r7sCuUcmfMicnJz65paW0l65uRRaM2zD3ANZ446d7H/KfsJQIzVi9FhWOuMa4fSdPWSYOOek3F6CtUMyI8vDwX4Lf89ifjS1trb6U/SdsR3UDNK3f3zZJ6TGX9a/xQ58ckg4dM8+8jOxjErXX1jxGGnkVfz7dEtnLytTPiiWTnGZ4LW625GsjhMMjEgFWDia3MD/v/HKC5zNv4s/K1K1ohgJG9L7YFWxRdqwIQxbl5lZ7kR7EGbKDk3dVSOTVShd1k3b6sUhLO7bs4t948b5UUFM0QwlwjEohd9ZyIvZ13xdlGRCCxtZNXMiWsYAWRa6+MAsVjp00gCApEBCxISl0gG0pUqNGj5K/V8XsRWx1rFDbltcrqw3TGvrmWEDD6zsxRJ2JXunawA+pleKUhgxMLc0VwoHL1oOlG3e2mjLYOI+QDEN5qEjLhQyixxe9TtzaeVufHeLm/9d5P/bG2Xy8Vops9IyhJdxmgmMwm+EVja6KylpxOLSOw2zMSIbUiPD+iZj1YmMZYMBETWhVdYAsTveFSN9xlzOkJ5XM5tGjYOZVS/5OW6Dsge2Iy3sYGX8M7/8QUMnQ1cDxGYlxRuvvKj+6U0wgJFGR+HSIRYqYCrjn7eIM6iXpI0drbme+e1yq0xOPkXaJlQyDshSK1cjAkFyIZYB8PgRUOlm1DCVImqhOIQLEghiFDbV8fcqghMK1vQFDolbVOg93xAQQIp3ox7MXmBWK4bn4Xqw0F4rDpBtNLF5DZg21pIgJBEAeOhi0oHGZMWT4laZir12Oz1yGzDsuFoKyYNw4Pfu/mmXqR+DCZ8fM4veTlexDO27MEC97r5sxsRR7JF7fqz6ATENsiKd9XFGamR1OgaTQTdqZbdos/BxX59q2MGTjo74oVFkhOfhbyRQGt/dTE3N/TZ9/k0cpB6wrhHd+u0rJ7GDu3dY3isb0oSq6VDSiWo4/I1ZAAMo1uyE6yHJozpdV6j3yFQg5+Tk4ILOaG5pcf3xFR+7fPwlrP9pX+yg7J8uZYeO92QPrHrG1OuuXraU/WPdq0KKgA2R9bvsmmvxWK9/Hzwwg7/vy62trfviBHEVf+0pRkEMa2k+yl7/80uhrF7hBNPviQaKyIri+M+vF4qCKtx/oPKXrG+/gqifA04vrge3KQj6tH3rEVev91+dwq/DnTL7icODTCS/Lu870sK8YSmTG4xyPKuHKKChCjnIjTXr/m5KFxMbP/PbZSIZokoRABqg4yyNKALisEXxgJjfFOOzGQVxqD7kyTCzWlkGpWVIrKANbuO7W3RlVntub9Z8w6OsbcD5pa3j55Tyv73SCcaBxb41Mv5c7gDZnKwoBeAwLQJkBGY4RTN/WE7LmEx79QCzVnSDHEauZ13yR6sxW/opHbtiDD5ZPmpIn0JWUNET7M7F9uw2Bfm1adtOPnBnRh3Y9L4t0+5mbf3OEfePjZvDjl9cJK4vrr9ynRFhKZOA9jpA1nGS+E0V2Iy0L+4DZLTXx/yynxsGih4bRxpAjoHDzwEr75BLqPQ+s1uG10Sbgm/ceIuhzwNtXr3k/nBXTrQ7QIoaDmy84ThcKwz8Gxb+OOrMQFEOzsCsbWDn7eCyGzeI74FBSY6qEuVxy5mr1AFyDEmB+uFI2UDABRAjV4IYZWMCqp7hvUJr/wQ7V0VjIBmZAAtjf2chR+BERhsoFPYDC4KFd7zjF7uTwsHDOjxkM1F3jEPZQswyiK+a98OY18r/t9DKnNYx0ztHCD7dz7IPbBffhQyARqgQERgF0JVSSjlRi0hmAygAYvUiklOCC28mQhHpmZvJ/Kn6FaEsyV4BFkrY1ErgCh0PRjs+ZLwAwM2DmzXfA6+BGYFAAEaO1vsOGhk1yWBpANyM4bkzbytjX5pybcxoBUVKtrbkCVmhWs+Ntazv208K4EabTSCJ8H1IISW6E36mMbJYe6cFYjCq3g8TzZCKBksamfIjDdMypIacWjHQwECH5K0bDhI0JfRlz401nM0ndBkIofroC0UiBK9DK7ujVbkh1IgEB+LkZhrYQI5cv+heNmL8V8Q1w/uqB4BH7036OFJSCNDsbojpqGIwku8iB2Zxopk5O4PYGPUH3kiwAoQAsXLRTBmmcrApWNLK89WpNTKcJrSldJDE9Hfgwy4DEEyMGYameFWjx1pFTY1osBRKb7U1pARWlCx+ei0/XhQgU8kAUgkHIhSYmQBg0sdtZ2kAmcsKIxEXvKb0JwjM5Q4j86kaF0bVl5i+IAusghisAyDhda3oai12JlZHuCpSW7YNHRduQfCTm+eI945wkkJRCSmPYvW2gKygJixY8hR1oL4d2rn1NM8koetx/ShbiOuGA4MYBz4/fTaAur1P/04DUdXIRq83XlPJkJbFE7rsLkD2KX0o5EW60DKI1YFgRVdHZ/hQsdHxCy7nYO4MsGPjQ+C9eqRbzAQEHi0mw6HXLgxOX7SqOIrg3FjxS3b3b/5gSPsTC5PTic8bnW2NJ2UoDi+/a1UiFvlmVGE9B3GtzPszigBYNfxo0IRw8MzGm/WkipAVF3clHjDc8aGh5ikhTT4/ZpjPjP7VYuH/6zfMVOkmAIzPiONY4S1iMHZh42ZrzRVpFuC3Ig5/ojt7JRx8QQKLVQOrQ1tbWC1iCMRt/YYIMGgZgUPvfcHIJ+d/0VQWj1j4B5WrwixsdLbCbCeyd996lB2dt4rLIm0FkHVge3ggWpFecvbz2K2XMwrIsmClBCBUM11mDdM7wGw2hW1GVkSNd3J9CRAY0eQAotF+HohIfHnW91j20LGWCuhxPdq5Ho6UQ9HM6iymRJ3K7Gy7kIn1yLX8oi8BmK00IESkAEdEatUWI40ZC8gIXRkN8wHsbzXu0e02hBXiazZ/xH790psx5YqetZ0+RPccq9JCNcXBrTxhgSzBvJAzsh+xTzNgBotjAFjN/unpSxyIu8ZitR6N60299+XXzdGsQ6YuRHPv/RX7z0X3kf6M6ztkNetnCrMPbo+bABT/wGskxd9tgSytkAMzAJlgFMTUmMXOKEWkPiZnThvEG8S0agZwAP3DT64JLyCghbSQEX1He4WMMFtXEkv2JFJWqIZZiVjZjr57GQtkqZenc5kQVBaJxgQxfgCEgRJhVJdwfOi4mGxsJmxF3j7Af+W8RUJCYLHA6zs+iVtGRJM9unb0M1veC99Lfn5b9nzJZEZmcrVGScSK5y6aWAVxvNNvLH1MoatYQLHCnhO/dqW43bbvEKtY+WS46D8RpsfKkBZ2mcLKce/5ktFAJudPC8yY6gFg6RT6Kx6tXphIEEOrx5IV2Qc+ZHnsqOloAn0vWphql4zQCo3R50yGtIhgZQHmExrIEszV/KYaPzoWV+JAmlVGEZbw/x997X+MWLLsp3fXGl1waUVWaBXYhI07UmZATKliJIDAwFqpbDuNXtsI49oZ7VEiOHHtJd4tgCzBjDLBauUhMDUWi4aXsD+94uGKeVdNDqrZQbsYWRfICusZBRZWbiSShSnaQqyP98zSYWRDOtrkAFKiOJZZuSfrRgYw81G9NNpKZ/l4YfWS++u49HBF7ikSD5BFNk8nmWCWUeNJwcf6rJhBqMItMnyZlX8k6b8bEj+yZzVYucLKPifdCsgKWGP+P79Y0/kPWYfCcSvF9JpsfNbItLsWAGsIsG+G70caZhG7WdasUaZTghnNcBae8EA2CHYfBzOkSCVnZxfAaDUSENbHGuWOqQAtVkSr9cQwEU3J78/aUB8tIyuqDEK2LrtxvVj5EcthTTIrBx0gG3QQ+QUDe9fxH92FgnJIDbPTuVF9nAzQhgHLP0vblP/oAthoBkmEtHqs1HoSWZniyuUOkE3IEA7mQoCZa0UXogR6nXe0gIyqsVjxY3GhOduxAZMsSReAdd+e3Z1XbiAVLgrfL2Rt109l7QY0uh2G94ynYMsgK891gGwNzIMBZn54UKMMsBhxBMNMqCMroEGR1WNsUszXCtVr7Fbu75JgHSLeo63/V1jbvHm6gyahQOaMn6jdYhVWRvuEIpkjcIBsAsxBycyigQotx9dzBA3FjxXDIMFrQ4tTPJtWvQhWB1hPH8KBy2XB2VOTKlfSxSJY2QGyFTDzG4TvsN0BVvy60BwFFxXsrBXLDU/zBhmSNtmhwnsA9/iUqYLlUsmyZqUFv1rJ0MrYxNNtNBSX5UC4q8lqLMHO9FhogerMcPAeoMTaO5joiRZDXoQamnwYdTFnJlnOhseZa8ufova0sMNAECgvYCZ21HKAHBvQXhaKa4bX/UAWQDuDOWjjyc9vW5va6Xh0f1a9aX/SgNxz/eOiB0ciTfa7C3AgDzZyfrYD15hyw8cPrOnHxUSQHgtgg2AMAjFkQqqt8sohrOra4cmRFrm9k/I+sgbDbbQZoqORjQEa8+gSeRBbi015kqVtvYNd/Mhnk90u5jnjFObq1ZMt2fARW/jidnEfrAwreXZrl+d6zujNPAWnMHffXqGp++MjzLejiQWPtpr+HG2nnxOWVoksYgrF879LTp/PAXKiGSpBmtft6sUWjD+TFZ1/Klu6/iM2iIOwdNyZnc5p4kAEwFWJgedNX/2OACn+LrtskHhMyyBHKv66kwWCR01/PkRbElnMRAsKuHMMWVfiADnBZmTBphkDu0IqEMPCJnOwVtTtZPWcSf37PhOMSgagd3KU9h0Rr1Ez6wLB4ARYPBfgHsXZmQYE3mMnB3E5B3O6ATnkYE8AkF1GYsoOkOOY7UOa0d5sWilnYQIxpn8A2LcjGJYEWrIhkl033TpGPA7gFv62Ifw8wfISxPg/yBKzTmK79Alidbm3D8jhgTKN6cSUHSDHy8g2JS0AXoBs+up32bTzThUArn3vE93n4ZzqjfvD8qCcSwktEEOC1MwaIdgaj5XUfKA5MPSdvVOEw2d1qzMzRtEh7MCqJy+cqIUFI0/aLg8eEQccACAcstGPbjQEYmJpVePOlWwOdlZBXHfjSAFivK4KcDXyEU1Law1eSqEn2mQRl0uv+aED5BQ7emBiNeJAMsKqvgYYwcaIaJDhNSFTyNRoBZ4DKQLdHKm3oxmtFI+3dZlRnUyuggPkROnjOENvAB3FfyEl4k1qkF7WYnOKZACsNHDA1Dtu+1L4eZMHG2sv0TZ0vJiNaMenRDOyDPM5jJwwRs6PP4YM8OKwEjnoAuSCkOO5UyOcBhBDf5OMgJYmuUEMjftGdTL1ek5USaeGvHDH6hXnANmaTbZDUmz67hi2ioNYK4lhRWcDoAClKiNUg8SA5ABgywoHhSMXBHAzRr2TrW7Ubg7IV3aaCR0gp5EhUaGyYTzyBBoXAwMOHBy5WDobwMV5dC6ATfFmM4kR0ev5gstFqj7RTp8iLyY7QE6ARraaDKEMHJjTSgiMDHoXrA6NC3miFY3QMjCwei7S3rA17/3LEitTewXcoqeI3e0WFHnhMHJCNLLFZAjYGLZqk/UtraFxkb0Dq0Oa4DDK7mBeOheDCowMUBsN+amsjA1/iJWxFQaYE3XcWANpZ1RDygtXNJ3sADkFRiEyK1EKALfuxlFC4wKQiDlbjXYg5EZREyRIrBg2/EEEAw1ewJrUXw/Apg1/bJYXmqzcw4GVecvJySnHrdjwxkLkAg7e01sOsn1HWszpmcEutuE7Hnbe6V8Q7HnF77bo6low99zRBaLwvCAvVyRcisf0FwCecVG/EIg5m6/dZrG+uOdJrP2LA9nBVx8LF/q0NDfLLd/uZLPml7KTcnvZct13bd+GKMm+1tbWNV0+hgPL5BpYcNr5p4m4sdnnISoBw3P1wnVgboCVkhxqERIZZgWA2KykiDQkSNAPA9oYQEYtMeQFWNnOUk/ICy5jNKWFA+QkG0AMTVpRZ1xKECApFqyX/YPzVzV9mLiFQ7l0wx5xfxCXNCRr1iHbF2hiwc9bbflex6bcxg6vnCvkBOSFLMHk/2NPU/XDTU2s6dC/GWdjABl9L1BEFHCAnGILHNIPdQF8KPQB+ChcpufQAfAAvlp4D4tkXbw2wnZ4vdG/2mipJjnS8cWe1Y2/v0PoYrAn7Sobb7nnC08/xirvup2NGT9JrLLeu2tnJX8MDQ+x8t3vADlOi6fyTQ84kAKQEpGAjGU4HxIkxNzvxJQMlMUzms0zej1aODOvfWaxbRk/AvFdS1eyyVdcE348L9/lemrFw3MdIMdJqAg+JOKF1cJ6I4Ck51AhvdESTcgTYvh42biTXuYOMFzYxrWL436t3zx0H3tqxSPs0WdfYcMu7Ewa8m+3Iy1SBGTEjqMlHiAhICUw7RsFpCo/EIYDcxuNJ8dTaacL5tzeLKduOXuBf1fPl40/9+PdOwULP//UY+yMgYPYY6/+Xdxqncet3gFyigzsCrZFLJhSw5FmFJCq/MD5aummniEsh1i0UdliLZIxjj3Hx6HnvYPsqvNPj3ruxvWvsQ+2NAgAf7Clnl31zRvY3b9cKTRxNOM6WQReHCCnwFT27GDFJikPeoj/RzjMSIIDDh3JDyRFzKa6RxWESjc9BTYv79/fyNjWzqtHVvpPYh9HAPntN18TK7EBXDAuQPvtRT8Rt3n5+iE7ych+B8hJNoCXyiYBOqNLmbT0MF6H5IeRSIaWgYXr9x2JO4bcxYL7GGt4iY0ZMYxdPCE6o864+fsCsOdeMMoQcCNt2zsNJPEcICfTKCRWHUfZJsBLgyEeSSBWkvTtZUsNdBcbPpGxD15nk6/4Kgfr9xJ2PQ83BTsB2am1SJKkgB5GdMAqiBFWQ9wXhteIR9diUGFAUKbQduOsHBllSLQ5QE6C0YLQVVL7UuGP18DSIsrsUdE8pES8S6ISEUPuZE37WO8+roRe07x88fpuB8h2sICBzRVVhwrZPJFR++4YwdC0PF9PV1PR/ODF/4irfpkMsWkMiEREK5LFyJOmiORIsQNkO6zZHKhQZwF5AIBCZlAiI5qhZRYVzSMyEe9qEsgTCvshhhzv60W1Xr0pqpAwu3rGDeISOUBOgVElGjQu6hvArgBV+WWDYjL5KptaxmJg4P1Q1plQ6z804UBGmO6MgYOgLzwOkJNkxHxqIbwooZTF7EhMaOlld9/csCSxw9C0hdpwdQeTGT+XA+Q4sGnmZKSkASBiYTJq7xqKJAzrpJcBbJIg8dRCQE603ztJSIrQur56W3S2HiMjW5dok7HkoANk6yZy/NhSwYgRgCI7/KhparCl2l+i8opzbJEVo2TzFWL3pFjBuSLlnChDbfI9P5iHWLKPOdVvNkQtOJCPW3iemqqObDYIQ6gN54CJl6z/KBzBwKJVtIfVq6mgPm6ISuBAwxbbM3ixbJCHrXv4ZwJwVrJ2sQz1GCsfvA8aHCCeTo87QE6yIZRGCz6FZv5VRzQCcgJMTN00sRoE90MaOgSIEo2KNTC4AP6hkAyh/sdIQSN7l5AMXizLLxAZvqdXPizqJ+I1KijCwVkYDLwUE516jgNkawY2KItnqieWPfTf4wX41EIiKuF0u3K7hOcCwWYR5UAvCixhAtNS/TJeB7FmMDZej9g8JTaphD214jY2acpUSzHldS/9iR/PCa0tIyABycB+rfMdIMfh7GUZTIiohqkeWymIUJg7P9RKVkoMOH5wDClzJwD97NZOG93gMUqk4DkAMvV6CxxqDr9Hyo07fIdHTWf3LpgnVnfogRky5LW1zwkAA7znnHE6m/bVS1nFL8tZ8NMj7Ktzvx+IBmLxWziYtGYnn3xyO5b2NF//QFLlSNZdr4m/EQte+NL2sLamari0s9eqWV59jagxxgFAg2FxQDLgNlSPXM8mf2k0m/qVS9m0r0xig87siHWv+8cmABkgHu0A2X4g7+BAdicDyDAkUxaMO0tEPzLOmvZxQFcxttMfKvOErs/rzaZ+dRJzc8BOumQ0G3X+ueKxaJZz/sSYeHWAbB3Ide19+nuPzluVtPe0o+lhWhgH9OSt1ewvqx42/BQ9IDtxZOsWMBpHtk2YdwcQixFZwOrf22b49Pr3t5GzxxwgJ4BXnEtg0fILWPCwcT0PZ88BsmNpy8pw4uwyB8iOpYyV7TQHyPFewN0NzkWwYv2Hstf+6TByOpjfuQRxWK880r4OkFNswvnoscdhZEs2yEPRCAfIqbTPP/9cMLKVNLVjITPKyDs/EkmUoAPkxJnP0ciJZ+Sdez/GTb0D5MTZuqzmI4ZXUzsWqZN7E9s60iLVjCx08vb1zpWwYv2HssBHH+ueNuq8c8WNA+TE6WQB5OzGDc7FSCAj54eKiVwOkBNrtdkHtrNk1110D0Y+l/RvTHP1EUD2OEBOsE4W8sJhZfPmKmB+A8VDUlo4jJxoRhYX0olemLf8AtZ02FRSxOUAOXE6OcBv/D0a17Os5s+cC2KSkY0WDmH1SCx58f8CDAC/lXbK4fs4RgAAAABJRU5ErkJggg==') center/contain no-repeat; }
+.nav-logo .mascot{ width:38px; height:40px; }
+.nav-logo .logo-text{
+  font-family:var(--font-heading); font-weight:700; font-size:var(--text-xl);
+  letter-spacing:.06em; line-height:1;
+}
+.nav-logo .logo-text small{
+  display:block; font-family:var(--font-body); font-weight:500;
+  font-size:.62rem; letter-spacing:.18em; opacity:.8; margin-top:2px;
+}
+
+.nav-links{ display:flex; align-items:center; gap:2rem; }
+.nav-links a{
+  color:#fff; font-weight:500; font-size:var(--text-base); position:relative; padding:.25rem 0;
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0;
+  background:var(--color-accent); transition:width var(--transition);
+}
+.nav-links a:hover::after, .nav-links a:focus-visible::after{ width:100%; }
+
+.nav-menu{ display:flex; align-items:center; gap:2rem; }
+
+/* Burger + Checkbox-Steuerung (CSS-only Toggle) */
+.nav-toggle{ display:none; }
+.burger{ display:none; width:44px; height:44px; cursor:pointer; align-items:center; justify-content:center; }
+.burger span{ display:block; width:26px; height:2px; background:#fff; position:relative; transition:transform var(--transition), opacity var(--transition); }
+.burger span+span{ margin-top:6px; }
+
+/* =========================================================================
+   6. HERO
+   ========================================================================= */
+.hero{
+  position:relative; min-height:100vh; display:flex; align-items:center;
+  padding-block:calc(var(--header-h) + 3rem) 5rem;
+  background:#00203f; color:#fff; overflow:hidden; isolation:isolate;
+}
+/* Layer 0 · Parallax-Foto, abgedunkelt */
+.hero-media{ position:absolute; inset:-6% 0; z-index:0; will-change:transform; }
+.hero-media img{ width:100%; height:100%; object-fit:cover; filter:brightness(.46) saturate(1.05); }
+/* Layer 1 · Markenblau-Verlauf (Lesbarkeit) */
+.hero-overlay{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    radial-gradient(115% 90% at 80% 8%, rgba(0,85,179,.42), transparent 56%),
+    linear-gradient(135deg, rgba(0,40,95,.86) 0%, rgba(0,20,60,.5) 42%, rgba(0,16,46,.94) 100%);
+}
+/* Layer 1 · freigestelltes Maskottchen – klein & leicht transparent, unten am Rand */
+.hero-mascot-bg{
+  position:absolute; z-index:1; right:clamp(12px,4vw,64px); bottom:0;
+  width:clamp(140px,16vw,230px); height:auto; aspect-ratio:178/191;
+  opacity:.5; filter:drop-shadow(0 10px 24px rgba(0,0,0,.4)); pointer-events:none;
+}
+@media (max-width:768px){
+  .hero-mascot-bg{ width:clamp(96px,24vw,150px); opacity:.4; }
+}
+/* Layer 2 · animierter Aurora-Shader – additiv & dezent */
+.hero-shader{
+  position:absolute; inset:0; width:100%; height:100%; z-index:2;
+  mix-blend-mode:screen; opacity:.45; pointer-events:none;
+  transition:opacity .8s ease;
+}
+.hero-inner{ position:relative; z-index:3; max-width:780px; }
+.hero-mascot{ width:72px; height:76px; margin-bottom:.6rem; filter:drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
+
+/* Wort-für-Wort-Einblendung der Hero-Überschrift */
+@keyframes wordReveal{ from{ opacity:0; transform:translateY(26px); } to{ opacity:1; transform:translateY(0); } }
+.hero-word{ display:inline-block; opacity:0; animation:wordReveal .7s cubic-bezier(.2,.7,.2,1) var(--wd,0s) both; }
+
+/* Scroll-Hinweis am unteren Hero-Rand */
+.hero-hint{
+  position:absolute; left:50%; bottom:24px; transform:translateX(-50%); z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:.55rem;
+  font-family:var(--font-heading); font-weight:600; font-size:.72rem;
+  letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.62);
+}
+.hero-hint .line{ width:1px; height:34px; background:rgba(255,255,255,.5); animation:hintDrop 1.9s infinite; }
+@keyframes hintDrop{
+  0%{ transform:scaleY(0); transform-origin:top; }
+  40%{ transform:scaleY(1); transform-origin:top; }
+  60%{ transform:scaleY(1); transform-origin:bottom; }
+  100%{ transform:scaleY(0); transform-origin:bottom; }
+}
+.hero-overtitle{
+  font-family:var(--font-heading); font-weight:600; font-size:var(--text-sm);
+  letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent);
+  margin-bottom:1.1rem;
+}
+.hero h1{
+  font-size:clamp(2.6rem, 7.8vw, 4.75rem); font-weight:700; margin-bottom:1.25rem;
+  text-wrap:balance;
+}
+.hero-sub{ max-width:520px; font-size:var(--text-lg); color:rgba(255,255,255,.85); margin-bottom:2rem; }
+.hero-cta{ display:flex; flex-wrap:wrap; gap:1rem; }
+
+.hero-trust{
+  display:flex; flex-wrap:wrap; gap:1.25rem 2rem; align-items:center;
+  margin-top:2.5rem; padding-top:1.75rem; border-top:1px solid rgba(255,255,255,.18);
+}
+.hero-trust span{ display:inline-flex; align-items:center; gap:.5rem; font-size:var(--text-sm); font-weight:500; color:rgba(255,255,255,.9); }
+.hero-trust svg{ width:1.15em; height:1.15em; color:var(--color-accent); flex:none; }
+
+/* =========================================================================
+   7. STATS  ·  Zahlen-Leiste mit Counter-Animation
+   ========================================================================= */
+.stats{ position:relative; overflow:hidden; background:var(--grad-dark); color:#fff; padding-block:56px; }
+.stats::before{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 130% at 10% 0%, rgba(0,85,179,.55), transparent 60%),
+    radial-gradient(55% 130% at 90% 100%, rgba(255,106,44,.30), transparent 62%);
+}
+.stats .container{ position:relative; z-index:1; }
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); }
+.stat{ padding:1.4rem 1rem; text-align:center; position:relative; }
+.stat:not(:first-child)::before{
+  content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:1px; height:56%;
+  background:linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.28), rgba(255,255,255,0));
+}
+.stat-num{
+  font-family:var(--font-heading); font-weight:700;
+  font-size:clamp(2.25rem,5vw,3.5rem); line-height:1;
+  background:linear-gradient(120deg, #ffffff 0%, #8fd6ff 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+}
+.stat-label{ font-size:var(--text-sm); color:var(--color-primary-light); margin-top:.5rem; }
+
+/* =========================================================================
+   8. LEISTUNGEN  ·  Karten-Grid
+   ========================================================================= */
+.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-gap); }
+.card{
+  position:relative;
+  background:var(--color-surface); border:1px solid var(--color-border);
+  border-radius:var(--radius-card); overflow:hidden;
+  box-shadow:var(--shadow-card);
+  transition:transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display:flex; flex-direction:column;
+}
+/* Gradient-Leiste, die bei Hover von links einläuft */
+.card::before{
+  content:""; position:absolute; left:0; top:0; height:4px; width:100%; z-index:3;
+  background:var(--grad-accent); transform:scaleX(0); transform-origin:left;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+}
+.card:hover{ transform:translateY(-8px); box-shadow:0 22px 50px rgba(0,56,117,.20); border-color:rgba(255,106,44,.45); }
+.card:hover::before{ transform:scaleX(1); }
+
+/* Bild oben in der Karte */
+.card-media{ position:relative; aspect-ratio:16/10; overflow:hidden; }
+.card-media img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.card:hover .card-media img{ transform:scale(1.06); }
+.card-media::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,56,117,.22), rgba(0,56,117,0) 55%); }
+
+/* Icon-Badge, überlappt die Bildunterkante */
+.card-body{ position:relative; padding:2.6rem 1.75rem 1.85rem; display:flex; flex-direction:column; gap:.7rem; flex:1; }
+.card-icon{
+  position:absolute; top:-26px; left:1.6rem; z-index:2;
+  width:54px; height:54px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--grad-primary); color:#fff;
+  box-shadow:var(--glow-primary);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1), background .35s ease, box-shadow .35s ease;
+}
+.card:hover .card-icon{
+  transform:translateY(-4px) rotate(-6deg) scale(1.08);
+  background:var(--grad-accent); box-shadow:var(--glow-accent);
+}
+.card-icon svg{ width:26px; height:26px; }
+.card-body h3{ font-size:var(--text-xl); color:var(--color-primary); }
+.card-body p{ color:var(--color-text-muted); font-size:var(--text-base); flex:1; }
+
+/* =========================================================================
+   9. FAHRZEUGE  ·  aufklappende Panels (Hover / Tastatur-Fokus)
+   ========================================================================= */
+.fleet{ display:flex; gap:1rem; height:clamp(440px, 64vh, 600px); }
+.fleet-card{
+  position:relative; flex:1 1 0%; min-width:0; overflow:hidden;
+  border-radius:var(--radius-card); color:#fff; box-shadow:var(--shadow-card);
+  cursor:pointer; transition:flex-grow .55s cubic-bezier(.4,0,.2,1);
+}
+.fleet-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.fleet-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(0,20,60,.9) 0%, rgba(0,20,60,.3) 55%, rgba(0,20,60,.05) 100%);
+  transition:background .55s ease;
+}
+.fleet-content{ position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; justify-content:flex-end; padding:1.75rem; }
+.fleet-content h3{ font-size:var(--text-2xl); letter-spacing:.04em; }
+.fleet-desc{
+  /* feste, von der animierten Kartenbreite unabhängige Textbreite → kein Umbruch beim Aufklappen */
+  width:clamp(200px, 22vw, 340px);
+  color:rgba(255,255,255,.9); font-size:var(--text-base); line-height:1.55;
+  max-height:0; opacity:0; overflow:hidden; transform:translateY(1.25rem);
+  transition:max-height .55s cubic-bezier(.4,0,.2,1), opacity .45s ease,
+             transform .55s cubic-bezier(.4,0,.2,1), margin .55s ease;
+}
+.fleet-link{
+  display:inline-flex; align-items:center; gap:.4rem; margin-top:1.1rem;
+  font-family:var(--font-heading); font-weight:600; color:#fff;
+  text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px;
+}
+.fleet-link .plus{ font-size:1.3em; line-height:0; }
+.fleet-link:hover{ color:var(--color-accent); }
+
+/* aufgeklappter Zustand */
+.fleet-card:hover, .fleet-card:focus-within{ flex-grow:2.8; }
+.fleet-card:hover img, .fleet-card:focus-within img{ transform:scale(1.05); }
+.fleet-card:hover .fleet-overlay, .fleet-card:focus-within .fleet-overlay{
+  background:linear-gradient(to top, rgba(0,40,95,.94) 0%, rgba(0,72,150,.72) 55%, rgba(0,85,179,.42) 100%);
+}
+.fleet-card:hover .fleet-desc, .fleet-card:focus-within .fleet-desc{
+  max-height:20em; opacity:1; transform:translateY(0); margin-top:.85rem;
+}
+
+/* =========================================================================
+   10. ÜBER UNS  ·  Bild + Text, Deko-Layer
+   ========================================================================= */
+.about{ display:grid; grid-template-columns:45% 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+.about-media{ position:relative; }
+.about-media::before{
+  content:""; position:absolute; inset:auto auto -22px -22px; width:60%; height:70%;
+  background:var(--color-accent); opacity:.18; border-radius:var(--radius-card); z-index:0;
+}
+.about-media img{ position:relative; z-index:1; width:100%; border-radius:var(--radius-card); box-shadow:var(--shadow-hover); }
+.about-body h2{ font-size:clamp(2.625rem, 5.6vw, 3.15rem); color:var(--color-primary); margin-bottom:1rem; text-wrap:balance; }
+.about-body p{ color:var(--color-text-muted); font-size:var(--text-lg); margin-bottom:1.5rem; }
+.about-list{ display:grid; gap:.85rem; margin:1.75rem 0; }
+.about-list li{ display:flex; align-items:center; gap:.75rem; font-weight:500; }
+.about-list svg{ width:1.4em; height:1.4em; color:var(--color-success); flex:none; }
+
+/* =========================================================================
+   11. AKTUELLES  ·  News-Karten
+   ========================================================================= */
+.news{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-gap); }
+.news-card{
+  background:var(--color-surface); border:1px solid var(--color-border);
+  border-radius:var(--radius-card); padding:1.75rem; box-shadow:var(--shadow-card);
+  display:flex; flex-direction:column; gap:.75rem;
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.news-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+.news-meta{ display:flex; align-items:center; gap:.75rem; }
+.badge{
+  display:inline-block; background:var(--color-primary-light); color:var(--color-primary-mid);
+  font-family:var(--font-heading); font-weight:600; font-size:var(--text-xs);
+  letter-spacing:.08em; text-transform:uppercase; padding:.3rem .7rem; border-radius:var(--radius-pill);
+}
+.news-date{ font-size:var(--text-sm); color:var(--color-text-muted); }
+.news-card h3{ font-size:var(--text-xl); color:var(--color-primary); }
+.news-card p{ color:var(--color-text-muted); flex:1; }
+
+/* =========================================================================
+   12. CTA-BANNER
+   ========================================================================= */
+.cta-banner{ background:var(--color-primary); color:#fff; text-align:center; padding-block:80px; }
+.cta-banner .eyebrow{ color:rgba(255,255,255,.6); }
+.cta-banner h2{ font-size:clamp(var(--text-3xl),4.5vw,var(--text-4xl)); margin-bottom:1.75rem; text-wrap:balance; }
+.cta-actions{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+
+/* =========================================================================
+   13. FOOTER
+   ========================================================================= */
+.site-footer{ background:var(--color-footer); color:rgba(255,255,255,.72); padding-block:64px 0; font-size:var(--text-sm); }
+.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.3fr; gap:2.5rem; }
+.footer-logo{ display:inline-flex; align-items:center; gap:.6rem; color:#fff; margin-bottom:1.1rem; }
+.footer-logo svg{ width:28px; height:28px; }
+.footer-logo .logo-text{ font-family:var(--font-heading); font-weight:700; font-size:var(--text-lg); letter-spacing:.06em; }
+.footer-about p{ margin-bottom:1.1rem; line-height:1.7; }
+.footer-rating{ display:flex; align-items:center; gap:.6rem; color:#fff; }
+.footer-rating .stars{ color:var(--color-accent); letter-spacing:.1em; }
+.footer-col h4{ color:#fff; font-size:var(--text-base); letter-spacing:.08em; text-transform:uppercase; margin-bottom:1.1rem; }
+.footer-col ul{ display:grid; gap:.6rem; }
+.footer-col a:hover{ color:#fff; }
+.footer-contact li{ display:flex; align-items:flex-start; gap:.65rem; margin-bottom:.7rem; }
+.footer-contact svg{ width:1.1em; height:1.1em; color:var(--color-accent); flex:none; margin-top:.2em; }
+.footer-contact a:hover{ color:#fff; }
+.footer-bottom{
+  margin-top:3rem; padding-block:1.5rem; border-top:1px solid rgba(255,255,255,.12);
+  display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center;
+}
+.footer-bottom a:hover{ color:#fff; }
+
+/* =========================================================================
+   14. SCROLL-ANIMATIONEN (reveal)
+   ========================================================================= */
+.reveal{
+  opacity:0; transform:translateY(36px) scale(.98); filter:blur(6px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease;
+}
+.reveal.visible{ opacity:1; transform:none; filter:none; }
+.reveal.d1{ transition-delay:.1s; }
+.reveal.d2{ transition-delay:.2s; }
+.reveal.d3{ transition-delay:.3s; }
+
+/* =========================================================================
+   15. RESPONSIVE
+   ========================================================================= */
+@media (max-width:1024px){
+  .cards{ grid-template-columns:repeat(2,1fr); }
+  .news{ grid-template-columns:repeat(2,1fr); }
+  .footer-grid{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media (max-width:768px){
+  :root{ --space-section:72px; }
+
+  /* mobile Navigation: Panel über Checkbox einblenden */
+  .burger{ display:flex; }
+  .nav-menu{
+    position:fixed; inset:var(--header-h) 0 auto 0;
+    flex-direction:column; align-items:stretch; gap:0;
+    background:var(--color-primary); padding:1rem var(--gutter) 1.75rem;
+    box-shadow:0 16px 30px rgba(0,20,60,.35);
+    transform:translateY(-130%); transition:transform .3s ease;
+  }
+  .nav-links{ flex-direction:column; align-items:stretch; gap:0; }
+  .nav-links li{ border-bottom:1px solid rgba(255,255,255,.12); }
+  .nav-links a{ display:block; padding:.95rem 0; }
+  .nav-links a::after{ display:none; }
+  .nav-menu .btn{ margin-top:1.1rem; justify-content:center; }
+  .nav-toggle:checked ~ .nav-menu{ transform:translateY(0); }
+  .nav-toggle:checked ~ .burger span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+  .nav-toggle:checked ~ .burger span:nth-child(2){ opacity:0; }
+  .nav-toggle:checked ~ .burger span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+  .stats-grid{ grid-template-columns:repeat(2,1fr); row-gap:1.5rem; }
+  .stat:nth-child(odd)::before{ display:none; }
+  .cards{ grid-template-columns:1fr; }
+  .news{ grid-template-columns:1fr; }
+
+  /* Fahrzeuge: gestapelt, Beschreibung immer sichtbar (kein Hover auf Touch) */
+  .fleet{ flex-direction:column; height:auto; gap:1rem; }
+  .fleet-card{ flex:none; height:clamp(300px, 46vh, 360px); }
+  .fleet-overlay{ background:linear-gradient(to top, rgba(0,40,95,.92) 0%, rgba(0,56,117,.45) 60%, rgba(0,85,179,.2) 100%); }
+  .fleet-desc{ max-height:none; opacity:1; transform:none; width:auto; margin-top:.85rem; font-size:var(--text-sm); }
+
+  .about{ grid-template-columns:1fr; }
+  .about-media{ order:-1; }
+  .about-media::before{ display:none; }
+}
+
+@media (max-width:420px){
+  .footer-grid{ grid-template-columns:1fr; }
+  .footer-bottom{ justify-content:flex-start; }
+}
+
+/* Header beim geöffneten Mobilmenü solide einfärben */
+.site-header:has(.nav-toggle:checked){ background:var(--color-primary); }
+
+/* =========================================================================
+   16b. MARKEN-LAUFBAND  ·  Marquee mit Fabrikaten
+   ========================================================================= */
+.brandbar{ background:var(--color-primary); border-block:1px solid rgba(255,255,255,.12); overflow:hidden; }
+.brandbar-track{
+  display:flex; gap:3.25rem; width:max-content; align-items:center;
+  padding-block:1.15rem; animation:brandScroll 34s linear infinite; opacity:.9;
+}
+.brandbar:hover .brandbar-track{ animation-play-state:paused; }
+.brandbar-track span{
+  font-family:var(--font-heading); font-weight:700; letter-spacing:.07em;
+  font-size:1.05rem; color:rgba(255,255,255,.82); white-space:nowrap;
+}
+.brandbar-track .dot{ color:var(--color-accent); }
+@keyframes brandScroll{ to{ transform:translateX(-50%); } }
+
+/* =========================================================================
+   16c. EINBLICKE  ·  Bild-Galerie (Mosaik)
+   ========================================================================= */
+.gallery{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:200px; gap:1rem; }
+.gallery-item{ position:relative; overflow:hidden; border-radius:var(--radius-card); box-shadow:var(--shadow-card); }
+.gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.gallery-item:hover img{ transform:scale(1.07); }
+.gallery-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,20,60,.4), transparent 58%); }
+.gallery-item .cap{
+  position:absolute; left:1.1rem; bottom:.9rem; z-index:2; color:#fff;
+  font-family:var(--font-heading); font-weight:600; font-size:var(--text-base);
+  letter-spacing:.03em; text-shadow:0 2px 8px rgba(0,0,0,.5);
+}
+.gallery-item.tall{ grid-row:span 2; }
+.gallery-item.wide{ grid-column:span 2; }
+
+/* =========================================================================
+   16d. KUNDENSTIMMEN  ·  Bewertungs-Karten
+   ========================================================================= */
+.reviews{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-gap); }
+.review{
+  background:var(--color-surface); border:1px solid var(--color-border);
+  border-radius:var(--radius-card); padding:1.9rem; box-shadow:var(--shadow-card);
+  display:flex; flex-direction:column; gap:1rem;
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.review:hover{ transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+.review-stars{ color:var(--color-accent); letter-spacing:.12em; font-size:var(--text-lg); }
+.review p{ color:var(--color-text); font-size:var(--text-lg); line-height:1.6; flex:1; }
+.review-author{ display:flex; align-items:center; gap:.85rem; }
+.review-author img{ width:48px; height:48px; border-radius:50%; object-fit:cover; flex:none; }
+.review-author b{ display:block; color:var(--color-primary); font-family:var(--font-heading); letter-spacing:.02em; }
+.review-author span{ font-size:var(--text-sm); color:var(--color-text-muted); }
+
+/* =========================================================================
+   16e. CTA-BANNER  ·  Hintergrundbild
+   ========================================================================= */
+.cta-banner{ position:relative; overflow:hidden; isolation:isolate; }
+.cta-media{ position:absolute; inset:0; z-index:0; }
+.cta-media img{ width:100%; height:100%; object-fit:cover; filter:brightness(.32) saturate(1.05); }
+.cta-banner::after{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(135deg, rgba(0,40,95,.82), rgba(0,16,46,.9)); }
+.cta-banner .container{ position:relative; z-index:2; }
+
+/* =========================================================================
+   16f. BACK-TO-TOP
+   ========================================================================= */
+.totop{
+  position:fixed; right:18px; bottom:18px; z-index:900;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--grad-accent); color:#fff; border:0; cursor:pointer;
+  display:grid; place-items:center; box-shadow:var(--glow-accent);
+  opacity:0; pointer-events:none; transform:translateY(12px) scale(.9);
+  transition:opacity .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+.totop.show{ opacity:1; pointer-events:auto; transform:none; }
+.totop:hover{ transform:translateY(-3px) scale(1.06); box-shadow:0 18px 40px rgba(255,90,44,.6); }
+.totop svg{ width:20px; height:20px; }
+
+/* Galerie- & Bewertungs-Layouts mobil */
+@media (max-width:1024px){ .reviews{ grid-template-columns:1fr; } }
+@media (max-width:768px){
+  .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
+  .gallery-item.wide{ grid-column:span 2; }
+}
+@media (max-width:480px){
+  .gallery{ grid-template-columns:1fr; grid-auto-rows:200px; }
+  .gallery-item.tall{ grid-row:span 1; }
+  .gallery-item.wide{ grid-column:span 1; }
+}
+
+/* =========================================================================
+   16. REDUCED MOTION
+   ========================================================================= */
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  .reveal{ opacity:1; transform:none; }
+  .hero-word{ opacity:1 !important; transform:none !important; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#hero">Zum Inhalt springen</a>
+
+<!-- Deko-Hintergrund: langsam schwebende Farb-Blobs (fix hinter allem) -->
+<div class="bg-decor" aria-hidden="true">
+  <span class="b1"></span><span class="b2"></span><span class="b3"></span>
+</div>
+
+<!-- Scroll-Fortschrittsbalken -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ===================================================================
+     SECTION: HEADER / NAVIGATION
+     =================================================================== -->
+<header class="site-header" id="header">
+  <div class="container">
+    <nav class="nav" aria-label="Hauptnavigation">
+
+      <a href="#top" class="nav-logo" aria-label="Wilfing Auto – Startseite">
+        <span class="mascot" role="img" aria-label="Wilfing Auto Werkstatt-Maskottchen"></span>
+        <span class="logo-text">WILFING AUTO<small>Kfz-Meisterbetrieb</small></span>
+      </a>
+
+      <!-- Checkbox steuert das mobile Menü ohne JavaScript -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#fahrzeuge">Fahrzeuge</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <a href="#kontakt" class="btn btn-accent">
+          Termin vereinbaren
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <label for="nav-toggle" class="burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </label>
+
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================================================================
+       SECTION: HERO
+       =================================================================== -->
+  <section id="hero" class="hero">
+
+    <!-- Layer 0 · Parallax-Foto -->
+    <div class="hero-media" id="heroMedia">
+      <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1600&q=80" alt="" aria-hidden="true" />
+    </div>
+
+    <!-- Layer 1 · Markenblau-Verlauf -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Layer 1 · freigestelltes Maskottchen als dezentes Wasserzeichen -->
+    <span class="mascot hero-mascot-bg" role="img" aria-label="Wilfing Auto Werkstatt-Maskottchen"></span>
+
+    <!-- Layer 2 · animierter Aurora-Shader (WebGL, dezent) -->
+    <canvas class="hero-shader" id="heroShader" aria-hidden="true"></canvas>
+
+    <div class="container hero-inner">
+      <p class="hero-overtitle reveal">Ihre Werkstatt in Steinheim an der Murr</p>
+      <h1 id="heroTitle">Ihr Partner für alle Fahrzeuge.</h1>
+      <p class="hero-sub reveal">
+        Von der Inspektion bis zur Karosserie – erfahren, zuverlässig und fair.
+        Über 25 Jahre Erfahrung im Raum Ludwigsburg.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#kontakt" class="btn btn-accent">
+          Termin vereinbaren
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#leistungen" class="btn btn-ghost">Leistungen entdecken</a>
+      </div>
+
+      <div class="hero-trust reveal">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          TÜV-Partnerservice
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          ADAC-empfohlen
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Meisterbetrieb
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26 6.86.62-5.18 4.52 1.55 6.7L12 16.9 5.87 20.6l1.55-6.7L2.24 8.88l6.86-.62z"/></svg>
+          4,9 Google
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-hint" aria-hidden="true">
+      <span>Scrollen</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: MARKEN-LAUFBAND  ·  Fabrikate, die wir betreuen
+       =================================================================== -->
+  <div class="brandbar" aria-label="Fabrikate, die wir betreuen">
+    <div class="brandbar-track" aria-hidden="true">
+      <span>VW</span><span class="dot">·</span><span>BMW</span><span class="dot">·</span><span>AUDI</span><span class="dot">·</span><span>MERCEDES</span><span class="dot">·</span><span>OPEL</span><span class="dot">·</span><span>FORD</span><span class="dot">·</span><span>ŠKODA</span><span class="dot">·</span><span>SEAT</span><span class="dot">·</span><span>TESLA</span><span class="dot">·</span><span>HYUNDAI</span><span class="dot">·</span>
+      <span>VW</span><span class="dot">·</span><span>BMW</span><span class="dot">·</span><span>AUDI</span><span class="dot">·</span><span>MERCEDES</span><span class="dot">·</span><span>OPEL</span><span class="dot">·</span><span>FORD</span><span class="dot">·</span><span>ŠKODA</span><span class="dot">·</span><span>SEAT</span><span class="dot">·</span><span>TESLA</span><span class="dot">·</span><span>HYUNDAI</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       SECTION: STATS  ·  Zahlen-Leiste (Counter)
+       =================================================================== -->
+  <section id="stats" class="stats" aria-label="Wilfing Auto in Zahlen">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num" data-target="25" data-suffix="+">0</div>
+          <div class="stat-label">Jahre Erfahrung</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-target="8000" data-suffix="+">0</div>
+          <div class="stat-label">Fahrzeuge / Jahr</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-target="3200" data-suffix=" m²">0</div>
+          <div class="stat-label">Werkstattfläche</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-target="12" data-suffix="">0</div>
+          <div class="stat-label">Fachkräfte im Team</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: LEISTUNGEN
+       =================================================================== -->
+  <section id="leistungen" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Leistungen</p>
+        <h2>Von der Inspektion bis zum Komplett-Service</h2>
+        <p>Profitieren Sie von unserem Rundum-Know-how – ein Ansprechpartner für alle Fragen rund um Ihr Fahrzeug.</p>
+      </div>
+
+      <div class="cards">
+
+        <!-- 1 · Inspektion & Wartung -->
+        <article class="card reveal">
+          <div class="card-media">
+            <img src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mechaniker bei der Inspektion am Motor" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L4 16.8a1.8 1.8 0 1 0 2.5 2.5l5.3-5.3a4 4 0 0 0 5.2-5.4l-2.4 2.4-1.8-1.8z"/></svg>
+            </span>
+            <h3>Inspektion &amp; Wartung</h3>
+            <p>Regelmäßige Wartung nach Herstellervorgabe – für alle Marken und Modelle. Wir halten Ihr Fahrzeug in Topform.</p>
+            <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 2 · HU / AU Vorbereitung -->
+        <article class="card reveal d1">
+          <div class="card-media">
+            <img src="https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fahrzeug auf der Hebebühne bei der Unterbodenprüfung" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <h3>HU / AU Vorbereitung</h3>
+            <p>Wir bereiten Ihr Fahrzeug optimal auf die Hauptuntersuchung vor und begleiten Sie zum TÜV.</p>
+            <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 3 · Karosserie & Lackierung -->
+        <article class="card reveal d2">
+          <div class="card-media">
+            <img src="https://images.pexels.com/photos/5835359/pexels-photo-5835359.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Arbeit an einem Karosserieteil in der Werkstatt" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13M5 13h14v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H8v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="15.5" r=".6" fill="currentColor"/><circle cx="16.5" cy="15.5" r=".6" fill="currentColor"/></svg>
+            </span>
+            <h3>Karosserie &amp; Lackierung</h3>
+            <p>Von kleinen Dellen bis zum Komplettlack – fachgerechte Karosserie-Arbeit aus einer Hand.</p>
+            <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 4 · Klimaservice -->
+        <article class="card reveal">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80" alt="Fahrzeug-Innenraum mit Klimabedienung" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+            </span>
+            <h3>Klimaservice</h3>
+            <p>Professionelle Klimaanlagen-Wartung, Befüllung und Dichtigkeitsprüfung für ganzjährig gutes Klima.</p>
+            <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 5 · Elektrik & Diagnose -->
+        <article class="card reveal d1">
+          <div class="card-media">
+            <img src="https://images.pexels.com/photos/6870313/pexels-photo-6870313.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mechaniker mit Diagnosegerät am Motor" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+            </span>
+            <h3>Elektrik &amp; Diagnose</h3>
+            <p>Modernste Diagnose-Technik für alle Fahrzeugsysteme. Fehlersuche präzise und schnell.</p>
+            <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 6 · Reifenservice -->
+        <article class="card reveal d2">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=800&q=80" alt="Gestapelte Reifen für den Reifenservice" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v4.5M12 16.5V21M3 12h4.5M16.5 12H21"/></svg>
+            </span>
+            <h3>Reifenservice</h3>
+            <p>Reifenwechsel, Einlagerung, Auswuchten – Sommer, Winter und Ganzjahresreifen.</p>
+            <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: FAHRZEUGE
+       =================================================================== -->
+  <section id="fahrzeuge" class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Fahrzeuge</p>
+        <h2>Für jeden Fahrzeugtyp der richtige Ansprechpartner</h2>
+        <p>Ob Alltagsauto, Nutzfahrzeug oder Liebhaberstück – bei uns ist Ihr Fahrzeug in besten Händen.</p>
+      </div>
+
+      <div class="fleet reveal">
+
+        <article class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80" alt="Sportlicher PKW von vorne" loading="lazy" />
+          <span class="fleet-overlay" aria-hidden="true"></span>
+          <div class="fleet-content">
+            <h3>PKW</h3>
+            <p class="fleet-desc">Vom Kleinwagen bis zur Oberklasse – Wartung, Reparatur und Pflege für alle Marken und Modelle in Herstellerqualität.</p>
+            <a href="#kontakt" class="fleet-link">Mehr erfahren <span class="plus" aria-hidden="true">+</span></a>
+          </div>
+        </article>
+
+        <article class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?w=800&q=80" alt="Blauer LKW / Nutzfahrzeug auf der Straße" loading="lazy" />
+          <span class="fleet-overlay" aria-hidden="true"></span>
+          <div class="fleet-content">
+            <h3>Transporter &amp; LKW</h3>
+            <p class="fleet-desc">Nutzfahrzeuge bis 7,5 t: Service, Bremsen, Inspektion und HU-Vorbereitung – damit Ihr Fuhrpark zuverlässig im Einsatz bleibt.</p>
+            <a href="#kontakt" class="fleet-link">Mehr erfahren <span class="plus" aria-hidden="true">+</span></a>
+          </div>
+        </article>
+
+        <article class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80" alt="Motorrad in der Werkstatt" loading="lazy" />
+          <span class="fleet-overlay" aria-hidden="true"></span>
+          <div class="fleet-content">
+            <h3>Motorräder</h3>
+            <p class="fleet-desc">Saison-Check, Inspektion und Reifenwechsel für Ihr Bike – sicher und sorgenfrei in die neue Saison starten.</p>
+            <a href="#kontakt" class="fleet-link">Mehr erfahren <span class="plus" aria-hidden="true">+</span></a>
+          </div>
+        </article>
+
+        <article class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1547038577-da80abbc4f19?w=800&q=80" alt="Oldtimer-Fahrzeug" loading="lazy" />
+          <span class="fleet-overlay" aria-hidden="true"></span>
+          <div class="fleet-content">
+            <h3>Oldtimer</h3>
+            <p class="fleet-desc">Liebhaberfahrzeuge verdienen besondere Sorgfalt. Wir warten, pflegen und restaurieren Ihren Klassiker mit Leidenschaft.</p>
+            <a href="#kontakt" class="fleet-link">Mehr erfahren <span class="plus" aria-hidden="true">+</span></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: EINBLICKE  ·  Werkstatt-Galerie
+       =================================================================== -->
+  <section id="einblicke" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Einblicke</p>
+        <h2>Ein Blick in unsere Werkstatt</h2>
+        <p>Moderne Technik, ehrliche Handarbeit und ein eingespieltes Team – so sieht zuverlässiger Service aus.</p>
+      </div>
+
+      <div class="gallery reveal">
+        <a class="gallery-item tall" href="#kontakt" aria-label="Werkstatt-Einblick: Hebebühne">
+          <img src="https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fahrzeug auf der Hebebühne" loading="lazy" />
+          <span class="cap">Hebebühne &amp; Unterbodencheck</span>
+        </a>
+        <a class="gallery-item wide" href="#kontakt" aria-label="Werkstatt-Einblick: Diagnose">
+          <img src="https://images.pexels.com/photos/6870313/pexels-photo-6870313.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mechaniker mit Diagnosegerät" loading="lazy" />
+          <span class="cap">Computer-Diagnose</span>
+        </a>
+        <a class="gallery-item" href="#kontakt" aria-label="Werkstatt-Einblick: Motorraum">
+          <img src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Arbeit am Motor" loading="lazy" />
+          <span class="cap">Motor-Service</span>
+        </a>
+        <a class="gallery-item" href="#kontakt" aria-label="Werkstatt-Einblick: Reifen">
+          <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=800&q=80" alt="Gestapelte Reifen" loading="lazy" />
+          <span class="cap">Reifenservice</span>
+        </a>
+        <a class="gallery-item wide" href="#kontakt" aria-label="Werkstatt-Einblick: Karosserie">
+          <img src="https://images.pexels.com/photos/5835359/pexels-photo-5835359.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Karosserie-Arbeit" loading="lazy" />
+          <span class="cap">Karosserie &amp; Lack</span>
+        </a>
+        <a class="gallery-item wide" href="#kontakt" aria-label="Werkstatt-Einblick: Werkstatt">
+          <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1000&q=80" alt="Blick in die Werkstatt" loading="lazy" />
+          <span class="cap">Unsere Halle</span>
+        </a>
+        <a class="gallery-item wide" href="#kontakt" aria-label="Werkstatt-Einblick: Innenraum">
+          <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1000&q=80" alt="Fahrzeug-Innenraum mit Klimabedienung" loading="lazy" />
+          <span class="cap">Innenraum &amp; Klima</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: ÜBER UNS
+       =================================================================== -->
+  <section id="ueber-uns" class="section section--tint">
+    <div class="container">
+      <div class="about">
+
+        <div class="about-media reveal">
+          <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&q=80" alt="Blick in die Werkstatt von Wilfing Auto" loading="lazy" />
+        </div>
+
+        <div class="about-body reveal d1">
+          <p class="eyebrow">Über uns</p>
+          <h2>Seit 1999 Ihr Vertrauenspartner in Steinheim.</h2>
+          <p>
+            Wilfing Auto steht für ehrliche Handwerksarbeit, kurze Wartezeiten und
+            transparente Preise. Familienbetrieb in zweiter Generation – mit modernstem
+            Equipment und dem Wissen von über zwei Jahrzehnten.
+          </p>
+
+          <ul class="about-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Alle Fabrikate und Modelle</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Zertifizierter Meisterbetrieb</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Ersatzfahrzeuge verfügbar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Kostenloser Hol- &amp; Bring-Service (Raum Steinheim)</li>
+          </ul>
+
+          <a href="#kontakt" class="link-arrow" style="font-size:var(--text-base)">Unser Team kennenlernen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: KUNDENSTIMMEN
+       =================================================================== -->
+  <section id="kundenstimmen" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Kundenstimmen</p>
+        <h2>Was unsere Kunden sagen</h2>
+        <p>Über 150 Bewertungen mit durchschnittlich 4,9 Sternen – Vertrauen, das wir uns jeden Tag neu verdienen.</p>
+      </div>
+
+      <div class="reviews reveal">
+
+        <article class="review">
+          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <p>„Schnell, ehrlich und fair – die Inspektion war günstiger als beim Vertragshändler und genauso gründlich. Klare Empfehlung!"</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80" alt="" loading="lazy" />
+            <span><b>Michael Brandt</b><span>Steinheim a. d. Murr</span></span>
+          </div>
+        </article>
+
+        <article class="review">
+          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <p>„Termin am nächsten Tag, Ersatzwagen inklusive und alles transparent erklärt. So stelle ich mir eine Werkstatt vor."</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="" loading="lazy" />
+            <span><b>Sandra Keller</b><span>Marbach am Neckar</span></span>
+          </div>
+        </article>
+
+        <article class="review">
+          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <p>„Mein Oldtimer ist hier in besten Händen. Man merkt die Leidenschaft fürs Handwerk an jedem Detail."</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="" loading="lazy" />
+            <span><b>Thomas Vogt</b><span>Ludwigsburg</span></span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: AKTUELLES
+       =================================================================== -->
+  <section id="aktuelles" class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Aktuelles</p>
+        <h2>News &amp; Aktionen</h2>
+        <p>Was es bei Wilfing Auto Neues gibt – Aktionen, Investitionen und Auszeichnungen.</p>
+      </div>
+
+      <div class="news">
+
+        <article class="news-card reveal">
+          <div class="news-meta">
+            <span class="badge">Aktion</span>
+            <span class="news-date">15. Mai 2026</span>
+          </div>
+          <h3>Sommer-Reifencheck gratis</h3>
+          <p>Bis Ende Juni: Kostenloser Reifencheck für alle Kunden. Einfach Termin vereinbaren und sicher in den Sommer starten.</p>
+          <a href="#kontakt" class="link-arrow">Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="news-card reveal d1">
+          <div class="news-meta">
+            <span class="badge">Service</span>
+            <span class="news-date">02. April 2026</span>
+          </div>
+          <h3>Neue Klimaanlagen-Diagnose</h3>
+          <p>Wir investieren in modernste Technik – schnellere Diagnose und günstigere Wartung Ihrer Klimaanlage.</p>
+          <a href="#kontakt" class="link-arrow">Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="news-card reveal d2">
+          <div class="news-meta">
+            <span class="badge">News</span>
+            <span class="news-date">10. März 2026</span>
+          </div>
+          <h3>TÜV-Partner des Jahres</h3>
+          <p>Wilfing Auto wurde erneut als TÜV-Partnerservice ausgezeichnet – ein toller Vertrauensbeweis für unser Team.</p>
+          <a href="#kontakt" class="link-arrow">Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION: CTA-BANNER (Kontakt)
+       =================================================================== -->
+  <section id="kontakt" class="cta-banner">
+    <div class="cta-media" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1600&q=80" alt="" loading="lazy" />
+    </div>
+    <div class="container">
+      <p class="eyebrow">Wie Sie uns erreichen</p>
+      <h2>Möchten Sie direkt einen Termin<br />vereinbaren oder eine Frage stellen?</h2>
+      <div class="cta-actions">
+        <a href="mailto:info@wilfing-auto.de" class="btn btn-accent">
+          Termin online buchen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:+497144XXXXXX" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          0 71 44 – XX XX XX anrufen
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================================================================
+     SECTION: FOOTER
+     =================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Spalte 1 – Logo & Claim -->
+      <div class="footer-about">
+        <a href="#top" class="footer-logo" aria-label="Wilfing Auto – Startseite">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M21.6 9.4a4 4 0 0 1-5.1 5.1l-6.2 6.2a1.7 1.7 0 1 1-2.4-2.4l6.2-6.2a4 4 0 0 1 5.1-5.1l-2.3 2.3 1.6 1.6 2.3-2.3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span class="logo-text">WILFING AUTO</span>
+        </a>
+        <p>Ihr zuverlässiger Partner für alle Fahrzeuge seit 1999.</p>
+        <div class="footer-rating">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span>4,9 / 5 Google-Bewertungen</span>
+        </div>
+      </div>
+
+      <!-- Spalte 2 – Navigation -->
+      <div class="footer-col">
+        <h4>Menü</h4>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#fahrzeuge">Fahrzeuge</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+      </div>
+
+      <!-- Spalte 3 – Leistungen -->
+      <div class="footer-col">
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#leistungen">Inspektion &amp; Wartung</a></li>
+          <li><a href="#leistungen">HU / AU Vorbereitung</a></li>
+          <li><a href="#leistungen">Karosserie &amp; Lack</a></li>
+          <li><a href="#leistungen">Klimaservice</a></li>
+          <li><a href="#leistungen">Elektrik &amp; Diagnose</a></li>
+          <li><a href="#leistungen">Reifenservice</a></li>
+        </ul>
+      </div>
+
+      <!-- Spalte 4 – Kontakt -->
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Musterstraße 1<br />71711 Steinheim a. d. Murr</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+497144XXXXXX">0 71 44 – XX XX XX</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <a href="mailto:info@wilfing-auto.de">info@wilfing-auto.de</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Mo–Fr: 7:30–18:00 Uhr<br />Sa: 8:00–13:00 Uhr</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Wilfing Auto. Alle Rechte vorbehalten.</span>
+      <span><a href="#">Datenschutz</a> · <a href="#">Impressum</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Zurück nach oben -->
+<button class="totop" id="totop" type="button" aria-label="Nach oben scrollen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ===================================================================
+     SCRIPTS
+     =================================================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* --- 1 · Sticky Header + Hero-Parallax + Back-to-Top --- */
+  var header    = document.getElementById('header');
+  var heroMedia = document.getElementById('heroMedia');
+  var toTop     = document.getElementById('totop');
+  var progress  = document.getElementById('scrollProgress');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function onScroll() {
+    var y = window.scrollY;
+    header.classList.toggle('scrolled', y > 80);
+    if (toTop) toTop.classList.toggle('show', y > 640);
+    if (heroMedia && !reduceMotion && y < window.innerHeight) {
+      heroMedia.style.transform = 'translateY(' + (y * 0.22) + 'px)';
+    }
+    if (progress) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (toTop) {
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* --- 2 · Counter-Animation (Stats) via IntersectionObserver --- */
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1500;
+    var start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+      el.textContent = Math.floor(eased * target).toLocaleString('de-DE') + suffix;
+      if (p < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toLocaleString('de-DE') + suffix;
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counters = document.querySelectorAll('.stat-num');
+  var reveals  = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    var statObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (c) { statObserver.observe(c); });
+
+    /* --- 3 · Reveal-Animation für Sektionen/Karten --- */
+    var revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (r) { revealObserver.observe(r); });
+  } else {
+    /* Fallback ohne IntersectionObserver: sofort anzeigen */
+    counters.forEach(animateCounter);
+    reveals.forEach(function (r) { r.classList.add('visible'); });
+  }
+
+  /* --- 4 · Smooth Scroll für interne Anker + Mobilmenü schließen --- */
+  var navToggle = document.getElementById('nav-toggle');
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var id = anchor.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+      if (navToggle) navToggle.checked = false; // Mobilmenü schließen
+    });
+  });
+
+  /* --- 5 · Hero-Überschrift Wort-für-Wort einblenden --- */
+  (function () {
+    var h1 = document.getElementById('heroTitle');
+    if (!h1 || reduceMotion) return;
+    var words = h1.textContent.trim().split(/\s+/);
+    h1.innerHTML = words.map(function (w, i) {
+      return '<span class="hero-word" style="--wd:' + (0.15 + i * 0.075).toFixed(3) + 's">' + w + '</span>';
+    }).join(' ');
+  })();
+
+  /* --- 6 · Animierter Aurora-Shader im Hero (WebGL, dezent) --- */
+  (function () {
+    var canvas = document.getElementById('heroShader');
+    if (!canvas || reduceMotion) return;
+
+    var gl = canvas.getContext('webgl', { antialias: true, premultipliedAlpha: false })
+          || canvas.getContext('experimental-webgl');
+    if (!gl) { canvas.style.display = 'none'; return; }
+
+    var vsSrc =
+      'attribute vec2 position;' +
+      'void main(){ gl_Position = vec4(position, 0.0, 1.0); }';
+
+    var fsSrc = [
+      'precision highp float;',
+      'uniform float iTime;',
+      'uniform vec2 iResolution;',
+      '#define NUM_OCTAVES 3',
+      'float rand(vec2 n){ return fract(sin(dot(n, vec2(12.9898,4.1414))) * 43758.5453); }',
+      'float noise(vec2 p){',
+      '  vec2 ip = floor(p); vec2 u = fract(p); u = u*u*(3.0-2.0*u);',
+      '  float res = mix(mix(rand(ip),rand(ip+vec2(1.0,0.0)),u.x),',
+      '                  mix(rand(ip+vec2(0.0,1.0)),rand(ip+vec2(1.0,1.0)),u.x), u.y);',
+      '  return res*res;',
+      '}',
+      'float fbm(vec2 x){',
+      '  float v = 0.0; float a = 0.3; vec2 shift = vec2(100.0);',
+      '  mat2 rot = mat2(cos(0.5), sin(0.5), -sin(0.5), cos(0.5));',
+      '  for(int i=0;i<NUM_OCTAVES;++i){ v += a*noise(x); x = rot*x*2.0 + shift; a *= 0.4; }',
+      '  return v;',
+      '}',
+      'vec4 tanh4(vec4 x){ vec4 e = exp(-2.0*min(x, vec4(10.0))); return (1.0-e)/(1.0+e); }',
+      'void main(){',
+      '  vec2 shake = vec2(sin(iTime*1.2)*0.005, cos(iTime*2.1)*0.005);',
+      '  vec2 p = ((gl_FragCoord.xy + shake*iResolution.xy) - iResolution.xy*0.5) / iResolution.y * mat2(6.0,-4.0,4.0,6.0);',
+      '  vec2 v; vec4 o = vec4(0.0);',
+      '  float f = 2.0 + fbm(p + vec2(iTime*5.0, 0.0)) * 0.5;',
+      '  for(float i=0.0;i<35.0;i++){',
+      '    v = p + cos(i*i + (iTime + p.x*0.08)*0.025 + i*vec2(13.0,11.0))*3.5 + vec2(sin(iTime*3.0+i)*0.003, cos(iTime*3.5-i)*0.003);',
+      '    float tailNoise = fbm(v + vec2(iTime*0.5, i)) * 0.3 * (1.0 - (i/35.0));',
+      '    vec4 auroraColors = vec4(0.1 + 0.3*sin(i*0.2 + iTime*0.4),',
+      '                             0.3 + 0.5*cos(i*0.3 + iTime*0.5),',
+      '                             0.7 + 0.3*sin(i*0.4 + iTime*0.3), 1.0);',
+      '    vec4 c = auroraColors * exp(sin(i*i + iTime*0.8)) / length(max(v, vec2(v.x*f*0.015, v.y*1.5)));',
+      '    float thinness = smoothstep(0.0, 1.0, i/35.0) * 0.6;',
+      '    o += c * (1.0 + tailNoise*0.8) * thinness;',
+      '  }',
+      '  o = max(o, vec4(0.0));',
+      '  o = tanh4(pow(o/100.0, vec4(1.6)));',
+      '  gl_FragColor = o * 1.5;',
+      '}'
+    ].join('\n');
+
+    function compile(type, src) {
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { gl.deleteShader(s); return null; }
+      return s;
+    }
+
+    var vs = compile(gl.VERTEX_SHADER, vsSrc);
+    var fs = compile(gl.FRAGMENT_SHADER, fsSrc);
+    if (!vs || !fs) { canvas.style.display = 'none'; return; }
+
+    var prog = gl.createProgram();
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { canvas.style.display = 'none'; return; }
+    gl.useProgram(prog);
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(prog, 'position');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+    var uTime = gl.getUniformLocation(prog, 'iTime');
+    var uRes  = gl.getUniformLocation(prog, 'iResolution');
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    function resize() {
+      var w = Math.max(1, Math.round(canvas.clientWidth * dpr));
+      var h = Math.max(1, Math.round(canvas.clientHeight * dpr));
+      // interne Auflösung deckeln – der Glow ist weich, Upscaling fällt nicht auf
+      var scale = Math.min(1, 1400 / w);
+      w = Math.round(w * scale); h = Math.round(h * scale);
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w; canvas.height = h;
+        gl.viewport(0, 0, w, h);
+      }
+      gl.uniform2f(uRes, w, h);
+    }
+    window.addEventListener('resize', resize, { passive: true });
+    resize();
+
+    var start = performance.now();
+    var raf = null;
+    var running = false;
+    function frame(now) {
+      gl.uniform1f(uTime, (now - start) / 1000);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+      raf = requestAnimationFrame(frame);
+    }
+    function play()  { if (!running) { running = true; raf = requestAnimationFrame(frame); } }
+    function pause() { if (running) { running = false; cancelAnimationFrame(raf); } }
+
+    // Nur rendern, wenn der Hero sichtbar ist (spart Akku/GPU)
+    var hero = document.getElementById('hero');
+    if ('IntersectionObserver' in window && hero) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { e.isIntersecting ? play() : pause(); });
+      }, { threshold: 0.02 }).observe(hero);
+    } else {
+      play();
+    }
+    document.addEventListener('visibilitychange', function () {
+      document.hidden ? pause() : (hero && hero.getBoundingClientRect().bottom > 0 ? play() : null);
+    });
+  })();
+})();
+</script>
+
+</body>
+</html>
