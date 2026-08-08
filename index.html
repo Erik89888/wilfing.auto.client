@@ -777,6 +777,32 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 }
 
 /* =========================================================================
+   17. MOBIL-FEINSCHLIFF  ·  greift NUR auf Mobil – Desktop bleibt unverändert
+   ========================================================================= */
+@media (max-width:768px){
+  /* Überschriften auf dem Handy nicht so wuchtig */
+  .hero h1{ font-size:clamp(2.1rem, 8.6vw, 3rem); }
+  .section-head h2{ font-size:clamp(1.85rem, 6.6vw, 2.4rem); }
+  .about-body h2{ font-size:clamp(1.85rem, 6.6vw, 2.4rem); }
+  .cta-banner h2{ font-size:clamp(1.6rem, 6vw, 2rem); }
+  .svc-highlight h3{ font-size:clamp(1.45rem, 5.5vw, 1.9rem); }
+  /* Fließtext etwas kompakter */
+  .hero-sub, .section-head p, .about-body p{ font-size:var(--text-base); }
+  .hero-sub{ margin-bottom:1.75rem; }
+  /* etwas mehr Luft am Rand + engere Sektionsabstände */
+  :root{ --gutter:clamp(1.15rem, 5vw, 1.75rem); }
+}
+/* Sehr schmale Geräte: Nav-Lockup garantiert ohne Overflow */
+@media (max-width:400px){
+  .nav-logo-img{ height:40px; }
+  .nav-logo{ gap:.5rem; }
+  .nav-logo .logo-text{ font-size:var(--text-lg); }
+  .nav-logo .logo-text small{ font-size:.58rem; letter-spacing:.12em; }
+  .hero h1{ font-size:2rem; }
+  .wa-banner{ max-width:210px; }
+}
+
+/* =========================================================================
    16. REDUCED MOTION
    ========================================================================= */
 @media (prefers-reduced-motion:reduce){
@@ -1215,50 +1241,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
     </div>
   </section>
 
-  <!-- ===================================================================
-       SECTION: KUNDENSTIMMEN
-       =================================================================== -->
-  <section id="kundenstimmen" class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Kundenstimmen</p>
-        <h2>Was unsere Kunden sagen</h2>
-        <p>Über 150 Bewertungen mit durchschnittlich 4,9 Sternen – Vertrauen, das wir uns jeden Tag neu verdienen.</p>
-      </div>
-
-      <div class="reviews reveal">
-
-        <article class="review">
-          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p>„Schnell, ehrlich und fair – die Inspektion war günstiger als beim Vertragshändler und genauso gründlich. Klare Empfehlung!"</p>
-          <div class="review-author">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80" alt="" loading="lazy" />
-            <span><b>Michael Brandt</b><span>Steinheim a. d. Murr</span></span>
-          </div>
-        </article>
-
-        <article class="review">
-          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p>„Termin am nächsten Tag, Ersatzwagen inklusive und alles transparent erklärt. So stelle ich mir eine Werkstatt vor."</p>
-          <div class="review-author">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="" loading="lazy" />
-            <span><b>Sandra Keller</b><span>Marbach am Neckar</span></span>
-          </div>
-        </article>
-
-        <article class="review">
-          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p>„Mein Oldtimer ist hier in besten Händen. Man merkt die Leidenschaft fürs Handwerk an jedem Detail."</p>
-          <div class="review-author">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="" loading="lazy" />
-            <span><b>Thomas Vogt</b><span>Ludwigsburg</span></span>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
+  
   <!-- ===================================================================
        SECTION: AKTUELLES
        =================================================================== -->
@@ -1370,6 +1353,51 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       </div>
     </div>
   </section>
+
+  <!-- ===================================================================
+       SECTION: KUNDENSTIMMEN
+       =================================================================== -->
+  <section id="kundenstimmen" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Kundenstimmen</p>
+        <h2>Was unsere Kunden sagen</h2>
+        <p>Über 150 Bewertungen mit durchschnittlich 4,9 Sternen – Vertrauen, das wir uns jeden Tag neu verdienen.</p>
+      </div>
+
+      <div class="reviews reveal">
+
+        <article class="review">
+          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <p>„Schnell, ehrlich und fair – die Inspektion war günstiger als beim Vertragshändler und genauso gründlich. Klare Empfehlung!"</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80" alt="" loading="lazy" />
+            <span><b>Michael Brandt</b><span>Steinheim a. d. Murr</span></span>
+          </div>
+        </article>
+
+        <article class="review">
+          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <p>„Termin am nächsten Tag, Ersatzwagen inklusive und alles transparent erklärt. So stelle ich mir eine Werkstatt vor."</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="" loading="lazy" />
+            <span><b>Sandra Keller</b><span>Marbach am Neckar</span></span>
+          </div>
+        </article>
+
+        <article class="review">
+          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <p>„Mein Oldtimer ist hier in besten Händen. Man merkt die Leidenschaft fürs Handwerk an jedem Detail."</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="" loading="lazy" />
+            <span><b>Thomas Vogt</b><span>Ludwigsburg</span></span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
 
 </main>
 
