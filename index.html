@@ -299,7 +299,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 
 /* Burger + Checkbox-Steuerung (CSS-only Toggle) */
 .nav-toggle{ display:none; }
-.burger{ display:none; width:44px; height:44px; cursor:pointer; align-items:center; justify-content:center; }
+.burger{ display:none; flex-direction:column; width:44px; height:44px; cursor:pointer; align-items:center; justify-content:center; }
 .burger span{ display:block; width:26px; height:2px; background:#fff; position:relative; transition:transform var(--transition), opacity var(--transition); }
 .burger span+span{ margin-top:6px; }
 
@@ -328,7 +328,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
   opacity:.62; filter:drop-shadow(0 12px 28px rgba(0,0,0,.45)); pointer-events:none;
 }
 @media (max-width:768px){
-  .hero-mascot-bg{ width:clamp(140px,34vw,220px); opacity:.5; }
+  .hero-mascot-bg{ width:clamp(185px,46vw,300px); opacity:.5; }
+  /* Scroll-Hinweis („Scrollen“ + Strich) auf dem Handy ausblenden */
+  .hero-hint{ display:none; }
 }
 /* Layer 2 · animierter Aurora-Shader – additiv & dezent */
 .hero-shader{
@@ -703,7 +705,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 @media (hover:hover) and (pointer:fine){
   .wa-btn:hover .wa-label, .wa-btn:focus-visible .wa-label{ max-width:240px; opacity:1; padding-left:1.4rem; }
 }
-@media (max-width:768px){ .wa-btn{ height:70px; } .wa-btn .wa-ico{ width:70px; height:70px; } .wa-btn .wa-ico svg{ width:42px; height:42px; } }
+@media (max-width:768px){
+  .wa-btn{ height:70px; }
+  .wa-btn .wa-ico{ width:70px; height:70px; }
+  .wa-btn .wa-ico svg{ width:42px; height:42px; }
+  /* Glow enger fassen, damit er unten nicht abgeschnitten wird … */
+  .wa-btn{ box-shadow:0 4px 20px rgba(37,211,102,.45); }
+  /* … und Button weit genug von allen Rändern (inkl. iOS-Safe-Area) abheben */
+  .wa-float{ right:22px; bottom:calc(env(safe-area-inset-bottom, 0px) + 28px); }
+}
 
 /* Hinweis-Banner – runde Gedankenblase, blendet automatisch nach 5 s über dem Button ein */
 .wa-banner{
@@ -910,7 +920,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
     </div>
 
     <div class="hero-hint" aria-hidden="true">
-      <span>Weiter</span>
+      <span>Scrollen</span>
       <span class="line"></span>
     </div>
   </section>
