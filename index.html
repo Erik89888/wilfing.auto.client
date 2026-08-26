@@ -419,6 +419,17 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 .card-body h3{ font-size:var(--text-xl); color:var(--color-primary); }
 .card-body p{ color:var(--color-text-muted); font-size:var(--text-base); flex:1; }
 
+/* Wisch-Fortschritt unter dem Leistungs-Rail – nur mobil sichtbar */
+.rail-progress{
+  display:none; height:3px; border-radius:var(--radius-pill);
+  background:var(--color-border); margin-top:1.25rem; overflow:hidden;
+}
+.rail-bar{
+  display:block; height:100%; width:30%; border-radius:var(--radius-pill);
+  background:var(--color-primary-mid);
+  transition:margin-left .12s linear, width .12s linear;
+}
+
 /* Hervorgehobene Sonder-Leistung (Ersatzfahrzeug) – etwas abgesetzt unter dem Raster */
 .svc-highlight{
   margin-top:var(--space-gap);
@@ -597,8 +608,37 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
   .nav-toggle:checked ~ .burger span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 
   .stats-grid{ grid-template-columns:repeat(2,1fr); }
-  .cards{ grid-template-columns:1fr; }
   .news{ grid-template-columns:1fr; }
+
+  /* Leistungen: horizontales Wisch-Rail statt gestapelter Liste */
+  .cards{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:var(--gutter);
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    /* randlos bis zum Bildschirmrand, erste Karte startet bündig zum Text */
+    margin-inline:calc(-1 * var(--gutter));
+    padding:4px var(--gutter) 10px; /* unten Platz für den Kartenschatten */
+  }
+  .cards::-webkit-scrollbar{ display:none; }
+
+  /* gleich hohe Karten (flex-stretch) → kein Höhenspringen beim Wischen */
+  .cards .card{ flex:0 0 78vw; max-width:330px; scroll-snap-align:start; }
+
+  /* Karten im Rail sofort sichtbar: außerhalb des Viewports würde die
+     Reveal-Animation beim Wischen sonst leere Karten zeigen */
+  .cards .card.reveal{ opacity:1; transform:none; }
+  /* kein hängender Hover-Versatz nach dem Antippen auf Touch */
+  .cards .card:hover{ transform:none; box-shadow:var(--shadow-card); }
+
+  /* flacheres Bild, damit eine Karte komplett auf den Schirm passt */
+  .cards .card .card-media{ aspect-ratio:16/9; }
+
+  .rail-progress{ display:block; }
 
   /* Fahrzeuge: gestapelt, Beschreibung immer sichtbar (kein Hover auf Touch) */
   .fleet{ flex-direction:column; height:auto; gap:1rem; }
@@ -1100,6 +1140,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
         </article>
 
       </div>
+
+      <!-- Wisch-Fortschritt (nur mobil sichtbar) -->
+      <div class="rail-progress" aria-hidden="true"><span class="rail-bar"></span></div>
 
       <!-- 10 · Ersatzfahrzeug – hervorgehobene Sonderleistung -->
       <div class="svc-highlight reveal">
@@ -1611,6 +1654,27 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       if (navToggle) navToggle.checked = false; // Mobilmenü schließen
     });
   });
+
+  /* --- 4b · Leistungen-Rail: Wisch-Fortschritt (nur mobil sichtbar) --- */
+  (function () {
+    var rail = document.querySelector('#leistungen .cards');
+    var bar  = document.querySelector('#leistungen .rail-bar');
+    if (!rail || !bar) return;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var max = rail.scrollWidth - rail.clientWidth;
+      if (max <= 1) { bar.style.width = '100%'; bar.style.marginLeft = '0%'; return; }
+      var w = Math.max((rail.clientWidth / rail.scrollWidth) * 100, 12);
+      bar.style.width = w + '%';
+      bar.style.marginLeft = ((rail.scrollLeft / max) * (100 - w)) + '%';
+    }
+    rail.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  })();
 
   /* --- 5 · Hero-Überschrift Wort-für-Wort einblenden --- */
   (function () {
