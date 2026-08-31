@@ -249,7 +249,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 
 /* Burger + Checkbox-Steuerung (CSS-only Toggle) */
 .nav-toggle{ display:none; }
-.burger{ display:none; width:44px; height:44px; cursor:pointer; align-items:center; justify-content:center; }
+.burger{ display:none; flex-direction:column; width:44px; height:44px; cursor:pointer; align-items:center; justify-content:center; }
 .burger span{ display:block; width:26px; height:2px; background:#fff; position:relative; transition:transform var(--transition), opacity var(--transition); }
 .burger span+span{ margin-top:6px; }
 
@@ -708,6 +708,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 .map-info .map-phone svg{ width:1.15em; height:1.15em; flex:none; }
 .map-info .map-phone:hover{ color:var(--color-primary); }
 .map-info .map-hours{ color:var(--color-text-muted); font-size:var(--text-sm); line-height:1.7; }
+/* Öffnungszeiten: Tagesgruppe als eigene Zeile, Zeiten darunter */
+.hours-day{ display:block; font-weight:600; margin-top:.5rem; }
+.hours-day:first-child{ margin-top:0; }
+.map-info .hours-day{ color:var(--color-text); }
 .map-info .map-route{ color:var(--color-text-muted); font-size:var(--text-sm); line-height:1.6; border-top:1px solid var(--color-border); padding-top:1rem; }
 @media (max-width:860px){
   .map-grid{ grid-template-columns:1fr; }
@@ -798,7 +802,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
   <div class="container">
     <nav class="nav" aria-label="Hauptnavigation">
 
-      <a href="index.html" class="nav-logo" aria-label="Wilfing Auto-Service – Startseite">
+      <a href="index.html#top" class="nav-logo" aria-label="Wilfing Auto-Service – Startseite">
         <img class="nav-logo-img" src="https://www.wilfing-autoservice.de/images/logo.png" alt="Wilfing Auto-Service Logo" width="76" height="56" />
         <span class="logo-text">WILFING AUTO<small>Kfz-Meisterbetrieb</small></span>
       </a>
@@ -808,11 +812,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 
       <div class="nav-menu">
         <ul class="nav-links">
-          <li><a href="wilfing.auto.html#leistungen">Leistungen</a></li>
-          <li><a href="wilfing.auto.html#fahrzeuge">Fahrzeuge</a></li>
-          <li><a href="wilfing.auto.html#ueber-uns">Über uns</a></li>
-          <li><a href="wilfing.auto.html#anfahrt">Anfahrt</a></li>
-          <li><a href="wilfing.auto.html#kontakt">Kontakt</a></li>
+          <li><a href="index.html#leistungen">Leistungen</a></li>
+          <li><a href="index.html#fahrzeuge">Fahrzeuge</a></li>
+          <li><a href="index.html#ueber-uns">Über uns</a></li>
+          <li><a href="index.html#anfahrt">Anfahrt</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
         </ul>
         <a href="index.html#kontakt" class="btn btn-accent">
           Termin vereinbaren
@@ -922,7 +926,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 
       <!-- Spalte 1 – Logo & Claim -->
       <div class="footer-about">
-        <a href="wilfing.auto.html#top" class="footer-logo" aria-label="Wilfing Auto-Service – Startseite">
+        <a href="index.html#top" class="footer-logo" aria-label="Wilfing Auto-Service – Startseite">
           <img class="footer-logo-img" src="https://www.wilfing-autoservice.de/images/logo.png" alt="Wilfing Auto-Service Logo" />
           <span class="logo-text">WILFING AUTO-SERVICE</span>
         </a>
@@ -938,7 +942,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
         <h4>Menü</h4>
         <ul>
           <li><a href="index.html#leistungen">Leistungen</a></li>
-          <li><a href="windex.html#fahrzeuge">Fahrzeuge</a></li>
+          <li><a href="index.html#fahrzeuge">Fahrzeuge</a></li>
           <li><a href="index.html#ueber-uns">Über uns</a></li>
           <li><a href="index.html#anfahrt">Anfahrt</a></li>
           <li><a href="index.html#kontakt">Kontakt</a></li>
@@ -978,7 +982,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <span>Mo–Do: 7:30–12:00 &amp; 13:00–17:00 Uhr<br />Fr: 7:30–13:00 Uhr</span>
+            <span>
+              <span class="hours-day">Mo bis Do</span>
+              7:30 bis 12:00 Uhr<br />
+              13:00 bis 17:00 Uhr
+              <span class="hours-day">Fr</span>
+              7:30 bis 13:00 Uhr
+            </span>
           </li>
         </ul>
       </div>
@@ -991,6 +1001,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
     </div>
   </div>
 </footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
