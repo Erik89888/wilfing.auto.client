@@ -25,8 +25,8 @@
      Kontaktdaten mit XX sind Platzhalter und vor dem Livegang zu ersetzen.
      ===================================================================== -->
 
-<title>Wilfing Auto — Ihre Kfz-Werkstatt in Steinheim an der Murr | Meisterbetrieb</title>
-<meta name="description" content="Autowerkstatt Wilfing Auto in Steinheim an der Murr – Inspektion, HU/AU, Karosserie, Klimaservice, Elektrik & Reifenservice. Meisterbetrieb seit 1999. Jetzt Termin vereinbaren." />
+<title>Wilfing Auto: Ihre Kfz-Werkstatt in Steinheim an der Murr | Meisterbetrieb</title>
+<meta name="description" content="Autowerkstatt Wilfing Auto in Steinheim an der Murr: Inspektion, HU/AU, Karosserie, Klimaservice, Elektrik und Reifenservice. Meisterbetrieb seit 1999. Jetzt Termin vereinbaren." />
 <meta name="keywords" content="Autowerkstatt Steinheim, Kfz Werkstatt Steinheim an der Murr, HU AU, Inspektion, Karosserie, Klimaservice, Reifenservice, Wilfing Auto, Ludwigsburg" />
 <meta name="author" content="Wilfing Auto" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -39,8 +39,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="de_DE" />
 <meta property="og:site_name" content="Wilfing Auto" />
-<meta property="og:title" content="Wilfing Auto — Ihre Kfz-Werkstatt in Steinheim an der Murr" />
-<meta property="og:description" content="Von der Inspektion bis zur Karosserie – erfahren, zuverlässig und fair. Meisterbetrieb seit 1999." />
+<meta property="og:title" content="Wilfing Auto: Ihre Kfz-Werkstatt in Steinheim an der Murr" />
+<meta property="og:description" content="Von der Inspektion bis zur Karosserie: erfahren, zuverlässig und fair. Meisterbetrieb seit 1999." />
 <meta property="og:image" content="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1200&q=80" />
 
 <!-- Strukturierte Daten (LocalBusiness · AutoRepair) -->
@@ -328,7 +328,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
   opacity:.62; filter:drop-shadow(0 12px 28px rgba(0,0,0,.45)); pointer-events:none;
 }
 @media (max-width:768px){
-  .hero-mascot-bg{ width:clamp(185px,46vw,300px); opacity:.5; }
+  .hero-mascot-bg{ width:clamp(225px,58vw,370px); opacity:.5; }
   /* Scroll-Hinweis („Scrollen“ + Strich) auf dem Handy ausblenden */
   .hero-hint{ display:none; }
 }
@@ -649,6 +649,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
   .about{ grid-template-columns:1fr; }
   .about-media{ order:-1; }
   .about-media::before{ display:none; }
+  /* Bild mobil kompakter: oberer Bildteil wird weggeschnitten */
+  .about-media img{ aspect-ratio:4/3; object-fit:cover; object-position:50% 82%; }
 }
 
 @media (max-width:420px){
@@ -808,6 +810,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 .map-info .map-phone svg{ width:1.15em; height:1.15em; flex:none; }
 .map-info .map-phone:hover{ color:var(--color-primary); }
 .map-info .map-hours{ color:var(--color-text-muted); font-size:var(--text-sm); line-height:1.7; }
+/* Öffnungszeiten: Tagesgruppe als eigene Zeile, Zeiten darunter */
+.hours-day{ display:block; font-weight:600; margin-top:.5rem; }
+.hours-day:first-child{ margin-top:0; }
+.map-info .hours-day{ color:var(--color-text); }
 .map-info .map-route{ color:var(--color-text-muted); font-size:var(--text-sm); line-height:1.6; border-top:1px solid var(--color-border); padding-top:1rem; }
 @media (max-width:860px){
   .map-grid{ grid-template-columns:1fr; }
@@ -817,13 +823,31 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 /* Galerie- & Bewertungs-Layouts mobil */
 @media (max-width:1024px){ .reviews{ grid-template-columns:1fr; } }
 @media (max-width:768px){
-  .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
-  .gallery-item.wide{ grid-column:span 2; }
+  /* Einblicke: horizontales Wisch-Rail statt Mosaik – analog zu den Leistungen */
+  .gallery{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:var(--gutter);
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    /* randlos bis zum Bildschirmrand, erstes Bild startet bündig zum Text */
+    margin-inline:calc(-1 * var(--gutter));
+    padding:4px var(--gutter) 10px; /* unten Platz für den Bildschatten */
+  }
+  .gallery::-webkit-scrollbar{ display:none; }
+
+  /* bisherige Bildmaße bleiben erhalten (Höhe wie im bisherigen Raster) */
+  .gallery-item{ flex:0 0 78vw; max-width:330px; height:160px; scroll-snap-align:start; }
+  .gallery-item.tall{ grid-row:auto; }
+  .gallery-item.wide{ grid-column:auto; }
+  /* kein hängender Hover-Zoom nach dem Antippen auf Touch */
+  .gallery-item:hover img{ transform:none; }
 }
 @media (max-width:480px){
-  .gallery{ grid-template-columns:1fr; grid-auto-rows:200px; }
-  .gallery-item.tall{ grid-row:span 1; }
-  .gallery-item.wide{ grid-column:span 1; }
+  .gallery-item{ height:200px; }
 }
 
 /* =========================================================================
@@ -873,7 +897,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
   <div class="container">
     <nav class="nav" aria-label="Hauptnavigation">
 
-      <a href="#top" class="nav-logo" aria-label="Wilfing Auto-Service – Startseite">
+      <a href="#top" class="nav-logo" aria-label="Wilfing Auto-Service, Startseite">
         <img class="nav-logo-img" src="https://www.wilfing-autoservice.de/images/logo.png" alt="Wilfing Auto-Service Logo" width="76" height="56" />
         <span class="logo-text">WILFING AUTO<small>Kfz-Meisterbetrieb</small></span>
       </a>
@@ -928,8 +952,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       <p class="hero-overtitle reveal">Ihre Werkstatt in Steinheim an der Murr</p>
       <h1 id="heroTitle">Ihr Partner für alle Fahrzeuge.</h1>
       <p class="hero-sub reveal">
-        Von der Inspektion bis zur Karosserie – erfahren, zuverlässig und fair.
-        Über 25 Jahre Erfahrung im Raum Ludwigsburg.
+        Von der Inspektion bis zur Karosserie: erfahren, zuverlässig und fair.
       </p>
       <div class="hero-cta reveal">
         <a href="#kontakt" class="btn btn-white">
@@ -942,11 +965,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       <div class="hero-trust reveal">
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          TÜV-Partnerservice
+          Partner des TÜV
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-          ADAC-empfohlen
+          Vom ADAC empfohlen
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -998,8 +1021,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">Leistungen</p>
-        <h2>Von der Inspektion bis zum Komplett-Service</h2>
-        <p>Profitieren Sie von unserem Rundum-Know-how – ein Ansprechpartner für alle Fragen rund um Ihr Fahrzeug.</p>
+        <h2>Von der Inspektion bis zum Komplettservice</h2>
+        <p>Ein Ansprechpartner für alles rund um Ihr Fahrzeug.</p>
       </div>
 
       <div class="cards">
@@ -1014,7 +1037,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L4 16.8a1.8 1.8 0 1 0 2.5 2.5l5.3-5.3a4 4 0 0 0 5.2-5.4l-2.4 2.4-1.8-1.8z"/></svg>
             </span>
             <h3>Inspektion &amp; Wartung</h3>
-            <p>Regelmäßige Wartung nach Herstellervorgabe – für alle Marken und Modelle. Wir halten Ihr Fahrzeug in Topform.</p>
+            <p>Wartung nach Herstellervorgabe, für alle Marken und Modelle.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1029,7 +1052,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
             </span>
             <h3>HU &amp; AU</h3>
-            <p>Wir bereiten Ihr Fahrzeug optimal auf die Haupt- und Abgasuntersuchung vor und begleiten Sie zum TÜV.</p>
+            <p>Wir bereiten Ihr Fahrzeug auf die Untersuchung vor und begleiten Sie zum TÜV.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1044,7 +1067,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v4.5M12 16.5V21M3 12h4.5M16.5 12H21"/></svg>
             </span>
             <h3>Reifenservice</h3>
-            <p>Reifenwechsel, Einlagerung, Auswuchten – Sommer, Winter und Ganzjahresreifen.</p>
+            <p>Wechseln, Auswuchten, Einlagern: Sommer, Winter und Ganzjahresreifen.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1059,7 +1082,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13M5 13h14v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H8v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="15.5" r=".6" fill="currentColor"/><circle cx="16.5" cy="15.5" r=".6" fill="currentColor"/></svg>
             </span>
             <h3>Lackierung &amp; Karosserie</h3>
-            <p>Von kleinen Dellen bis zum Komplettlack – fachgerechte Karosserie-Arbeit aus einer Hand.</p>
+            <p>Von der kleinen Delle bis zum Komplettlack, alles aus einer Hand.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1074,7 +1097,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16V7a1 1 0 0 1 1-1h11v10"/><path d="M14 9h3.6l2.9 3.2V16"/><path d="M2 16h3.2M9.2 16h5.6M18.8 16H22"/><circle cx="7.2" cy="16.6" r="1.6"/><circle cx="17" cy="16.6" r="1.6"/><rect x="5" y="8.4" width="4.4" height="3.2" rx=".4"/></svg>
             </span>
             <h3>Wohnmobilreparaturen aller Art</h3>
-            <p>Reparatur und Wartung für Wohnmobile und Kastenwagen aller Art: Fahrzeugtechnik, Aufbau und mehr aus einer Hand.</p>
+            <p>Reparatur und Wartung für Wohnmobile und Kastenwagen: Technik und Aufbau aus einer Hand.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1089,7 +1112,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16 6 8a2 2 0 0 1 1.9-1.5h8.2A2 2 0 0 1 18 8l2 8z"/><path d="M4 16h16"/><path d="M12 6.5v4l-2.5 3"/></svg>
             </span>
             <h3>Autoglasservice</h3>
-            <p>Steinschlag-Reparatur und Austausch von Windschutzscheiben – schnell erledigt, auf Wunsch mit Versicherungsabwicklung.</p>
+            <p>Steinschlag oder neue Scheibe: schnell erledigt, auf Wunsch mit Versicherungsabwicklung.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1104,7 +1127,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
             </span>
             <h3>Elektrik &amp; Diagnose</h3>
-            <p>Modernste Diagnose-Technik für alle Fahrzeugsysteme. Fehlersuche präzise und schnell.</p>
+            <p>Moderne Diagnosetechnik für alle Fahrzeugsysteme, Fehlersuche präzise und schnell.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1119,7 +1142,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
             </span>
             <h3>Klimaservice</h3>
-            <p>Professionelle Klimaanlagen-Wartung, Befüllung und Dichtigkeitsprüfung für ganzjährig gutes Klima.</p>
+            <p>Wartung, Befüllung und Dichtigkeitsprüfung Ihrer Klimaanlage.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1134,7 +1157,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><path d="m7 7 1.8 1.8M17 7l-1.8 1.8M7 17l1.8-1.8M17 17l-1.8-1.8"/></svg>
             </span>
             <h3>Achsvermessung</h3>
-            <p>Computergestützte Achsvermessung für sicheres Fahrverhalten, exakte Spur und geringeren Reifenverschleiß.</p>
+            <p>Exakte Spur für sicheres Fahrverhalten und weniger Verschleiß am Reifen.</p>
             <a href="#kontakt" class="link-arrow">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
@@ -1152,7 +1175,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
         <div class="svc-highlight-body">
           <span class="badge-accent">Inklusive bei jeder Reparatur</span>
           <h3>Ersatzfahrzeug</h3>
-          <p>Damit Sie mobil bleiben: Für die Dauer der Reparatur stellen wir Ihnen auf Wunsch ein Ersatzfahrzeug bereit – unkompliziert und ohne versteckte Kosten.</p>
+          <p>Damit Sie mobil bleiben: Für die Dauer der Reparatur stellen wir Ihnen auf Wunsch ein Ersatzfahrzeug bereit, ohne versteckte Kosten.</p>
           <a href="#kontakt" class="link-arrow" style="font-size:var(--text-base)">Ersatzwagen anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
@@ -1167,7 +1190,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       <div class="section-head reveal">
         <p class="eyebrow">Fahrzeuge</p>
         <h2>Für jeden Fahrzeugtyp der richtige Ansprechpartner</h2>
-        <p>Ob Alltagsauto, Nutzfahrzeug oder Liebhaberstück – bei uns ist Ihr Fahrzeug in besten Händen.</p>
+        <p>Ob Alltagsauto, Nutzfahrzeug oder Liebhaberstück: bei uns ist Ihr Fahrzeug in besten Händen.</p>
       </div>
 
       <div class="fleet reveal">
@@ -1177,7 +1200,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           <span class="fleet-overlay" aria-hidden="true"></span>
           <div class="fleet-content">
             <h3>PKW</h3>
-            <p class="fleet-desc">Vom Kleinwagen bis zur Oberklasse – Wartung, Reparatur und Pflege für alle Marken und Modelle in Herstellerqualität.</p>
+            <p class="fleet-desc">Vom Kleinwagen bis zur Oberklasse: Wartung, Reparatur und Pflege für alle Marken.</p>
             <a href="#kontakt" class="fleet-link">Mehr erfahren </a>
           </div>
         </article>
@@ -1187,7 +1210,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           <span class="fleet-overlay" aria-hidden="true"></span>
           <div class="fleet-content">
             <h3>Wohnmobil &amp; LKW</h3>
-            <p class="fleet-desc">Nutzfahrzeuge bis 7,5 t: Service, Bremsen, Inspektion und HU-Vorbereitung – damit Ihr Fuhrpark zuverlässig im Einsatz bleibt.</p>
+            <p class="fleet-desc">Nutzfahrzeuge bis 7,5 t: Service, Bremsen, Inspektion und Vorbereitung auf die HU.</p>
             <a href="#kontakt" class="fleet-link">Mehr erfahren </a>
           </div>
         </article>
@@ -1197,7 +1220,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           <span class="fleet-overlay" aria-hidden="true"></span>
           <div class="fleet-content">
             <h3>Motorräder</h3>
-            <p class="fleet-desc">Saison-Check, Inspektion und Reifenwechsel für Ihr Bike – sicher und sorgenfrei in die neue Saison starten.</p>
+            <p class="fleet-desc">Check, Inspektion und Reifenwechsel, damit Sie sicher in die Saison starten.</p>
             <a href="#kontakt" class="fleet-link">Mehr erfahren </a>
           </div>
         </article>
@@ -1207,7 +1230,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           <span class="fleet-overlay" aria-hidden="true"></span>
           <div class="fleet-content">
             <h3>Oldtimer</h3>
-            <p class="fleet-desc">Liebhaberfahrzeuge verdienen besondere Sorgfalt. Wir warten, pflegen und restaurieren Ihren Klassiker mit Leidenschaft.</p>
+            <p class="fleet-desc">Wir warten, pflegen und restaurieren Ihren Klassiker mit Leidenschaft.</p>
             <a href="#kontakt" class="fleet-link">Mehr erfahren </a>
           </div>
         </article>
@@ -1224,7 +1247,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       <div class="section-head reveal">
         <p class="eyebrow">Einblicke</p>
         <h2>Ein Blick in unsere Werkstatt</h2>
-        <p>Moderne Technik, ehrliche Handarbeit und ein eingespieltes Team – so sieht zuverlässiger Service aus.</p>
+        <p>Moderne Technik, ehrliche Handarbeit, ein eingespieltes Team.</p>
       </div>
 
       <div class="gallery reveal">
@@ -1234,11 +1257,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
         </a>
         <a class="gallery-item wide" href="#kontakt" aria-label="Werkstatt-Einblick: Diagnose">
           <img src="https://images.unsplash.com/photo-1632733711679-529326f6db12?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mechaniker mit Diagnosegerät" loading="lazy" />
-          <span class="cap">Computer-Diagnose</span>
+          <span class="cap">Computerdiagnose</span>
         </a>
         <a class="gallery-item" href="#kontakt" aria-label="Werkstatt-Einblick: Motorraum">
           <img src="https://images.unsplash.com/photo-1630360056563-1698d9a5aee6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Arbeit am Motor" loading="lazy" />
-          <span class="cap">Motor-Service</span>
+          <span class="cap">Motorservice</span>
         </a>
         <a class="gallery-item" href="#kontakt" aria-label="Werkstatt-Einblick: Reifen">
           <img src="https://images.unsplash.com/photo-1444947295498-07f60c19a4ff?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gestapelte Reifen" loading="lazy" />
@@ -1257,6 +1280,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           <span class="cap">Innenraum &amp; Klima</span>
         </a>
       </div>
+
+      <!-- Wisch-Fortschritt (nur mobil sichtbar) -->
+      <div class="rail-progress" aria-hidden="true"><span class="rail-bar"></span></div>
     </div>
   </section>
 
@@ -1275,16 +1301,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           <p class="eyebrow">Über uns</p>
           <h2>Seit über 20 Jahren Ihr Vertrauenspartner in Steinheim.</h2>
           <p>
-            Wilfing Auto steht für ehrliche Handwerksarbeit, kurze Wartezeiten und
-            transparente Preise. Familienbetrieb in zweiter Generation mit modernstem
-            Equipment und dem Wissen von über zwei Jahrzehnten.
+            Familienbetrieb in zweiter Generation: ehrliche Handwerksarbeit,
+            kurze Wartezeiten und transparente Preise.
           </p>
 
           <ul class="about-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Alle Fabrikate und Modelle</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Zertifizierter Meisterbetrieb</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Ersatzfahrzeuge verfügbar</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Kostenloser Hol- &amp; Bring-Service (Raum Steinheim)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Wir holen Ihr Fahrzeug ab und bringen es zurück (Raum Steinheim)</li>
           </ul>
 
           <a href="#kontakt" class="link-arrow" style="font-size:var(--text-base)">Unser Team kennenlernen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1303,7 +1328,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       <div class="section-head reveal">
         <p class="eyebrow">Aktuelles</p>
         <h2>News &amp; Aktionen</h2>
-        <p>Was es bei Wilfing Auto Neues gibt – Aktionen, Investitionen und Auszeichnungen.</p>
+        <p>Aktionen, Investitionen und Auszeichnungen.</p>
       </div>
 
       <div class="news">
@@ -1313,8 +1338,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
             <span class="badge">Aktion</span>
             <span class="news-date">15. Mai 2026</span>
           </div>
-          <h3>Sommer-Reifencheck gratis</h3>
-          <p>Bis Ende Juni: Kostenloser Reifencheck für alle Kunden. Einfach Termin vereinbaren und sicher in den Sommer starten.</p>
+          <h3>Reifencheck gratis</h3>
+          <p>Bis Ende Juni kostenlos für alle Kunden. Einfach Termin vereinbaren.</p>
           <a href="#kontakt" class="link-arrow">Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
@@ -1323,8 +1348,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
             <span class="badge">Service</span>
             <span class="news-date">02. April 2026</span>
           </div>
-          <h3>Neue Klimaanlagen-Diagnose</h3>
-          <p>Wir investieren in modernste Technik – schnellere Diagnose und günstigere Wartung Ihrer Klimaanlage.</p>
+          <h3>Neue Diagnose für Klimaanlagen</h3>
+          <p>Neue Technik in der Werkstatt: schnellere Diagnose, günstigere Wartung.</p>
           <a href="#kontakt" class="link-arrow">Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
@@ -1333,8 +1358,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
             <span class="badge">News</span>
             <span class="news-date">10. März 2026</span>
           </div>
-          <h3>TÜV-Partner des Jahres</h3>
-          <p>Wilfing Auto wurde erneut als TÜV-Partnerservice ausgezeichnet – ein toller Vertrauensbeweis für unser Team.</p>
+          <h3>Ausgezeichnet vom TÜV</h3>
+          <p>Wilfing Auto ist erneut als Partnerservice des TÜV ausgezeichnet worden.</p>
           <a href="#kontakt" class="link-arrow">Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
@@ -1351,7 +1376,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
     </div>
     <div class="container">
       <p class="eyebrow">Wie Sie uns erreichen</p>
-      <h2>Möchten Sie direkt einen Termin<br />vereinbaren oder eine Frage stellen?</h2>
+      <h2>Termin vereinbaren oder<br />einfach kurz nachfragen?</h2>
       <div class="cta-actions">
         <a href="tel:+497144209071" class="btn btn-white">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
@@ -1373,7 +1398,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       <div class="section-head reveal">
         <p class="eyebrow">Anfahrt</p>
         <h2>So finden Sie zu uns</h2>
-        <p>Mitten in Steinheim an der Murr – gut erreichbar über den Kreisverkehr „Steppi".</p>
+        <p>Mitten in Steinheim an der Murr, gut erreichbar über den Kreisverkehr „Steppi".</p>
       </div>
 
       <div class="map-grid reveal">
@@ -1399,8 +1424,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
             07144 209071
           </a>
-          <p class="map-hours">Mo–Do: 7:30–12:00 &amp; 13:00–17:00 Uhr<br />Fr: 7:30–13:00 Uhr</p>
-          <p class="map-route">Im Kreisverkehr „Steppi" die Ausfahrt Richtung Höpfigheim nehmen – nach ca. 400&nbsp;m auf der rechten Seite.</p>
+          <p class="map-hours">
+            <span class="hours-day">Mo bis Do</span>
+            7:30 bis 12:00 Uhr<br />
+            13:00 bis 17:00 Uhr
+            <span class="hours-day">Fr</span>
+            7:30 bis 13:00 Uhr
+          </p>
+          <p class="map-route">Im Kreisverkehr „Steppi" die Ausfahrt Richtung Höpfigheim nehmen, nach ca. 400&nbsp;m auf der rechten Seite.</p>
         </div>
 
       </div>
@@ -1415,14 +1446,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
       <div class="section-head reveal">
         <p class="eyebrow">Kundenstimmen</p>
         <h2>Was unsere Kunden sagen</h2>
-        <p>Über 150 Bewertungen mit durchschnittlich 4,9 Sternen – Vertrauen, das wir uns jeden Tag neu verdienen.</p>
+        <p>Über 150 Bewertungen mit durchschnittlich 4,9 Sternen.</p>
       </div>
 
       <div class="reviews reveal">
 
         <article class="review">
           <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p>„Schnell, ehrlich und fair – die Inspektion war günstiger als beim Vertragshändler und genauso gründlich. Klare Empfehlung!"</p>
+          <p>„Schnell, ehrlich und fair: die Inspektion war günstiger als beim Vertragshändler und genauso gründlich."</p>
           <div class="review-author">
             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80" alt="" loading="lazy" />
             <span><b>Erik Palus</b><span>Steinheim a. d. Murr</span></span>
@@ -1463,14 +1494,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 
       <!-- Spalte 1 – Logo & Claim -->
       <div class="footer-about">
-        <a href="#top" class="footer-logo" aria-label="Wilfing Auto-Service – Startseite">
+        <a href="#top" class="footer-logo" aria-label="Wilfing Auto-Service, Startseite">
           <img class="footer-logo-img" src="https://www.wilfing-autoservice.de/images/logo.png" alt="Wilfing Auto-Service Logo" />
           <span class="logo-text">WILFING AUTO-SERVICE</span>
         </a>
         <p>Ihr zuverlässiger Partner für alle Fahrzeuge seit über 20 Jahren.</p>
         <div class="footer-rating">
           <span class="stars" aria-hidden="true">★★★★★</span>
-          <span>4,9 / 5 Google-Bewertungen</span>
+          <span>4,9 von 5 bei Google</span>
         </div>
       </div>
 
@@ -1519,7 +1550,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <span>Mo–Do: 7:30–12:00 &amp; 13:00–17:00 Uhr<br />Fr: 7:30–13:00 Uhr</span>
+            <span>
+              <span class="hours-day">Mo bis Do</span>
+              7:30 bis 12:00 Uhr<br />
+              13:00 bis 17:00 Uhr
+              <span class="hours-day">Fr</span>
+              7:30 bis 13:00 Uhr
+            </span>
           </li>
         </ul>
       </div>
@@ -1540,7 +1577,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
     <span class="wa-banner-text">Jetzt neu<br>per WhatsApp!</span>
     <button type="button" class="wa-banner-close" id="waBannerClose" aria-label="Hinweis schließen">&times;</button>
   </div>
-  <a class="wa-btn" href="https://wa.me/497144209071" target="_blank" rel="noopener" aria-label="Wilfing Auto-Service per WhatsApp kontaktieren – 07144 209071">
+  <a class="wa-btn" href="https://wa.me/497144209071" target="_blank" rel="noopener" aria-label="Wilfing Auto-Service per WhatsApp kontaktieren, 07144 209071">
     <span class="wa-label">Jetzt unter: 07144 209071</span>
     <span class="wa-ico" aria-hidden="true">
       <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.38L1.05 31.31l6.136-1.962A15.9 15.9 0 0 0 16.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.31 22.594c-.386 1.09-1.918 1.994-3.14 2.258-.836.178-1.928.32-5.604-1.204-4.702-1.948-7.73-6.726-7.966-7.036-.226-.31-1.9-2.53-1.9-4.826 0-2.296 1.166-3.424 1.636-3.904.386-.394.98-.574 1.55-.574.184 0 .35.01.5.017.44.019.66.045.95.74.386.87 1.264 3.166 1.37 3.386.108.22.216.512.066.822-.14.32-.264.454-.484.71-.22.256-.43.454-.65.73-.2.24-.426.498-.172.938.254.43 1.13 1.862 2.424 3.016 1.67 1.49 3.058 1.95 3.522 2.146.346.144.758.11 1.012-.164.322-.354.72-.94 1.124-1.518.286-.412.648-.464 1.028-.32.386.134 2.44 1.15 2.86 1.36.42.21.7.31.804.484.104.18.104 1.03-.282 2.12z"/></svg>
@@ -1655,25 +1692,29 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
     });
   });
 
-  /* --- 4b · Leistungen-Rail: Wisch-Fortschritt (nur mobil sichtbar) --- */
+  /* --- 4b · Wisch-Rails (Leistungen & Einblicke): Fortschritt, nur mobil sichtbar --- */
   (function () {
-    var rail = document.querySelector('#leistungen .cards');
-    var bar  = document.querySelector('#leistungen .rail-bar');
-    if (!rail || !bar) return;
-    var ticking = false;
-    function update() {
-      ticking = false;
-      var max = rail.scrollWidth - rail.clientWidth;
-      if (max <= 1) { bar.style.width = '100%'; bar.style.marginLeft = '0%'; return; }
-      var w = Math.max((rail.clientWidth / rail.scrollWidth) * 100, 12);
-      bar.style.width = w + '%';
-      bar.style.marginLeft = ((rail.scrollLeft / max) * (100 - w)) + '%';
+    function initRail(railSel, barSel) {
+      var rail = document.querySelector(railSel);
+      var bar  = document.querySelector(barSel);
+      if (!rail || !bar) return;
+      var ticking = false;
+      function update() {
+        ticking = false;
+        var max = rail.scrollWidth - rail.clientWidth;
+        if (max <= 1) { bar.style.width = '100%'; bar.style.marginLeft = '0%'; return; }
+        var w = Math.max((rail.clientWidth / rail.scrollWidth) * 100, 12);
+        bar.style.width = w + '%';
+        bar.style.marginLeft = ((rail.scrollLeft / max) * (100 - w)) + '%';
+      }
+      rail.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      update();
     }
-    rail.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
+    initRail('#leistungen .cards', '#leistungen .rail-bar');
+    initRail('#einblicke .gallery', '#einblicke .rail-bar');
   })();
 
   /* --- 5 · Hero-Überschrift Wort-für-Wort einblenden --- */
