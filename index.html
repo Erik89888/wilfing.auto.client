@@ -824,6 +824,38 @@ h2.split.in .wi{ transform:none; }
   .facts{ margin-top:0; }
 }
 
+/* ---------- Mobil: Hero-Titel größer, CTAs gleich breit ---------- */
+@media (max-width:899px){
+  .hero-title{ font-size:min(3.9rem, 15.5vw); }
+  .hero-cta{ display:grid; grid-template-columns:1fr; gap:.75rem; max-width:420px; }
+  .hero-cta .btn{ width:100%; justify-content:center; padding:0 1.5rem; }
+  .hero-cta .btn .arr{ position:absolute; right:.45rem; top:50%; margin-top:-20px; }
+}
+
+/* ---------- Mobil: Leistungen als horizontaler Slider ---------- */
+@media (max-width:999px){
+  .svc-list{
+    display:flex; gap:.9rem; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain;
+    margin-inline:calc(var(--gut) * -1); padding:0 var(--gut) 1rem; scroll-padding-inline:var(--gut);
+    border-top:0; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  .svc-list::-webkit-scrollbar{ display:none; }
+  .svc-item{ flex:0 0 86%; max-width:420px; scroll-snap-align:start; border:1px solid var(--line); border-radius:20px; background:var(--white); overflow:hidden; }
+  .svc-item a{ height:100%; padding:1.25rem 1.1rem; grid-template-columns:auto 1fr auto; column-gap:.75rem; align-content:start; }
+  .svc-desc{ grid-column:1 / -1; }
+  .svc-thumb{ grid-column:1 / -1; grid-row:3; aspect-ratio:16/10; }
+  .js .svc-item[data-r]{ opacity:1; transform:none; }
+
+  /* Fahrzeugtypen: ebenfalls wischen */
+  .fleet{
+    display:flex; gap:.75rem; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain;
+    margin-inline:calc(var(--gut) * -1); padding:0 var(--gut) .25rem; scroll-padding-inline:var(--gut);
+    scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  .fleet::-webkit-scrollbar{ display:none; }
+  .fleet-panel{ flex:0 0 86%; max-width:420px; scroll-snap-align:start; min-height:420px; }
+}
+
 /* =========================================================================
    19 · REDUCED MOTION
    ========================================================================= */
@@ -1283,46 +1315,6 @@ h2.split.in .wi{ transform:none; }
 </section>
 
 <!-- =====================================================================
-     SECTION: AKTUELLES
-     ===================================================================== -->
-<section id="aktuelles" class="sec">
-  <div class="wrap">
-    <header class="sec-head">
-      <span class="mono sec-tag" data-r>Aktuelles</span>
-      <h2 data-r style="--d:.05s">News &amp; Aktionen</h2>
-      <p class="lead" data-r style="--d:.12s">Aktionen, Investitionen und Auszeichnungen.</p>
-    </header>
-
-    <ul class="news">
-      <li data-r>
-        <a href="#kontakt">
-          <span class="mono news-meta"><span class="news-tag">Aktion</span><time datetime="2026-05-15">15.05.2026</time></span>
-          <h3>Reifencheck gratis</h3>
-          <p>Bis Ende Juni kostenlos für alle Kunden. Einfach Termin vereinbaren.</p>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </li>
-      <li data-r style="--d:.08s">
-        <a href="#kontakt">
-          <span class="mono news-meta"><span class="news-tag">Service</span><time datetime="2026-04-02">02.04.2026</time></span>
-          <h3>Neue Diagnose für Klimaanlagen</h3>
-          <p>Neue Technik in der Werkstatt: schnellere Diagnose, günstigere Wartung.</p>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </li>
-      <li data-r style="--d:.16s">
-        <a href="#kontakt">
-          <span class="mono news-meta"><span class="news-tag">News</span><time datetime="2026-03-10">10.03.2026</time></span>
-          <h3>Ausgezeichnet vom TÜV</h3>
-          <p>Wilfing Auto ist erneut als Partnerservice des TÜV ausgezeichnet worden.</p>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- =====================================================================
      SECTION: KONTAKT
      ===================================================================== -->
 <section id="kontakt" class="sec call">
@@ -1401,6 +1393,46 @@ h2.split.in .wi{ transform:none; }
         </a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: AKTUELLES
+     ===================================================================== -->
+<section id="aktuelles" class="sec">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="mono sec-tag" data-r>Aktuelles</span>
+      <h2 data-r style="--d:.05s">News &amp; Aktionen</h2>
+      <p class="lead" data-r style="--d:.12s">Aktionen, Investitionen und Auszeichnungen.</p>
+    </header>
+
+    <ul class="news">
+      <li data-r>
+        <a href="#kontakt">
+          <span class="mono news-meta"><span class="news-tag">Aktion</span><time datetime="2026-05-15">15.05.2026</time></span>
+          <h3>Reifencheck gratis</h3>
+          <p>Bis Ende Juni kostenlos für alle Kunden. Einfach Termin vereinbaren.</p>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </li>
+      <li data-r style="--d:.08s">
+        <a href="#kontakt">
+          <span class="mono news-meta"><span class="news-tag">Service</span><time datetime="2026-04-02">02.04.2026</time></span>
+          <h3>Neue Diagnose für Klimaanlagen</h3>
+          <p>Neue Technik in der Werkstatt: schnellere Diagnose, günstigere Wartung.</p>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </li>
+      <li data-r style="--d:.16s">
+        <a href="#kontakt">
+          <span class="mono news-meta"><span class="news-tag">News</span><time datetime="2026-03-10">10.03.2026</time></span>
+          <h3>Ausgezeichnet vom TÜV</h3>
+          <p>Wilfing Auto ist erneut als Partnerservice des TÜV ausgezeichnet worden.</p>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
