@@ -3,16 +3,70 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#001E44" />
-<title>Impressum – Wilfing Auto-Service</title>
-<meta name="description" content="Autowerkstatt Wilfing Auto in Steinheim an der Murr – Inspektion, HU/AU, Karosserie, Klimaservice, Elektrik & Reifenservice. Meisterbetrieb seit 1999. Jetzt Termin vereinbaren." />
+<meta name="theme-color" content="#0B0E13" />
+<meta name="format-detection" content="telephone=yes" />
+
+<!-- =====================================================================
+     WILFING AUTO-SERVICE  ·  index.v2  ·  Redesign "Werkstattauftrag"
+     ---------------------------------------------------------------------
+     Firmenname   Wilfing Auto-Service
+     Adresse      Schulstraße 1, 71711 Steinheim an der Murr
+     Telefon      07144 209071
+     Zeiten       Mo bis Do 7:30 bis 12:00 & 13:00 bis 17:00, Fr 7:30 bis 13:00
+     ---------------------------------------------------------------------
+     Keine Frameworks. Nur Google Fonts. Alle Animationen in Vanilla JS,
+     prefers-reduced-motion wird überall respektiert.
+     ===================================================================== -->
+
+<title>Wilfing Auto: Kfz-Meisterbetrieb in Steinheim an der Murr</title>
+<meta name="description" content="Autowerkstatt Wilfing Auto in Steinheim an der Murr: Inspektion, HU/AU, Karosserie, Klimaservice, Elektrik und Reifenservice. Meisterbetrieb seit 1999. Jetzt Termin vereinbaren." />
+<meta name="author" content="Wilfing Auto" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="icon" type="image/png" href="data:image/png;base64,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" />
 <link rel="apple-touch-icon" href="data:image/png;base64,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" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Wilfing Auto" />
+<meta property="og:title" content="Wilfing Auto: Ihre Kfz-Werkstatt in Steinheim an der Murr" />
+<meta property="og:description" content="Von der Inspektion bis zur Karosserie: erfahren, zuverlässig und fair. Meisterbetrieb seit 1999." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1200&q=80" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Wilfing Auto-Service",
+  "image": "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1200&q=80",
+  "url": "https://wilfing-autoservice.de/",
+  "telephone": "+49-7144-209071",
+  "foundingDate": "1999",
+  "priceRange": "€€",
+  "address": { "@type": "PostalAddress", "streetAddress": "Schulstraße 1", "addressLocality": "Steinheim an der Murr", "postalCode": "71711", "addressCountry": "DE" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 48.97035, "longitude": 9.272913 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "07:30", "closes": "12:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "13:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:30", "closes": "13:00" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "150" }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet" />
-<script>document.documentElement.classList.add('js', 'no-loader');</script>
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=2000&q=80" />
+
+<script>
+(function(){
+  var r = document.documentElement; r.classList.add('js');
+  var seen = false;
+  try { seen = sessionStorage.getItem('wa-intro') === '1'; sessionStorage.setItem('wa-intro','1'); } catch(e) {}
+  if (seen || window.matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('no-loader');
+})();
+</script>
+
 <style>
 /* =========================================================================
    1 · TOKENS
@@ -304,6 +358,7 @@ h3{ letter-spacing:-.015em; line-height:1.15; }
   .hero-meta{ display:none; }
 }
 
+.mascot{ display:inline-block; flex:none; background:url('data:image/png;base64,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') center/contain no-repeat; }
 /* Maskottchen aus dem alten Hero: unten rechts, schwebt sanft */
 .hero-mascot{
   position:absolute; z-index:1; right:clamp(8px, 4vw, 72px); bottom:0;
@@ -345,8 +400,9 @@ h3{ letter-spacing:-.015em; line-height:1.15; }
 .stat .mono span:last-child{ display:none; }
 .odo{ font-family:var(--f-display); font-weight:800; font-size:clamp(2rem, 4.4vw, 4rem); line-height:1.02; letter-spacing:-.03em; display:flex; align-items:flex-end; white-space:nowrap; }
 .odo .d{ display:inline-block; height:1em; overflow:hidden; position:relative; }
-.odo .col{ display:flex; flex-direction:column; transform:translateY(0); transition:transform 2.2s var(--ease); }
-.odo .col span{ height:1em; line-height:1; display:block; }
+.odo .col{ position:absolute; top:0; left:0; right:0; display:flex; flex-direction:column; transform:translateY(0); transition:transform 2.2s var(--ease); }
+.odo .col span{ height:1em; line-height:1; display:block; text-align:center; }
+.odo .d .w{ display:block; height:0; visibility:hidden; line-height:1; }
 .odo .suf{ font-size:.42em; letter-spacing:-.01em; margin-left:.12em; padding-bottom:.12em; color:var(--blue); }
 
 /* =========================================================================
@@ -768,6 +824,43 @@ h2.split.in .wi{ transform:none; }
   .facts{ margin-top:0; }
 }
 
+/* ---------- Mobil: Hero-Titel größer, CTAs gleich breit ---------- */
+@media (max-width:899px){
+  .hero-title{ font-size:min(3.9rem, 15.5vw); }
+  /* Buttons gleich breit (Breite = breitester Button), linksbündig */
+  .hero-cta, .call-actions{ display:grid; grid-template-columns:max-content; justify-content:start; gap:.75rem; }
+  .hero-cta .btn, .call-actions .btn{ width:100%; justify-content:center; padding:0 2.9rem; }
+  .hero-cta .btn .arr, .call-actions .btn .arr{ position:absolute; right:.45rem; top:50%; margin-top:-20px; }
+  .hero-cta .btn{ justify-content:flex-start; padding:0 3.1rem 0 1.2rem; font-size:.9rem; }
+  .call-actions .btn-line svg.ico{ position:absolute; left:1.1rem; top:50%; margin-top:-9px; }
+  /* Maskottchen größer */
+  .hero-mascot{ width:clamp(150px, 44vw, 240px); }
+}
+
+/* ---------- Mobil: Leistungen als horizontaler Slider ---------- */
+@media (max-width:999px){
+  .svc-list{
+    display:flex; gap:.9rem; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain;
+    margin-inline:calc(var(--gut) * -1); padding:0 var(--gut) 1rem; scroll-padding-inline:var(--gut);
+    border-top:0; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  .svc-list::-webkit-scrollbar{ display:none; }
+  .svc-item{ flex:0 0 86%; max-width:420px; scroll-snap-align:start; border:1px solid var(--line); border-radius:20px; background:var(--white); overflow:hidden; }
+  .svc-item a{ height:100%; padding:1.25rem 1.1rem; grid-template-columns:auto 1fr auto; column-gap:.75rem; align-content:start; }
+  .svc-desc{ grid-column:1 / -1; }
+  .svc-thumb{ grid-column:1 / -1; grid-row:3; aspect-ratio:16/10; }
+  .js .svc-item[data-r]{ opacity:1; transform:none; }
+
+  /* Fahrzeugtypen: ebenfalls wischen */
+  .fleet{
+    display:flex; gap:.75rem; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain;
+    margin-inline:calc(var(--gut) * -1); padding:0 var(--gut) .25rem; scroll-padding-inline:var(--gut);
+    scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  .fleet::-webkit-scrollbar{ display:none; }
+  .fleet-panel{ flex:0 0 86%; max-width:420px; scroll-snap-align:start; min-height:420px; }
+}
+
 /* =========================================================================
    19 · REDUCED MOTION
    ========================================================================= */
@@ -777,83 +870,42 @@ h2.split.in .wi{ transform:none; }
   .grain{ display:none; }
   .js .loader{ display:none; }
 }
-
-/* =========================================================================
-   RECHTSSEITEN  ·  Impressum & Datenschutz im v2-Design
-   ========================================================================= */
-.legal-hero{
-  position:relative; overflow:hidden; color:var(--white);
-  padding:calc(var(--hdr) + clamp(3rem, 8vw, 5.5rem)) 0 clamp(3rem, 7vw, 5rem);
-  background:
-    radial-gradient(900px 400px at 85% 0%, rgba(45,140,235,.35), transparent 70%),
-    linear-gradient(120deg, var(--blue-deep) 0%, var(--blue) 60%, var(--blue-2) 100%);
-}
-.legal-hero .sec-tag{ color:var(--blue-light); }
-.legal-title{ font-size:clamp(1.9rem, 7vw, 4.8rem); line-height:1.05; letter-spacing:-.035em; margin:.9rem 0 1rem; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere; }
-.legal-title .wm{ display:inline-block; max-width:100%; overflow:hidden; vertical-align:top; padding-bottom:.2em; margin-bottom:-.2em; }
-.legal-title .wi{ display:inline-block; transform:translateY(110%) rotate(4deg); transform-origin:0 100%; transition:transform 1s var(--ease); transition-delay:calc(var(--wi) * 70ms + .1s); }
-.legal-title.in .wi{ transform:none; }
-.legal-hero p.sub{ color:rgba(255,255,255,.8); font-size:1.1rem; max-width:52ch; }
-.legal{ padding-block:clamp(3rem, 7vw, 5.5rem) var(--sec); }
-.legal a{ color:var(--blue-2); font-weight:600; text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(11,79,166,.35); transition:text-decoration-color .3s; }
-.legal a:hover{ text-decoration-color:currentColor; }
-
-/* Impressum: Karten */
-.legal-cards{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); }
-.legal-card{ background:var(--white); border-radius:22px; padding:clamp(1.4rem, 3vw, 2rem); box-shadow:0 1px 2px rgba(11,14,19,.04), 0 16px 40px rgba(11,14,19,.07); }
-.legal-card .lbl{ display:block; color:var(--blue); font-weight:700; font-size:.88rem; margin-bottom:.5rem; }
-.legal-card h3{ font-size:1.35rem; margin-bottom:.75rem; }
-.legal-card p{ color:#3A404A; line-height:1.7; }
-
-/* Datenschutz: Inhaltsverzeichnis + Textspalte */
-.legal-wrap{ display:grid; gap:1.5rem; }
-.legal-toc{ background:var(--white); border-radius:22px; padding:1.4rem; box-shadow:0 1px 2px rgba(11,14,19,.04), 0 16px 40px rgba(11,14,19,.07); display:grid; gap:.15rem; align-self:start; }
-.legal-toc h4{ font-size:.88rem; color:var(--blue); font-weight:700; margin-bottom:.6rem; }
-.legal .legal-toc a{ color:var(--muted); font-weight:500; font-size:.95rem; text-decoration:none; padding:.4rem .7rem; border-radius:10px; transition:background .3s, color .3s; }
-.legal .legal-toc a:hover{ color:var(--ink); background:var(--paper); }
-.legal .legal-toc a.is-active{ color:var(--white); background:var(--blue-2); }
-.legal-content{ display:grid; gap:1rem; min-width:0; }
-.legal-block{ background:var(--white); border-radius:22px; padding:clamp(1.4rem, 3.5vw, 2.4rem); box-shadow:0 1px 2px rgba(11,14,19,.04), 0 16px 40px rgba(11,14,19,.07); scroll-margin-top:calc(var(--hdr) + 1.5rem); }
-.legal-block > *{ max-width:72ch; }
-.legal-block h2{ font-size:clamp(1.4rem, 2.4vw, 1.9rem); line-height:1.2; margin-bottom:1rem; text-wrap:balance; }
-.legal-block h3{ font-size:1.12rem; margin:1.5rem 0 .5rem; }
-.legal-block p{ color:#3A404A; line-height:1.75; margin-bottom:.85rem; }
-.legal-block ul{ list-style:disc; padding-left:1.3rem; margin:0 0 1rem; color:#3A404A; line-height:1.7; }
-.legal-block li{ margin-bottom:.3rem; }
-.legal-block li::marker{ color:var(--blue-2); }
-@media (min-width:1000px){
-  .legal-wrap{ grid-template-columns:280px 1fr; gap:2rem; }
-  .legal-toc{ position:sticky; top:calc(var(--hdr) + 1.5rem); }
-}
-
-.legal-back{ margin-top:2rem; }
-.legal .legal-back a{ display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; background:var(--ink); color:var(--white); padding:.9rem 1.4rem; border-radius:999px; transition:background .3s; }
-.legal .legal-back a:hover{ background:var(--blue); }
-.legal-credit{ margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
-.ftr-bottom a[aria-current="page"]{ color:var(--white); font-weight:700; }</style>
+</style>
 </head>
 
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-bar"></div>
+  <div class="loader-word">
+    <span style="animation-delay:.05s">W</span><span style="animation-delay:.09s">I</span><span style="animation-delay:.13s">L</span><span style="animation-delay:.17s">F</span><span style="animation-delay:.21s">I</span><span style="animation-delay:.25s">N</span><span style="animation-delay:.29s">G</span>
+  </div>
+  <span class="loader-count">Kfz-Meisterbetrieb · Steinheim</span>
+</div>
+
+<!-- =====================================================================
+     SECTION: HEADER
+     ===================================================================== -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
-    <a href="index.v2.html" class="logo" aria-label="Wilfing Auto-Service, zum Seitenanfang">
+    <a href="#top" class="logo" aria-label="Wilfing Auto-Service, zum Seitenanfang">
       <img src="https://www.wilfing-autoservice.de/images/logo.png" alt="" width="60" height="44" />
       <span class="logo-txt">Wilfing Auto<small>Kfz-Meisterbetrieb</small></span>
     </a>
 
     <nav class="nav" aria-label="Hauptnavigation">
-      <a href="index.v2.html#leistungen"><sup>01</sup>Leistungen</a>
-      <a href="index.v2.html#fahrzeuge"><sup>02</sup>Fahrzeuge</a>
-      <a href="index.v2.html#ueber-uns"><sup>03</sup>Über uns</a>
-      <a href="index.v2.html#anfahrt"><sup>04</sup>Anfahrt</a>
-      <a href="index.v2.html#kontakt"><sup>05</sup>Kontakt</a>
+      <a href="#leistungen"><sup>01</sup>Leistungen</a>
+      <a href="#fahrzeuge"><sup>02</sup>Fahrzeuge</a>
+      <a href="#ueber-uns"><sup>03</sup>Über uns</a>
+      <a href="#anfahrt"><sup>04</sup>Anfahrt</a>
+      <a href="#kontakt"><sup>05</sup>Kontakt</a>
     </nav>
 
     <div class="hdr-right">
       <span class="status" data-status><i></i><b>Öffnungszeiten</b></span>
-      <a href="index.v2.html#kontakt" class="btn btn-signal hdr-cta" data-magnet>
+      <a href="#kontakt" class="btn btn-signal hdr-cta">
         Termin vereinbaren
         <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
@@ -865,12 +917,12 @@ h2.split.in .wi{ transform:none; }
 <!-- Mobiles Menü -->
 <div class="mmenu" id="mmenu" aria-hidden="true">
   <ol>
-    <li><a href="index.v2.html#leistungen">Leistungen <span>01</span></a></li>
-    <li><a href="index.v2.html#fahrzeuge">Fahrzeuge <span>02</span></a></li>
-    <li><a href="index.v2.html#einblicke">Einblicke <span>03</span></a></li>
-    <li><a href="index.v2.html#ueber-uns">Über uns <span>04</span></a></li>
-    <li><a href="index.v2.html#anfahrt">Anfahrt <span>05</span></a></li>
-    <li><a href="index.v2.html#kontakt">Kontakt <span>06</span></a></li>
+    <li><a href="#leistungen">Leistungen <span>01</span></a></li>
+    <li><a href="#fahrzeuge">Fahrzeuge <span>02</span></a></li>
+    <li><a href="#einblicke">Einblicke <span>03</span></a></li>
+    <li><a href="#ueber-uns">Über uns <span>04</span></a></li>
+    <li><a href="#anfahrt">Anfahrt <span>05</span></a></li>
+    <li><a href="#kontakt">Kontakt <span>06</span></a></li>
   </ol>
   <div class="mmenu-foot">
     <span class="status" data-status><i></i><b>Öffnungszeiten</b></span>
@@ -878,96 +930,527 @@ h2.split.in .wi{ transform:none; }
   </div>
 </div>
 
+<main id="main">
+<span id="top"></span>
 
-<section class="legal-hero">
-  <div class="wrap">
-    <span class="mono sec-tag">Rechtliches</span>
-    <h1 class="legal-title">Impressum</h1>
-    <p class="sub">Angaben gemäß § 5 TMG · Wilfing Auto-Service</p>
+<!-- =====================================================================
+     SECTION: HERO
+     ===================================================================== -->
+<section class="hero" id="hero">
+  <div class="hero-img" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=2000&q=80" alt="" fetchpriority="high" />
+    <video id="heroImg" class="auto-vid" data-src="hero-werkstatt.mp4" muted loop playsinline preload="none"></video>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="hero-mascot"><span class="mascot" role="img" aria-label="Wilfing Auto Werkstatt-Maskottchen"></span></div>
+
+  <div class="wrap hero-body">
+    <p class="mono hero-kicker hero-fade"><b>Kfz-Meisterbetrieb</b><span>Steinheim an der Murr</span><span>Seit 1999</span></p>
+
+    <h1 class="hero-title">
+      <span class="ln"><span>Ihr Partner</span></span>
+      <span class="ln"><span class="soft">für alle</span></span>
+      <span class="ln"><span>Fahrzeuge<em>.</em></span></span>
+    </h1>
+
+    <div class="hero-foot hero-fade">
+      <p class="hero-sub">Von der Inspektion bis zur Karosserie: erfahren, zuverlässig und fair.</p>
+      <div class="hero-cta">
+        <a href="#kontakt" class="btn btn-white">
+          Termin vereinbaren
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a href="#leistungen" class="btn btn-line">Leistungen entdecken</a>
+      </div>
+      <div class="mono hero-meta">
+        <span>48.9704° N · 9.2729° E</span>
+        <span>Schulstraße 1, 71711 Steinheim</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<main id="main" class="legal">
+<!-- Warnband: Vertrauenssiegel -->
+<div class="tape">
+  <p class="sr-only">Partner des TÜV, vom ADAC empfohlen, Meisterbetrieb, 4,9 Sterne bei Google, Ersatzfahrzeug inklusive, alle Marken und Modelle.</p>
+  <div class="tape-track" aria-hidden="true">
+    <div class="tape-group">
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Partner des TÜV</span><span class="tape-sep"></span>
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vom ADAC empfohlen</span><span class="tape-sep"></span>
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L4 16.8a1.8 1.8 0 1 0 2.5 2.5l5.3-5.3a4 4 0 0 0 5.2-5.4l-2.4 2.4-1.8-1.8z"/></svg>Meisterbetrieb</span><span class="tape-sep"></span>
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.86.62-5.18 4.52 1.55 6.7L12 16.9 5.87 20.6l1.55-6.7L2.24 8.88l6.86-.62z"/></svg>4,9 bei Google</span><span class="tape-sep"></span>
+      <span class="tape-item">Ersatzfahrzeug inklusive</span><span class="tape-sep"></span>
+      <span class="tape-item">Alle Marken und Modelle</span><span class="tape-sep"></span>
+    </div>
+    <div class="tape-group">
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Partner des TÜV</span><span class="tape-sep"></span>
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vom ADAC empfohlen</span><span class="tape-sep"></span>
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L4 16.8a1.8 1.8 0 1 0 2.5 2.5l5.3-5.3a4 4 0 0 0 5.2-5.4l-2.4 2.4-1.8-1.8z"/></svg>Meisterbetrieb</span><span class="tape-sep"></span>
+      <span class="tape-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.86.62-5.18 4.52 1.55 6.7L12 16.9 5.87 20.6l1.55-6.7L2.24 8.88l6.86-.62z"/></svg>4,9 bei Google</span><span class="tape-sep"></span>
+      <span class="tape-item">Ersatzfahrzeug inklusive</span><span class="tape-sep"></span>
+      <span class="tape-item">Alle Marken und Modelle</span><span class="tape-sep"></span>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION: ZAHLEN
+     ===================================================================== -->
+<section class="stats" aria-label="Wilfing Auto in Zahlen">
   <div class="wrap">
-<div class="legal-cards">
-
-      <div class="legal-card" data-r style="--d:0.06s">
-        <span class="lbl">Anbieter</span>
-        <h3>Wilfing Auto-Service</h3>
-        <p>
-          <strong>Wilfing Auto-Service</strong> · Kfz-Meisterbetrieb<br />
-          Inhaber: Frank Wilfing<br />
-          Schulstraße 1<br />
-          71711 Steinheim an der Murr<br />
-          Baden-Württemberg, Deutschland
-        </p>
+    <div class="stats-intro">
+      <span class="mono sec-tag" data-r>Die Werkstatt</span>
+      <p class="big" data-r style="--d:.08s">Ein Familienbetrieb mit <mark>ehrlicher Handarbeit</mark>, kurzen Wartezeiten und Technik, die mit jedem Fahrzeug mithält.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat" data-r>
+        <div class="odo" data-value="25" data-suffix="+">25+</div>
+        <p class="mono"><span>Jahre Erfahrung</span><span>A</span></p>
       </div>
-
-      <div class="legal-card" data-r style="--d:0.12s">
-        <span class="lbl">Kontakt</span>
-        <h3>Erreichbarkeit</h3>
-        <p>
-          Telefon: <a href="tel:+497144209071">07144 209071</a><br />
-          Telefax: 07144 209072<br />
-          E-Mail: <a href="mailto:info@wilfing-autoservice.de">info@wilfing-autoservice.de</a>
-        </p>
+      <div class="stat" data-r style="--d:.08s">
+        <div class="odo" data-value="8000" data-suffix="+">8.000+</div>
+        <p class="mono"><span>Fahrzeuge pro Jahr</span><span>B</span></p>
       </div>
-
-      <div class="legal-card" data-r style="--d:0.18s">
-        <span class="lbl">Umsatzsteuer</span>
-        <h3>USt-IdNr.</h3>
-        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br /><strong>DE 184432146</strong></p>
+      <div class="stat" data-r style="--d:.16s">
+        <div class="odo" data-value="3200" data-suffix="m²">3.200m²</div>
+        <p class="mono"><span>Werkstattfläche</span><span>C</span></p>
       </div>
-
-      <div class="legal-card" data-r style="--d:0.24s">
-        <span class="lbl">Kammer &amp; Beruf</span>
-        <h3>Aufsicht &amp; Berufsbezeichnung</h3>
-        <p>
-          Zuständige Handwerkskammer: <strong>Handwerkskammer Region Stuttgart</strong>.<br />
-          Gesetzliche Berufsbezeichnung: Kraftfahrzeugtechniker-Meister (verliehen in der Bundesrepublik Deutschland).
-        </p>
+      <div class="stat" data-r style="--d:.24s">
+        <div class="odo" data-value="12" data-suffix="">12</div>
+        <p class="mono"><span>Fachkräfte im Team</span><span>D</span></p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="legal-card" data-r style="--d:0.24s">
-        <span class="lbl">Streitbeilegung</span>
-        <h3>Verbraucherstreitbeilegung</h3>
-        <p>
-          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.<br />
-          Plattform der EU-Kommission zur Online-Streitbeilegung:
-          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>
-        </p>
+<!-- =====================================================================
+     SECTION: LEISTUNGEN
+     ===================================================================== -->
+<section id="leistungen" class="sec svc">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="mono sec-tag" data-r>Leistungen</span>
+      <h2 data-r style="--d:.05s">Von der Inspektion bis zum Komplettservice</h2>
+      <p class="lead" data-r style="--d:.12s">Ein Ansprechpartner für alles rund um Ihr Fahrzeug.</p>
+    </header>
+
+    <div class="svc-layout">
+      <ol class="svc-list" id="svcList">
+        <li class="svc-item is-active" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">01</span>
+            <span class="svc-name">Inspektion &amp; Wartung</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Wartung nach Herstellervorgabe, für alle Marken und Modelle.</span>
+            <img class="svc-thumb" src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Mechaniker bei der Inspektion am Motor" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">02</span>
+            <span class="svc-name">HU &amp; AU</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Wir bereiten Ihr Fahrzeug auf die Untersuchung vor und begleiten Sie zum TÜV.</span>
+            <img class="svc-thumb" src="https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fahrzeug auf der Hebebühne bei der Unterbodenprüfung" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">03</span>
+            <span class="svc-name">Reifenservice</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Wechseln, Auswuchten, Einlagern: Sommer, Winter und Ganzjahresreifen.</span>
+            <img class="svc-thumb" src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=900&q=80" alt="Gestapelte Reifen für den Reifenservice" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">04</span>
+            <span class="svc-name">Lackierung &amp; Karosserie</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Von der kleinen Delle bis zum Komplettlack, alles aus einer Hand.</span>
+            <img class="svc-thumb" src="https://images.pexels.com/photos/6870314/pexels-photo-6870314.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Lackierer beim Lackieren einer Karosserie in der Lackierkabine" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">05</span>
+            <span class="svc-name">Wohnmobil&shy;reparaturen aller Art</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Reparatur und Wartung für Wohnmobile und Kastenwagen: Technik und Aufbau aus einer Hand.</span>
+            <img class="svc-thumb" src="https://images.pexels.com/photos/37443372/pexels-photo-37443372.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Modernes weißes Wohnmobil auf einer Wiese am See" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">06</span>
+            <span class="svc-name">Autoglasservice</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Steinschlag oder neue Scheibe: schnell erledigt, auf Wunsch mit Versicherungsabwicklung.</span>
+            <img class="svc-thumb" src="https://images.pexels.com/photos/11950154/pexels-photo-11950154.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Techniker beim Austausch einer Windschutzscheibe" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">07</span>
+            <span class="svc-name">Elektrik &amp; Diagnose</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Moderne Diagnosetechnik für alle Fahrzeugsysteme, Fehlersuche präzise und schnell.</span>
+            <img class="svc-thumb" src="https://images.pexels.com/photos/6870313/pexels-photo-6870313.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Mechaniker mit Diagnosegerät am Motor" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">08</span>
+            <span class="svc-name">Klimaservice</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Wartung, Befüllung und Dichtigkeitsprüfung Ihrer Klimaanlage.</span>
+            <img class="svc-thumb" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&q=80" alt="Fahrzeug-Innenraum mit Klimabedienung" loading="lazy" />
+          </a>
+        </li>
+        <li class="svc-item" data-r>
+          <a href="#kontakt">
+            <span class="mono svc-num">09</span>
+            <span class="svc-name">Achsvermessung</span>
+            <span class="svc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="svc-desc">Exakte Spur für sicheres Fahrverhalten und weniger Verschleiß am Reifen.</span>
+            <img class="svc-thumb" src="https://images.pexels.com/photos/38324578/pexels-photo-38324578.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Auto in der Achsmessanlage in der Werkstatt" loading="lazy" />
+          </a>
+        </li>
+      </ol>
+
+      <!-- Große Vorschau (Desktop), wird per JS mit den Bildern der Liste befüllt -->
+      <div class="svc-preview" aria-hidden="true">
+        <div class="svc-frame" id="svcFrame">
+          <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        </div>
+        <div class="mono svc-cap"><b id="svcCapName">Inspektion &amp; Wartung</b><span id="svcCapNum">01 / 09</span></div>
       </div>
-
-      <div class="legal-card" data-r style="--d:0.24s">
-        <span class="lbl">Haftung</span>
-        <h3>Haftung für Inhalte</h3>
-        <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-      </div>
-
-      <div class="legal-card" data-r style="--d:0.24s">
-        <span class="lbl">Verweise</span>
-        <h3>Haftung für Links</h3>
-        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-      </div>
-
-      <div class="legal-card" data-r style="--d:0.24s">
-        <span class="lbl">Urheberrecht</span>
-        <h3>Urheberrecht</h3>
-        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
-      </div>
-
     </div>
 
-    <p class="legal-back"><a href="index.html">&larr; Zurück zur Startseite</a></p>
-    <p class="legal-credit">Webdesign &amp; Umsetzung: <a href="https://irtona.de" target="_blank" rel="noopener">Irtona.de</a></p>
+    <!-- Ersatzfahrzeug -->
+    <div class="loaner" data-r>
+      <div class="loaner-media" aria-hidden="true">
+        <img src="https://images.pexels.com/photos/7144212/pexels-photo-7144212.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Übergabe der Autoschlüssel für ein Ersatzfahrzeug" loading="lazy" />
+        <video class="auto-vid" data-src="driver-sm.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+      </div>
+      <div class="wrap loaner-inner">
+      <div class="loaner-body">
+        <svg class="loaner-key" viewBox="0 0 64 64" fill="none" stroke="#FFC21A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="6" r="4"/><path d="M32 10v6"/><rect x="20" y="16" width="24" height="34" rx="6"/><path d="M32 50v10M32 55h5M32 60h4"/><circle cx="32" cy="28" r="3"/><path d="M26 38h12"/></svg>
+        <span class="tag-signal">Inklusive bei jeder Reparatur</span>
+        <h3>Ersatzfahrzeug</h3>
+        <p>Damit Sie mobil bleiben: Für die Dauer der Reparatur stellen wir Ihnen auf Wunsch ein Ersatzfahrzeug bereit, ohne versteckte Kosten.</p>
+        <a href="#kontakt" class="link">Ersatzwagen anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: FAHRZEUGE
+     ===================================================================== -->
+<section id="fahrzeuge" class="sec dark">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="mono sec-tag" data-r>Fahrzeuge</span>
+      <h2 data-r style="--d:.05s">Für jeden Fahrzeugtyp der richtige Ansprechpartner</h2>
+      <p class="lead" data-r style="--d:.12s">Ob Alltagsauto, Nutzfahrzeug oder Liebhaberstück: bei uns ist Ihr Fahrzeug in besten Händen.</p>
+    </header>
+
+    <div class="fleet" id="fleet" data-r>
+      <article class="fleet-panel is-active" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1572811298797-9eecadf6cb24?q=80&w=1600&auto=format&fit=crop" alt="Sportlicher PKW von vorne" loading="lazy" />
+        <div class="fleet-vert" aria-hidden="true"><span class="mono">01</span><b>PKW</b></div>
+        <div class="fleet-body">
+          <span class="mono">Alle Marken</span>
+          <h3>PKW</h3>
+          <p>Vom Kleinwagen bis zur Oberklasse: Wartung, Reparatur und Pflege für alle Marken.</p>
+          <a href="#kontakt" class="link">Termin anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="fleet-panel" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1719150810145-77b576e1c955?q=80&w=1400&auto=format&fit=crop" alt="Blauer LKW auf der Straße" loading="lazy" />
+        <div class="fleet-vert" aria-hidden="true"><span class="mono">02</span><b>Wohnmobil &amp; LKW</b></div>
+        <div class="fleet-body">
+          <span class="mono">Bis 7,5 t</span>
+          <h3>Wohnmobil &amp; LKW</h3>
+          <p>Nutzfahrzeuge bis 7,5 t: Service, Bremsen, Inspektion und Vorbereitung auf die HU.</p>
+          <a href="#kontakt" class="link">Termin anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="fleet-panel" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?q=80&w=1400&auto=format&fit=crop" alt="Motorrad in der Werkstatt" loading="lazy" />
+        <div class="fleet-vert" aria-hidden="true"><span class="mono">03</span><b>Motorräder</b></div>
+        <div class="fleet-body">
+          <span class="mono">Saisonstart</span>
+          <h3>Motorräder</h3>
+          <p>Check, Inspektion und Reifenwechsel, damit Sie sicher in die Saison starten.</p>
+          <a href="#kontakt" class="link">Termin anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="fleet-panel" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1596463097767-79a39851a776?q=80&w=1400&auto=format&fit=crop" alt="Oldtimer-Fahrzeug" loading="lazy" />
+        <div class="fleet-vert" aria-hidden="true"><span class="mono">04</span><b>Oldtimer</b></div>
+        <div class="fleet-body">
+          <span class="mono">Mit Leidenschaft</span>
+          <h3>Oldtimer</h3>
+          <p>Wir warten, pflegen und restaurieren Ihren Klassiker mit Leidenschaft.</p>
+          <a href="#kontakt" class="link">Termin anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: EINBLICKE  ·  Galerie (Desktop: horizontal gepinnt)
+     ===================================================================== -->
+<section id="einblicke" class="hs" aria-label="Einblicke in die Werkstatt">
+  <div class="hs-sticky">
+    <div class="wrap">
+      <header class="sec-head">
+        <span class="mono sec-tag" data-r>Einblicke</span>
+        <h2 data-r style="--d:.05s">Ein Blick in unsere Werkstatt</h2>
+        <p class="lead" data-r style="--d:.12s">Moderne Technik, ehrliche Handarbeit, ein eingespieltes Team.</p>
+      </header>
+    </div>
+
+    <div class="hs-track" id="hsTrack">
+      <figure class="hs-item">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1607282061645-52fa09bde395?q=80&w=1000&auto=format&fit=crop" alt="Fahrzeug auf der Hebebühne" loading="lazy" /></div>
+        <figcaption class="mono"><b>Hebebühne &amp; Unterbodencheck</b><span>01</span></figcaption>
+      </figure>
+      <figure class="hs-item wide">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1632733711679-529326f6db12?q=80&w=1400&auto=format&fit=crop" alt="Mechaniker mit Diagnosegerät" loading="lazy" /></div>
+        <figcaption class="mono"><b>Computerdiagnose</b><span>02</span></figcaption>
+      </figure>
+      <figure class="hs-item">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1630360056563-1698d9a5aee6?q=80&w=1000&auto=format&fit=crop" alt="Arbeit am Motor" loading="lazy" /></div>
+        <figcaption class="mono"><b>Motorservice</b><span>03</span></figcaption>
+      </figure>
+      <figure class="hs-item wide">
+        <div class="ph"><img src="wilfing.werkstatt.innen.jpg.png" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1400&q=80'" alt="Blick in die Werkstatthalle" loading="lazy" /></div>
+        <figcaption class="mono"><b>Unsere Halle</b><span>04</span></figcaption>
+      </figure>
+      <figure class="hs-item">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1444947295498-07f60c19a4ff?q=80&w=1000&auto=format&fit=crop" alt="Gestapelte Reifen" loading="lazy" /></div>
+        <figcaption class="mono"><b>Reifenservice</b><span>05</span></figcaption>
+      </figure>
+      <figure class="hs-item wide">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1780558852670-3f49298ecc1f?q=80&w=1400&auto=format&fit=crop" alt="Karosserie-Arbeit" loading="lazy" /></div>
+        <figcaption class="mono"><b>Karosserie &amp; Lack</b><span>06</span></figcaption>
+      </figure>
+      <figure class="hs-item">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1625690180114-5530b1304127?q=80&w=1000&auto=format&fit=crop" alt="Fahrzeug-Innenraum mit Klimabedienung" loading="lazy" /></div>
+        <figcaption class="mono"><b>Innenraum &amp; Klima</b><span>07</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="wrap"><div class="hs-bar" aria-hidden="true"><span id="hsBar"></span></div></div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: ÜBER UNS
+     ===================================================================== -->
+<section id="ueber-uns" class="about">
+  <div class="about-banner">
+    <div class="about-media" aria-hidden="true">
+      <img id="aboutImg" src="IMG_0838.jpeg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=2000&q=80'" alt="" loading="lazy" />
+      <video class="auto-vid" data-src="about-werkstatt.mp4" muted loop playsinline preload="none"></video>
+    </div>
+    <span class="since" data-r style="--d:.3s"><small>Gegründet</small>1999</span>
+    <div class="wrap about-inner">
+      <div class="about-text">
+        <span class="mono sec-tag" data-r>Über uns</span>
+        <h2 data-r style="--d:.05s; margin-top:1.25rem">Seit über 20 Jahren&nbsp;Ihr Vertrauenspartner in&nbsp;Steinheim</h2>
+        <p class="scrolltext" id="scrolltext">Familienbetrieb in zweiter Generation: <span data-hl>ehrliche Handwerksarbeit,</span> <span data-hl>kurze Wartezeiten</span> und <span data-hl>transparente Preise.</span> Wir erklären, bevor wir schrauben, und rufen an, bevor es teurer wird.</p>
+        <a href="#kontakt" class="link">Unser Team kennenlernen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="facts">
+      <li class="fact"><span class="cb"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Alle Fabrikate und Modelle</span></li>
+      <li class="fact"><span class="cb"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Zertifizierter Meisterbetrieb</span></li>
+      <li class="fact"><span class="cb"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Ersatzfahrzeuge verfügbar</span></li>
+      <li class="fact"><span class="cb"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Hol- und Bringservice im Raum Steinheim</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: KUNDENSTIMMEN
+     ===================================================================== -->
+<section id="kundenstimmen" class="sec reviews">
+  <div class="wrap">
+    <div class="rv-grid">
+      <div class="rv-score">
+        <span class="mono sec-tag" data-r>Kundenstimmen</span>
+        <h2 class="sr-only">Was unsere Kunden sagen</h2>
+        <div class="big" data-r style="--d:.05s">4,9</div>
+        <div class="stars" aria-hidden="true" data-r style="--d:.1s">★★★★★</div>
+        <p data-r style="--d:.15s">Über 150 Bewertungen bei Google mit durchschnittlich 4,9 Sternen.</p>
+      </div>
+
+      <div data-r style="--d:.1s">
+        <div class="rv-stage" id="rvStage" aria-live="polite">
+          <article class="rv is-active">
+            <blockquote>„Schnell, ehrlich und fair: die Inspektion war günstiger als beim Vertragshändler und genauso gründlich.“</blockquote>
+            <div class="rv-author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80" alt="" loading="lazy" /><span><b>Erik Palus</b><span>Steinheim a. d. Murr</span></span></div>
+          </article>
+          <article class="rv">
+            <blockquote>„Termin am nächsten Tag, Ersatzwagen inklusive und alles transparent erklärt. So stelle ich mir eine Werkstatt vor.“</blockquote>
+            <div class="rv-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="" loading="lazy" /><span><b>Sandra Keller</b><span>Marbach am Neckar</span></span></div>
+          </article>
+          <article class="rv">
+            <blockquote>„Mein Oldtimer ist hier in besten Händen. Man merkt die Leidenschaft fürs Handwerk an jedem Detail.“</blockquote>
+            <div class="rv-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="" loading="lazy" /><span><b>Thomas Vogt</b><span>Ludwigsburg</span></span></div>
+          </article>
+        </div>
+        <div class="rv-tabs" id="rvTabs" role="tablist" aria-label="Kundenstimmen wählen">
+          <button class="rv-tab is-active" role="tab" aria-selected="true">01 · Erik P.</button>
+          <button class="rv-tab" role="tab" aria-selected="false">02 · Sandra K.</button>
+          <button class="rv-tab" role="tab" aria-selected="false">03 · Thomas V.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: KONTAKT
+     ===================================================================== -->
+<section id="kontakt" class="sec call">
+  <div class="call-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1600&q=80" alt="" loading="lazy" />
+    <video id="callVid" class="auto-vid" data-src="drive-sunset.mp4" muted loop playsinline preload="none"></video>
+  </div>
+  <div class="wrap">
+    <span class="mono sec-tag" data-r>Wie Sie uns erreichen</span>
+    <h2 data-r style="--d:.05s; margin-top:1.25rem">Termin vereinbaren oder einfach kurz nachfragen?</h2>
+
+    <div class="call-num-row" data-r style="--d:.1s">
+      <a class="call-num" id="callNum" href="tel:+497144209071" aria-label="07144 209071 anrufen">07144 209071</a>
+      <a class="call-wa" href="https://wa.me/497144209071" target="_blank" rel="noopener" aria-label="Per WhatsApp schreiben">
+        <span class="call-wa-ico"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.38L1.05 31.31l6.136-1.962A15.9 15.9 0 0 0 16.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.31 22.594c-.386 1.09-1.918 1.994-3.14 2.258-.836.178-1.928.32-5.604-1.204-4.702-1.948-7.73-6.726-7.966-7.036-.226-.31-1.9-2.53-1.9-4.826 0-2.296 1.166-3.424 1.636-3.904.386-.394.98-.574 1.55-.574.184 0 .35.01.5.017.44.019.66.045.95.74.386.87 1.264 3.166 1.37 3.386.108.22.216.512.066.822-.14.32-.264.454-.484.71-.22.256-.43.454-.65.73-.2.24-.426.498-.172.938.254.43 1.13 1.862 2.424 3.016 1.67 1.49 3.058 1.95 3.522 2.146.346.144.758.11 1.012-.164.322-.354.72-.94 1.124-1.518.286-.412.648-.464 1.028-.32.386.134 2.44 1.15 2.86 1.36.42.21.7.31.804.484.104.18.104 1.03-.282 2.12z"/></svg></span>
+        <span class="call-wa-txt"><small>Lieber schreiben?</small>WhatsApp</span>
+      </a>
+    </div>
+
+    <div class="call-row">
+      <div class="call-actions">
+        <a href="tel:+497144209071" class="btn btn-white">
+          Jetzt anrufen
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a href="https://wa.me/497144209071" target="_blank" rel="noopener" class="btn btn-line">
+          <svg class="ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.38L1.05 31.31l6.136-1.962A15.9 15.9 0 0 0 16.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.31 22.594c-.386 1.09-1.918 1.994-3.14 2.258-.836.178-1.928.32-5.604-1.204-4.702-1.948-7.73-6.726-7.966-7.036-.226-.31-1.9-2.53-1.9-4.826 0-2.296 1.166-3.424 1.636-3.904.386-.394.98-.574 1.55-.574.184 0 .35.01.5.017.44.019.66.045.95.74.386.87 1.264 3.166 1.37 3.386.108.22.216.512.066.822-.14.32-.264.454-.484.71-.22.256-.43.454-.65.73-.2.24-.426.498-.172.938.254.43 1.13 1.862 2.424 3.016 1.67 1.49 3.058 1.95 3.522 2.146.346.144.758.11 1.012-.164.322-.354.72-.94 1.124-1.518.286-.412.648-.464 1.028-.32.386.134 2.44 1.15 2.86 1.36.42.21.7.31.804.484.104.18.104 1.03-.282 2.12z"/></svg>
+          Auf WhatsApp schreiben
+        </a>
+      </div>
+
+      <div class="hours">
+        <span class="status" data-status><i></i><b>Öffnungszeiten</b></span>
+        <dl>
+          <dt>Mo bis Do</dt><dd>7:30 bis 12:00 · 13:00 bis 17:00 Uhr</dd>
+          <dt>Freitag</dt><dd>7:30 bis 13:00 Uhr</dd>
+          <dt>Sa &amp; So</dt><dd>geschlossen</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: ANFAHRT
+     ===================================================================== -->
+<section id="anfahrt" class="sec">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="mono sec-tag" data-r>Anfahrt</span>
+      <h2 data-r style="--d:.05s">So finden Sie zu uns</h2>
+      <p class="lead" data-r style="--d:.12s">Mitten in Steinheim an der Murr, gut erreichbar über den Kreisverkehr „Steppi“.</p>
+    </header>
+
+    <div class="map-grid" data-r>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=48.97035,9.272913&amp;hl=de&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Wilfing Auto-Service auf Google Maps"></iframe>
+      </div>
+      <div class="map-info">
+        <div class="map-info-head">
+          <img src="https://www.wilfing-autoservice.de/images/blitz.jpg" alt="" loading="lazy" />
+          <div><h3>Wilfing Auto-Service</h3><span class="mono" style="color:var(--muted)">Kfz-Meisterbetrieb</span></div>
+        </div>
+        <address>Schulstraße 1<br />71711 Steinheim an der Murr</address>
+        <div class="row">
+          <span class="mono">Telefon</span>
+          <a class="tel" href="tel:+497144209071">07144 209071</a>
+        </div>
+        <div class="row">
+          <span class="mono">Anfahrt</span>
+          <p>Im Kreisverkehr „Steppi“ die Ausfahrt Richtung Höpfigheim nehmen, nach ca. 400&nbsp;m auf der rechten Seite.</p>
+        </div>
+        <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.97035,9.272913" target="_blank" rel="noopener" style="justify-self:start">
+          Route planen
+          <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SECTION: AKTUELLES
+     ===================================================================== -->
+<section id="aktuelles" class="sec">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="mono sec-tag" data-r>Aktuelles</span>
+      <h2 data-r style="--d:.05s">News &amp; Aktionen</h2>
+      <p class="lead" data-r style="--d:.12s">Aktionen, Investitionen und Auszeichnungen.</p>
+    </header>
+
+    <ul class="news">
+      <li data-r>
+        <a href="#kontakt">
+          <span class="mono news-meta"><span class="news-tag">Aktion</span><time datetime="2026-05-15">15.05.2026</time></span>
+          <h3>Reifencheck gratis</h3>
+          <p>Bis Ende Juni kostenlos für alle Kunden. Einfach Termin vereinbaren.</p>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </li>
+      <li data-r style="--d:.08s">
+        <a href="#kontakt">
+          <span class="mono news-meta"><span class="news-tag">Service</span><time datetime="2026-04-02">02.04.2026</time></span>
+          <h3>Neue Diagnose für Klimaanlagen</h3>
+          <p>Neue Technik in der Werkstatt: schnellere Diagnose, günstigere Wartung.</p>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </li>
+      <li data-r style="--d:.16s">
+        <a href="#kontakt">
+          <span class="mono news-meta"><span class="news-tag">News</span><time datetime="2026-03-10">10.03.2026</time></span>
+          <h3>Ausgezeichnet vom TÜV</h3>
+          <p>Wilfing Auto ist erneut als Partnerservice des TÜV ausgezeichnet worden.</p>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
 </main>
 
+<!-- =====================================================================
+     SECTION: FOOTER
+     ===================================================================== -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr-grid">
       <div class="ftr-about">
-        <a href="index.v2.html" class="logo" aria-label="Wilfing Auto-Service, zum Seitenanfang">
+        <a href="#top" class="logo" aria-label="Wilfing Auto-Service, zum Seitenanfang">
           <img src="https://www.wilfing-autoservice.de/images/logo.png" alt="" width="60" height="44" loading="lazy" />
           <span class="logo-txt">Wilfing Auto-Service<small>Kfz-Meisterbetrieb</small></span>
         </a>
@@ -977,26 +1460,26 @@ h2.split.in .wi{ transform:none; }
       <div>
         <h4>Menü</h4>
         <ul>
-          <li><a href="index.html#leistungen">Leistungen</a></li>
-          <li><a href="index.html#fahrzeuge">Fahrzeuge</a></li>
-          <li><a href="index.html#ueber-uns">Über uns</a></li>
-          <li><a href="index.html#anfahrt">Anfahrt</a></li>
-          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#fahrzeuge">Fahrzeuge</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#anfahrt">Anfahrt</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </div>
       <div>
         <h4>Leistungen</h4>
         <ul>
-          <li><a href="index.v2.html#leistungen">Inspektion &amp; Wartung</a></li>
-          <li><a href="index.v2.html#leistungen">HU &amp; AU</a></li>
-          <li><a href="index.v2.html#leistungen">Reifenservice</a></li>
-          <li><a href="index.v2.html#leistungen">Lackierung &amp; Karosserie</a></li>
-          <li><a href="index.v2.html#leistungen">Wohnmobilreparaturen</a></li>
-          <li><a href="index.v2.html#leistungen">Autoglasservice</a></li>
-          <li><a href="index.v2.html#leistungen">Elektrik &amp; Diagnose</a></li>
-          <li><a href="index.v2.html#leistungen">Klimaservice</a></li>
-          <li><a href="index.v2.html#leistungen">Achsvermessung</a></li>
-          <li><a href="index.v2.html#leistungen">Ersatzfahrzeug</a></li>
+          <li><a href="#leistungen">Inspektion &amp; Wartung</a></li>
+          <li><a href="#leistungen">HU &amp; AU</a></li>
+          <li><a href="#leistungen">Reifenservice</a></li>
+          <li><a href="#leistungen">Lackierung &amp; Karosserie</a></li>
+          <li><a href="#leistungen">Wohnmobilreparaturen</a></li>
+          <li><a href="#leistungen">Autoglasservice</a></li>
+          <li><a href="#leistungen">Elektrik &amp; Diagnose</a></li>
+          <li><a href="#leistungen">Klimaservice</a></li>
+          <li><a href="#leistungen">Achsvermessung</a></li>
+          <li><a href="#leistungen">Ersatzfahrzeug</a></li>
         </ul>
       </div>
       <div class="ftr-contact">
@@ -1013,7 +1496,7 @@ h2.split.in .wi{ transform:none; }
 
     <div class="ftr-bottom">
       <span>© 2026 Wilfing Auto. Alle Rechte vorbehalten.</span>
-      <span><a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html" aria-current="page">Impressum</a></span>
+      <span><a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></span>
     </div>
   </div>
 </footer>
@@ -1030,105 +1513,444 @@ h2.split.in .wi{ transform:none; }
   </a>
 </div>
 
+<!-- =====================================================================
+     SCRIPTS
+     ===================================================================== -->
 <script>
 (function () {
   'use strict';
-  var body = document.body;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Header: Hintergrund + Fortschritt */
+  var root   = document.documentElement;
+  var body   = document.body;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine   = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+  /* ---------- 1 · Loader (einmal pro Sitzung) ---------- */
+  var loader = document.getElementById('loader');
+  var heroImg = document.getElementById('heroImg');
+  var heroFree = false;
+  function ready() {
+    body.classList.add('is-ready');
+    /* Nach dem Zoom-in übernimmt die Scroll-Parallaxe das Hero-Bild */
+    setTimeout(function () { if (heroImg) heroImg.style.transition = 'none'; heroFree = true; onScroll(); }, 2300);
+  }
+  if (root.classList.contains('no-loader') || !loader) {
+    requestAnimationFrame(ready);
+  } else {
+    setTimeout(function () {
+      loader.classList.add('done');
+      setTimeout(ready, 250);
+      setTimeout(function () { loader.style.display = 'none'; }, 1000);
+    }, 1150);
+  }
+
+  /* ---------- 2 · Header: Hintergrund, Ausblenden beim Runterscrollen, Fortschritt ---------- */
   var hdr = document.getElementById('hdr');
+  var lastY = window.scrollY;
+  var ticking = false;
+
   function onScroll() {
-    var y = window.scrollY, max = document.documentElement.scrollHeight - window.innerHeight;
+    ticking = false;
+    var y = window.scrollY;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
     hdr.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
     hdr.classList.toggle('scrolled', y > 40);
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+    if (!body.classList.contains('menu-open')) {
+      hdr.classList.toggle('hide', y > lastY && y > window.innerHeight * .8);
+    }
+    lastY = y;
 
-  /* Mobiles Menü */
-  var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu');
+    if (!reduce) {
+      if (heroFree && heroImg && y < window.innerHeight * 1.2) {
+        heroImg.style.transform = 'translate3d(0,' + (y * 0.28) + 'px,0) scale(1.02)';
+      }
+      pinGallery();
+      scrollText();
+      aboutParallax();
+      sectionMotion();
+    }
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+
+  /* ---------- 3 · Mobiles Menü ---------- */
+  var burger = document.getElementById('burger');
+  var mmenu  = document.getElementById('mmenu');
   function setMenu(open) {
     body.classList.toggle('menu-open', open);
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
     mmenu.setAttribute('aria-hidden', !open);
     body.style.overflow = open ? 'hidden' : '';
+    if (open) hdr.classList.remove('hide');
   }
   burger.addEventListener('click', function () { setMenu(!body.classList.contains('menu-open')); });
   mmenu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
-  /* Überschrift Wort für Wort */
-  var h1 = document.querySelector('.legal-title');
-  if (h1 && !reduce) {
-    var i = 0;
-    h1.innerHTML = h1.innerHTML.split(/(\s+)/).map(function (p) {
-      if (!p || /^\s+$/.test(p)) return p;
-      return '<span class="wm"><span class="wi" style="--wi:' + (i++) + '">' + p + '</span></span>';
-    }).join('');
-    requestAnimationFrame(function () { requestAnimationFrame(function () { h1.classList.add('in'); }); });
-  } else if (h1) { h1.classList.add('in'); }
-
-  /* Reveal */
-  var els = document.querySelectorAll('[data-r]');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
-    els.forEach(function (el) { io.observe(el); });
-  } else { els.forEach(function (el) { el.classList.add('in'); }); }
-
-  /* Inhaltsverzeichnis: aktiven Abschnitt markieren */
-  var tocLinks = [].slice.call(document.querySelectorAll('.legal-toc a[href^="#"]'));
-  if (tocLinks.length && 'IntersectionObserver' in window) {
-    var map = {};
-    tocLinks.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-    var tio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        tocLinks.forEach(function (a) { a.classList.remove('is-active'); });
-        var a = map[en.target.id]; if (a) a.classList.add('is-active');
-      });
-    }, { rootMargin: '-30% 0px -60% 0px' });
-    document.querySelectorAll('.legal-block[id]').forEach(function (b) { tio.observe(b); });
-  }
+  /* ---------- 4 · Smooth Scroll ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      var t = document.querySelector(a.getAttribute('href'));
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var t = document.querySelector(id);
       if (!t) return;
       e.preventDefault();
       t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
     });
   });
 
-  /* Öffnungsstatus im mobilen Menü */
+  /* ---------- 5 · Reveal ---------- */
+  var io = null;
+  if ('IntersectionObserver' in window) {
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        if (en.target.__onIn) en.target.__onIn();
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
+  }
+  function watch(el, cb) {
+    if (cb) el.__onIn = cb;
+    if (io) io.observe(el); else { el.classList.add('in'); if (cb) cb(); }
+  }
+  document.querySelectorAll('[data-r], .protocol, .ftr-word, .facts').forEach(function (el) { watch(el); });
+
+  /* ---------- 6 · Kilometerzähler ---------- */
+  document.querySelectorAll('.odo').forEach(function (el) {
+    var val = parseInt(el.getAttribute('data-value'), 10) || 0;
+    var suf = el.getAttribute('data-suffix') || '';
+    var str = val.toLocaleString('de-DE');
+    if (reduce) return;
+    el.textContent = '';
+    el.setAttribute('aria-label', str + (suf ? ' ' + suf : ''));
+    var cols = [];
+    str.split('').forEach(function (ch, i) {
+      if (!/\d/.test(ch)) {
+        var s = document.createElement('span'); s.textContent = ch; s.setAttribute('aria-hidden', 'true');
+        el.appendChild(s); return;
+      }
+      var d = document.createElement('span'); d.className = 'd'; d.setAttribute('aria-hidden', 'true');
+      var col = document.createElement('span'); col.className = 'col';
+      for (var n = 0; n < 30; n++) { var x = document.createElement('span'); x.textContent = n % 10; col.appendChild(x); }
+      /* Breite der Ziffernspalte = Breite der Zielziffer (sonst steht die „1“ in einer zu breiten Box) */
+      var w = document.createElement('span'); w.className = 'w'; w.textContent = ch;
+      d.appendChild(w); d.appendChild(col); el.appendChild(d);
+      cols.push({ col: col, target: 20 + parseInt(ch, 10), i: cols.length });
+    });
+    if (suf) { var sf = document.createElement('span'); sf.className = 'suf'; sf.textContent = suf; sf.setAttribute('aria-hidden', 'true'); el.appendChild(sf); }
+    var stat = el.closest('.stat');
+    watch(stat, function () {
+      cols.forEach(function (c) {
+        c.col.style.transitionDelay = (c.i * 0.12) + 's';
+        c.col.style.transform = 'translateY(-' + c.target + 'em)';
+      });
+    });
+  });
+
+  /* ---------- 7 · Leistungen: Vorschau ---------- */
+  (function () {
+    var list  = document.getElementById('svcList');
+    var frame = document.getElementById('svcFrame');
+    if (!list || !frame) return;
+    var items = [].slice.call(list.querySelectorAll('.svc-item'));
+    var capName = document.getElementById('svcCapName');
+    var capNum  = document.getElementById('svcCapNum');
+    var imgs = items.map(function (it, i) {
+      var src = it.querySelector('.svc-thumb');
+      var im = document.createElement('img');
+      im.src = src.src; im.alt = ''; im.loading = i === 0 ? 'eager' : 'lazy';
+      if (i === 0) im.className = 'is-active';
+      frame.appendChild(im);
+      return im;
+    });
+    var cur = 0;
+    function activate(i) {
+      if (i === cur) return;
+      imgs.forEach(function (im) { im.classList.remove('was-active'); });
+      imgs[cur].classList.remove('is-active'); imgs[cur].classList.add('was-active');
+      items[cur].classList.remove('is-active');
+      cur = i;
+      imgs[cur].classList.add('is-active');
+      items[cur].classList.add('is-active');
+      capName.textContent = items[cur].querySelector('.svc-name').textContent.replace(/­/g, '');
+      capNum.textContent = ('0' + (cur + 1)).slice(-2) + ' / ' + ('0' + items.length).slice(-2);
+    }
+    items.forEach(function (it, i) {
+      it.addEventListener('mouseenter', function () { activate(i); });
+      it.querySelector('a').addEventListener('focus', function () { activate(i); });
+    });
+  })();
+
+  /* ---------- 8 · Fahrzeuge: Panels ---------- */
+  (function () {
+    var panels = [].slice.call(document.querySelectorAll('.fleet-panel'));
+    function act(p) { panels.forEach(function (x) { x.classList.toggle('is-active', x === p); }); }
+    panels.forEach(function (p) {
+      p.addEventListener('mouseenter', function () { act(p); });
+      p.addEventListener('focusin', function () { act(p); });
+      p.addEventListener('click', function () { act(p); });
+    });
+  })();
+
+  /* ---------- 9 · Einblicke: horizontal gepinnt (Desktop) ---------- */
+  var hs = document.getElementById('einblicke');
+  var hsTrack = document.getElementById('hsTrack');
+  var hsBar = document.getElementById('hsBar');
+  var hsDist = 0;
+  var mqWide = window.matchMedia('(min-width: 900px)');
+  function setupGallery() {
+    if (!hs) return;
+    if (mqWide.matches && !reduce) {
+      hs.classList.add('is-pinned');
+      hsTrack.style.transform = '';
+      hsDist = Math.max(0, hsTrack.scrollWidth - document.documentElement.clientWidth);
+      hs.style.height = (window.innerHeight + hsDist) + 'px';
+    } else {
+      hs.classList.remove('is-pinned');
+      hs.style.height = '';
+      hsTrack.style.transform = '';
+      hsDist = 0;
+    }
+    pinGallery();
+  }
+  function pinGallery() {
+    if (!hs) return;
+    if (!hs.classList.contains('is-pinned')) {
+      var m = hsTrack.scrollWidth - hsTrack.clientWidth;
+      hsBar.style.transform = 'scaleX(' + (m > 0 ? hsTrack.scrollLeft / m : 1) + ')';
+      return;
+    }
+    var r = hs.getBoundingClientRect();
+    var p = clamp(-r.top / Math.max(1, hs.offsetHeight - window.innerHeight), 0, 1);
+    hsTrack.style.transform = 'translate3d(' + (-p * hsDist).toFixed(1) + 'px,0,0)';
+    hsBar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+  }
+  if (hsTrack) hsTrack.addEventListener('scroll', pinGallery, { passive: true });
+  window.addEventListener('resize', setupGallery);
+  window.addEventListener('load', setupGallery);
+  setupGallery();
+
+  /* ---------- 10 · Über uns: Text färbt sich beim Scrollen ein ---------- */
+  var st = document.getElementById('scrolltext');
+  var words = [];
+  if (st) {
+    var out = [];
+    [].slice.call(st.childNodes).forEach(function (node) {
+      var hl = node.nodeType === 1 && node.hasAttribute('data-hl');
+      var txt = node.textContent;
+      txt.split(/(\s+)/).forEach(function (part) {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { out.push(part); return; }
+        out.push('<span class="w' + (hl ? ' hl' : '') + '">' + part + '</span>');
+      });
+    });
+    st.innerHTML = out.join('');
+    words = [].slice.call(st.querySelectorAll('.w'));
+    if (reduce) words.forEach(function (w) { w.classList.add('on'); });
+  }
+  function scrollText() {
+    if (!st || !words.length) return;
+    var r = st.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var p = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35), 0, 1);
+    var n = Math.round(p * words.length);
+    for (var i = 0; i < words.length; i++) words[i].classList.toggle('on', i < n);
+  }
+
+  var callBg = document.querySelector('.call-bg');
+  var loanerMedia = document.querySelector('.loaner-media');
+  function sectionMotion() {
+    var vh = window.innerHeight, r;
+    if (callBg) {
+      r = callBg.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) {
+        var p = (r.top + r.height / 2 - vh / 2) / vh;
+        callBg.querySelectorAll('img, video').forEach(function (m) { m.style.transform = 'translate3d(0,' + (p * 8).toFixed(2) + '%,0)'; });
+      }
+    }
+    if (loanerMedia) {
+      r = loanerMedia.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) loanerMedia.style.setProperty('--vs', clamp(1 - (r.top + r.height / 2 - vh / 2) / vh, 0, 1).toFixed(3));
+    }
+  }
+
+  var aboutImg = document.getElementById('aboutImg');
+  function aboutParallax() {
+    if (!aboutImg) return;
+    var r = aboutImg.parentNode.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) return;
+    var p = clamp((r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight, -0.6, 0.4);
+    aboutImg.style.transform = 'translate3d(0,' + (-7 + p * 10).toFixed(2) + '%,0)';
+  }
+
+  /* ---------- 11 · Kundenstimmen ---------- */
+  (function () {
+    var slides = [].slice.call(document.querySelectorAll('.rv'));
+    var tabsWrap = document.getElementById('rvTabs');
+    if (!slides.length || !tabsWrap) return;
+    var tabs = [].slice.call(tabsWrap.querySelectorAll('.rv-tab'));
+    var DUR = 7000, cur = 0, timer = null, paused = false, left = DUR, startedAt = 0;
+
+    slides.forEach(function (s) {
+      var q = s.querySelector('blockquote');
+      var parts = q.textContent.split(' ');
+      q.setAttribute('aria-label', q.textContent);
+      q.innerHTML = parts.map(function (w, i) { return '<span class="qw" aria-hidden="true" style="--i:' + i + '">' + w + '</span>'; }).join(' ');
+    });
+
+    function go(i) {
+      slides[cur].classList.remove('is-active');
+      tabs[cur].classList.remove('is-active'); tabs[cur].setAttribute('aria-selected', 'false');
+      cur = (i + slides.length) % slides.length;
+      slides[cur].classList.add('is-active');
+      void tabs[cur].offsetWidth;
+      tabs[cur].classList.add('is-active'); tabs[cur].setAttribute('aria-selected', 'true');
+      schedule(DUR);
+    }
+    function schedule(ms) {
+      clearTimeout(timer);
+      if (reduce) return;
+      left = ms; startedAt = Date.now();
+      if (!paused) timer = setTimeout(function () { go(cur + 1); }, ms);
+    }
+    tabs.forEach(function (t, i) { t.addEventListener('click', function () { if (i !== cur) go(i); }); });
+    var stage = tabsWrap.parentNode;
+    stage.addEventListener('mouseenter', function () {
+      paused = true; clearTimeout(timer); left -= Date.now() - startedAt; tabsWrap.classList.add('paused');
+    });
+    stage.addEventListener('mouseleave', function () {
+      paused = false; tabsWrap.classList.remove('paused'); schedule(Math.max(400, left));
+    });
+    if (reduce) { tabsWrap.style.setProperty('--rv-dur', '0s'); }
+    schedule(DUR);
+  })();
+
+  /* ---------- 12 · Live-Öffnungsstatus ---------- */
   (function () {
     var H = { 1: [[450, 720], [780, 1020]], 2: [[450, 720], [780, 1020]], 3: [[450, 720], [780, 1020]], 4: [[450, 720], [780, 1020]], 5: [[450, 780]] };
     var DAYS = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
     function hm(m) { return Math.floor(m / 60) + ':' + ('0' + (m % 60)).slice(-2); }
-    var d = new Date(), day = d.getDay(), m = d.getHours() * 60 + d.getMinutes(), r = H[day] || [], s = null;
-    for (var k = 0; k < r.length && !s; k++) {
-      if (m >= r[k][0] && m < r[k][1]) s = { cls: 'open', txt: 'Jetzt geöffnet bis ' + hm(r[k][1]) + ' Uhr' };
-      else if (m < r[k][0]) s = k === 0 ? { cls: '', txt: 'Öffnet heute um ' + hm(r[k][0]) + ' Uhr' } : { cls: 'break', txt: 'Mittagspause bis ' + hm(r[k][0]) + ' Uhr' };
+    function calc() {
+      var d = new Date(), day = d.getDay(), m = d.getHours() * 60 + d.getMinutes();
+      var r = H[day] || [];
+      for (var i = 0; i < r.length; i++) {
+        if (m >= r[i][0] && m < r[i][1]) return { cls: 'open', txt: 'Jetzt geöffnet bis ' + hm(r[i][1]) + ' Uhr' };
+        if (m < r[i][0]) return i === 0 ? { cls: '', txt: 'Öffnet heute um ' + hm(r[i][0]) + ' Uhr' } : { cls: 'break', txt: 'Mittagspause bis ' + hm(r[i][0]) + ' Uhr' };
+      }
+      for (var k = 1; k <= 7; k++) {
+        var nd = (day + k) % 7;
+        if (H[nd]) return { cls: '', txt: 'Geschlossen, öffnet ' + (k === 1 ? 'morgen' : DAYS[nd]) + ' ' + hm(H[nd][0][0]) + ' Uhr' };
+      }
+      return { cls: '', txt: 'Geschlossen' };
     }
-    for (var n = 1; n <= 7 && !s; n++) { var nd = (day + n) % 7; if (H[nd]) s = { cls: '', txt: 'Geschlossen, öffnet ' + (n === 1 ? 'morgen' : DAYS[nd]) + ' ' + hm(H[nd][0][0]) + ' Uhr' }; }
-    document.querySelectorAll('[data-status]').forEach(function (el) {
-      if (s.cls) el.classList.add(s.cls);
-      el.querySelector('b').textContent = s.txt;
+    function paint() {
+      var s = calc();
+      document.querySelectorAll('[data-status]').forEach(function (el) {
+        el.classList.remove('open', 'break');
+        if (s.cls) el.classList.add(s.cls);
+        el.querySelector('b').textContent = s.txt;
+      });
+    }
+    paint(); setInterval(paint, 60000);
+  })();
+
+  /* ---------- 13 · Riesige Telefonnummer: Ziffern wellen beim Hover ---------- */
+  (function () {
+    var num = document.getElementById('callNum');
+    if (!num || reduce) return;
+    var t = num.textContent;
+    num.innerHTML = t.split('').map(function (c, i) {
+      return c === ' ' ? '<span class="ch sp" aria-hidden="true"> </span>' : '<span class="ch" aria-hidden="true" data-i="' + i + '">' + c + '</span>';
+    }).join('');
+    var chs = [].slice.call(num.querySelectorAll('.ch'));
+    if (!fine) return;
+    num.addEventListener('mousemove', function (e) {
+      chs.forEach(function (c) {
+        var r = c.getBoundingClientRect();
+        var dx = Math.abs(e.clientX - (r.left + r.width / 2));
+        var f = Math.max(0, 1 - dx / 260);
+        c.style.transform = 'translateY(' + (-f * 0.12).toFixed(3) + 'em)';
+      });
+    });
+    num.addEventListener('mouseleave', function () { chs.forEach(function (c) { c.style.transform = ''; }); });
+  })();
+
+
+  /* ---------- 16 · Videos: erst laden, wenn sie in die Nähe kommen; außerhalb pausieren ---------- */
+  (function () {
+    var vids = [].slice.call(document.querySelectorAll('video.auto-vid'));
+    if (!vids.length) return;
+    function load(v) {
+      if (v.src) return;
+      v.src = v.getAttribute('data-src');
+      v.addEventListener('playing', function () { v.classList.add('playing'); });
+    }
+    function play(v) { load(v); var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    if (reduce) return; /* reduzierte Bewegung: Standbilder bleiben stehen */
+    if (!('IntersectionObserver' in window)) { vids.forEach(play); return; }
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (v.closest('.fleet-panel') && !v.closest('.fleet-panel.is-active') && window.innerWidth >= 1000) { v.pause(); return; }
+        if (en.isIntersecting) play(v); else if (v.src) v.pause();
+      });
+    }, { rootMargin: '200px 0px' });
+    vids.forEach(function (v) { vio.observe(v); });
+    /* PKW-Panel: Video läuft nur, solange das Panel offen ist (Desktop) */
+    document.querySelectorAll('.fleet-panel').forEach(function (p) {
+      var v = p.querySelector('video.auto-vid');
+      if (!v) return;
+      new MutationObserver(function () {
+        if (p.classList.contains('is-active') || window.innerWidth < 1000) play(v); else v.pause();
+      }).observe(p, { attributes: true, attributeFilter: ['class'] });
     });
   })();
 
-  /* WhatsApp-Hinweis */
-  var note = document.getElementById('waNote'), close = document.getElementById('waNoteClose');
-  if (note) {
-    setTimeout(function () { note.classList.add('show'); }, 6000);
-    note.addEventListener('click', function (e) { if (e.target !== close) window.open('https://wa.me/497144209071', '_blank', 'noopener'); });
-    close.addEventListener('click', function (e) { e.stopPropagation(); note.classList.remove('show'); });
+  /* ---------- 17 · Überschriften Wort für Wort ---------- */
+  if (!reduce) {
+    document.querySelectorAll('h2[data-r]').forEach(function (h) {
+      var i = 0;
+      h.innerHTML = h.innerHTML.split(/(\s+|<br\s*\/?>)/).map(function (part) {
+        if (!part || /^\s+$/.test(part) || /^<br/.test(part)) return part;
+        return '<span class="wm"><span class="wi" style="--wi:' + (i++) + '">' + part + '</span></span>';
+      }).join('');
+      h.classList.add('split');
+    });
   }
 
-  body.classList.add('is-ready');
+  /* ---------- 18 · Leistungsvorschau: Tilt ---------- */
+  (function () {
+    var fr = document.getElementById('svcFrame');
+    if (!fr || !fine || reduce) return;
+    fr.parentNode.parentNode.addEventListener('mousemove', function (e) {
+      var r = fr.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      fr.style.setProperty('--ry', (x * 6).toFixed(2) + 'deg');
+      fr.style.setProperty('--rx', (-y * 6).toFixed(2) + 'deg');
+    });
+    fr.parentNode.parentNode.addEventListener('mouseleave', function () { fr.style.setProperty('--rx', '0deg'); fr.style.setProperty('--ry', '0deg'); });
+  })();
+
+  /* ---------- 15 · WhatsApp-Hinweis ---------- */
+  (function () {
+    var note = document.getElementById('waNote');
+    var close = document.getElementById('waNoteClose');
+    var href = 'https://wa.me/497144209071';
+    if (!note) return;
+    setTimeout(function () { note.classList.add('show'); }, 6000);
+    note.addEventListener('click', function (e) { if (e.target === close) return; window.open(href, '_blank', 'noopener'); });
+    note.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(href, '_blank', 'noopener'); } });
+    close.addEventListener('click', function (e) { e.stopPropagation(); note.classList.remove('show'); });
+  })();
+
+  onScroll();
 })();
 </script>
 </body>
 </html>
+
